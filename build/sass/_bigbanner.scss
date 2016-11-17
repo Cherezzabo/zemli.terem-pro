@@ -1,0 +1,25 @@
+.wrapper-bigbanner {
+	display: flex;
+}
+
+.banner-img img {
+	display: block;
+	width: 100%;
+	min-width: 400px;
+	border-radius: 12px;
+}
+
+.green-block-bigbanner {
+	display: block;
+	min-width: 400px;
+	background: #659229;
+	color: #fff;
+	border-radius: 12px;
+	padding: 30px;
+	& .btn-block {
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+		margin-top: 60px;
+	}
+}

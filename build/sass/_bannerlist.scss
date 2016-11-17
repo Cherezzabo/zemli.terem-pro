@@ -1,0 +1,55 @@
+.desc-item-inner {
+	display: table;
+	text-decoration: none;
+	margin-top: 20px;
+	& h2 {
+		color: #000;
+		margin-bottom: 5px;
+		font-size: 18px;
+		line-height: 20px;
+		text-decoration: underline !important;
+	}
+	& .banner-wrapper {
+		display: flex;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	& .bl1 {
+		display: table-cell;
+		background: #659229;
+		margin-right: 3px;
+		padding: 20px;
+		vertical-align: middle;
+		box-sizing: border-box;
+		color: #fff;
+		border-radius: 5px;
+		& p {
+			margin: 0;
+		}
+	}
+	& .bl2 {
+		position: relative;
+		border-radius: 5px;
+		color: #fff;
+		& p {
+			position: absolute;
+			margin: 0;
+			bottom: 5px;
+			right: 15px;
+			font-size: 16px;
+		}
+	}
+	& .pros-wrapper {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		height: 40px;
+		margin-top: 20px;
+		& .pros-column {
+			display: table-cell;
+			height: 100%;
+			vertical-align: middle;
+			white-space: nowrap;
+		}
+	}
+}

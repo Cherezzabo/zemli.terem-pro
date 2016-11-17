@@ -1,0 +1,142 @@
+//header
+.header {
+	text-transform: uppercase;
+	position: fixed;
+	z-index: 10;
+	top:0;
+	left:0;
+	width: 100%;
+	z-index: 10;
+	font-family: 'Reforma';
+	font-weight: 600;
+	font-size: 19px;
+	.navbar-default .navbar-nav>li {
+		position: relative;
+		margin-right: 10px;
+		&:nth-child(-n+5){
+			&:before {
+				content: '';
+				width: 1px;
+				height: 18px;
+				z-index: 2;
+				background: #e5e5e5;
+				position: absolute;
+				right: -30px;
+				top: 15px;
+			}
+		}
+		>a {
+			color: #181717;
+			padding-left: 0;
+			padding-right: 0;
+			&.logo {
+				&:hover,&:focus {
+					background: url(../img/logo.svg) #a2a3a2 center 10px no-repeat;
+					background-size: 120px;
+				}
+			}
+		}
+		&.active {
+			a {
+				color: #ab0b0e;
+				background: 0 0;
+			}
+		}
+		.call {
+			color: #3ba943;
+			display: flex;
+			width: 100%;
+			align-items: center;
+			&>span {
+				&:first-child {
+					padding-right: 10px;
+				}
+			}
+			i {
+				background: #34a63e;
+				margin-top: -1px;
+				color: #fff;
+				padding: 5px;
+				font-size: 14px;
+				border-radius: 4px;
+				transform: scale3d(-1, 1, 1);
+			}
+		}
+		.phone {
+			color: #b1b2b3;
+			span {
+				color:#ab0b0e;
+			}
+		}
+		&.has-inner {
+			position: relative;
+			&:after {
+				content: '';
+				top:100%;
+				height: 10px;
+				left:0;
+				right: 0;
+				position: absolute;
+			}
+			&:hover,&:focus {
+				ul {
+					display: block;
+				}
+			}
+			ul {
+				position: absolute;
+				left:0;
+				top: 100%;
+				padding: 15px 20px 15px;
+				margin:0;
+				list-style-type: none;
+				background: #fff;
+				
+				min-width: 150px;
+				display: none;
+				li.active {
+					a {
+						color: #ab0b0e;
+					}
+				}
+				a {
+					color: #333;
+					text-decoration: none;
+					font-weight: 400;
+					font-size: 12px;
+					font-family: Arial;
+					&:hover,&:focus {
+						color: #ab0b0e;
+					}
+				}
+			}
+		}
+	}
+	.logo {
+		width: 140px;
+		height: 65px;
+		background: url(../img/logo.svg) #a2a3a2 center 10px no-repeat;
+		background-size: 120px;
+	}
+	.navbar-nav {
+		float:none;
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		&:after,&:before {
+			content: none;
+		}
+	}
+	.navbar-default {
+		background: #fff;
+		border-radius: 0;
+		border: none;
+		margin-bottom: 0;
+		box-shadow: 0 3px 7px rgba(0,0,0,.6);
+	}
+	.navbar-collapse {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
