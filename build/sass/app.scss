@@ -5,4 +5,137 @@
 @import "footer";
 @import "bigbanner";
 @import "bannerlist";
+@import "animation";
 @import "rwd";
+
+html,
+body {
+	height: 100%;
+}
+body {
+	// font-family: "GothamProRegular", sans-serif;
+	background-color: #f3f3f5;
+	-webkit-font-smoothing: antialiased;
+}
+
+// Variables
+$color-success: #34a63e;
+$color-default: #d9534f;
+$speed: ".25s";
+$transition: all #{$speed} cubic-bezier(.31, -.105, .43, 1.4);
+
+a.button-toggler {
+	display: inline-block;
+	position: relative;
+	background-color: $color-default;
+	padding: 10px;
+	width: auto;
+	color: #fff;
+	cursor: pointer;
+	overflow: hidden;
+	transition: $transition;
+	text-decoration: none;
+	span {
+		display: inline-block;
+		text-align: center;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		line-height: inherit;
+		font-size: 22px;
+		font-family: "Reforma";
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-right: 40px;
+		transition: $transition;
+		&::after {
+			content: "";
+			opacity: 0;
+			background-color: $color-default;
+			filter: saturate(.8);
+			width: 2px;
+			height: 90%;
+			position: absolute;
+			top: 0;
+			right: -10px;
+		}
+	}
+	.icon {
+		display: inline-block;
+		position: absolute;
+		right: -15px;
+		top: 15px;
+		transform-origin: 50% 50%;
+		transition: $transition;
+		.fa {
+			font-size: 18px;
+			font-style: normal;
+			vertical-align: middle;
+			transition: $transition, height #{$speed} ease;
+		}
+		.fa-check {
+			display: none;
+			&::before {
+				content: "";
+				display: block;
+				width: 20px;
+				height: 20px;
+				background: url("../img/check-sign.svg");
+				background-size: cover;
+			}
+		}
+	}
+	&:hover {
+		background-color: $color-success;
+	}
+	&.success {
+		background-color: $color-success;
+		span {
+			left: 0;
+			transform: translateX(0%);
+			&::after {
+				content: "";
+				opacity: 1;
+				background-color: $color-success;
+				filter: saturate(.8);
+				width: 2px;
+				height: 90%;
+				position: absolute;
+				top: 0;
+				right: -10px;
+			}
+		}
+		.icon {
+			right: 15px;
+			.fa {
+				font-size: 24px;
+			}
+			.fa-check {
+				display: block;
+			}
+		}
+	}
+	&.success {
+		background-color: $color-success;
+	}
+	&:hover {
+		opacity: .9;
+	}
+}
+
+.green-button {
+	height: auto;
+	width: auto;
+	padding: 10px 20px !important;
+	background: #34a63e;
+	color: #fff !important;
+	box-sizing: content-box;
+	border: 0;
+	font-size: 1em;
+	font-weight: 600;
+	border-radius: 0;
+	&:hover {
+		background: #34a63e !important;
+		filter: saturate(1.2);
+	}
+}

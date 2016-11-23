@@ -1,45 +1,133 @@
-//fonts
 @font-face {
-	font-family: 'Reforma';
-	src: url('../fonts/RFG49__W.eot');
-	src: local('Reforma Grotesk Web Light'), local('ReformaGroteskWebLight'),
-	     url('../fonts/RFG49__W.eot?#iefix') format('embedded-opentype'),
-	     url('../fonts/RFG49__W.woff') format('woff'),
-	     url('../fonts/RFG49__W.ttf') format('truetype'),
-	     url('../fonts/RFG49__W.svg#ReformaGroteskWebLight') format('svg');
-	font-weight: 300;
+	font-family: "Reforma";
+	src: url("../fonts/RFG79.eot");
+	src:
+		url("../fonts/RFG79.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/RFG79.woff") format("woff"),
+		url("../fonts/RFG79.ttf") format("truetype"),
+		url("../fonts/RFG79.svg#ReformaGroteskWebBold") format("svg");
+	font-weight: 600;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Reforma';
-	src: url('../fonts/RFG69__W.eot');
-	src: local('Reforma Grotesk Web Medium'), local('ReformaGroteskWebMedium'),
-	     url('../fonts/RFG69__W.eot?#iefix') format('embedded-opentype'),
-	     url('../fonts/RFG69__W.woff') format('woff'),
-	     url('../fonts/RFG69__W.ttf') format('truetype'),
-	     url('../fonts/RFG69__W.svg#ReformaGroteskWebMedium') format('svg');
-	font-weight: 500;
+	font-family: "GothamProBlack";
+	src: url("../fonts/GothamProBlack.eot");
+	src: url("../fonts/GothamProBlack.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProBlack.woff") format("woff"), url("../fonts/GothamProBlack.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "GothamProBold";
+	src: url("../fonts/GothamProBold.eot");
+	src: url("../fonts/GothamProBold.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProBold.woff") format("woff"), url("../fonts/GothamProBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "GothamProLight";
+	src: url("../fonts/GothamProLight.eot");
+	src: url("../fonts/GothamProLight.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProLight.woff") format("woff"), url("../fonts/GothamProLight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "GothamProMedium";
+	src: url("../fonts/GothamProMedium.eot");
+	src: url("../fonts/GothamProMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProMedium.woff") format("woff"), url("../fonts/GothamProMedium.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "GothamProRegular";
+	src: url("../fonts/GothamProRegular.eot");
+	src: url("../fonts/GothamProRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamProRegular.woff") format("woff"), url("../fonts/GothamProRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "MullerBold";
+	src: url("../fonts/MullerBold.eot");
+	src: url("../fonts/MullerBold.eot?#iefix") format("embedded-opentype"), url("../fonts/MullerBold.woff") format("woff"), url("../fonts/MullerBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "MullerLight";
+	src: url("../fonts/MullerLight.eot");
+	src: url("../fonts/MullerLight.eot?#iefix") format("embedded-opentype"), url("../fonts/MullerLight.woff") format("woff"), url("../fonts/MullerLight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "MullerMedium";
+	src: url("../fonts/MullerMedium.eot");
+	src: url("../fonts/MullerMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/MullerMedium.woff") format("woff"), url("../fonts/MullerMedium.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "MullerRegular";
+	src: url("../fonts/MullerRegular.eot");
+	src: url("../fonts/MullerRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/MullerRegular.woff") format("woff"), url("../fonts/MullerRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "MullerExtraBold";
+	src: url("../fonts/MullerExtraBold.eot");
+	src: url("../fonts/MullerExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/MullerExtraBold.woff") format("woff"), url("../fonts/MullerExtraBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "Reforma";
+	src: url("../fonts/RFG49.eot");
+	src:
+		url("../fonts/RFG49.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/RFG49.woff") format("woff"),
+		url("../fonts/RFG49.ttf") format("truetype"),
+		url("../fonts/RFG49.svg#RFG49") format("svg");
+	font-weight: 100;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Reforma';
-	src: url('../fonts/RFG89__W.eot');
-	src: local('Reforma Grotesk Web Bold'), local('ReformaGroteskWebBold'),
-	     url('../fonts/RFG89__W.eot?#iefix') format('embedded-opentype'),
-	     url('../fonts/RFG89__W.woff') format('woff'),
-	     url('../fonts/RFG89__W.ttf') format('truetype'),
-	     url('../fonts/RFG89__W.svg#ReformaGroteskWebBold') format('svg');
+	font-family: "Reforma";
+	src: url("../fonts/RFG69.eot");
+	src:
+		url("../fonts/RFG69.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/RFG69.woff") format("woff"),
+		url("../fonts/RFG69.ttf") format("truetype"),
+		url("../fonts/RFG69.svg#RFG49") format("svg");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Reforma";
+	src: url("../fonts/RFG79.eot");/* IE9 Compat Modes */
+	src:
+		url("../fonts/RFG79.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/RFG79.woff") format("woff"),
+		url("../fonts/RFG79.ttf") format("truetype"),
+		url("../fonts/RFG79.svg#RFG49") format("svg");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Reforma";
+	src: url("../fonts/RFG89.eot");
+	src:
+		url("../fonts/RFG89.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/RFG89.otf") format("truetype"),
+		url("../fonts/RFG89.svg#RFG49") format("svg");
 	font-weight: 700;
 	font-style: normal;
 }
-
 @font-face {
-	font-family: 'Reforma';
-	src: url('../fonts/RFG79.eot');
-	src: url('../fonts/RFG79.eot?#iefix') format('embedded-opentype'),
-	     url('../fonts/RFG79.woff') format('woff'),
-	     url('../fonts/RFG79.ttf') format('truetype'),
-	     url('../fonts/RFG79.svg#ReformaGroteskWebBold') format('svg');
-	font-weight: 600;
-	font-style: normal;
+	font-family: "Glyphicons Halflings";
+	src: url("../fonts/glyphicons-halflings-regular.eot");
+	src:
+		url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/glyphicons-halflings-regular.woff") format("woff"),
+		url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"),
+		url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg");
 }

@@ -1,45 +1,70 @@
 //header
+.header-content-wrapper {
+	position: absolute;
+	top: 66px;
+	height: 112px;
+	width: 100%;
+	perspective: 1000px;
+	z-index: 100;
+}
+.action-call-btns-group {
+	text-align: right;
+	padding-top: 20px;
+}
+
 .header {
 	text-transform: uppercase;
 	position: fixed;
-	z-index: 10;
-	top:0;
-	left:0;
+	z-index: 1000;
+	top: 0;
+	left: 0;
 	width: 100%;
-	z-index: 10;
-	font-family: 'Reforma';
+	font-family: "Reforma", sans-serif;
 	font-weight: 600;
-	font-size: 19px;
-	.navbar-default .navbar-nav>li {
+	font-size: 20px;
+	& .navbar-default {
+		box-shadow: none !important;
+		border-bottom: 1px solid #a2a3a2 !important;
+	}
+	.navbar-default .navbar-nav > li {
 		position: relative;
 		margin-right: 10px;
-		&:nth-child(-n+5){
-			&:before {
-				content: '';
+		&:last-of-type {
+			margin-right: 0;
+		}
+		&:first-of-type {
+			&::before {
+				content: none !important;
+			}
+		}
+		&:nth-child(-n + 6) {
+			&::before {
+				content: "";
 				width: 1px;
 				height: 18px;
 				z-index: 2;
 				background: #e5e5e5;
 				position: absolute;
-				right: -30px;
+				right: -32px;
 				top: 15px;
 			}
 		}
-		>a {
+		> a {
 			color: #181717;
 			padding-left: 0;
 			padding-right: 0;
 			&.logo {
-				&:hover,&:focus {
-					background: url(../img/logo.svg) #a2a3a2 center 10px no-repeat;
+				&:hover,
+				&:focus {
+					background: url("../img/logo.svg") #a2a3a2 center 10px no-repeat;
 					background-size: 120px;
 				}
 			}
 		}
 		&.active {
-			a {
-				color: #ab0b0e;
-				background: 0 0;
+			& > a {
+				color: #cc0605;
+				background: 0;
 			}
 		}
 		.call {
@@ -47,7 +72,7 @@
 			display: flex;
 			width: 100%;
 			align-items: center;
-			&>span {
+			& > span {
 				&:first-child {
 					padding-right: 10px;
 				}
@@ -65,33 +90,33 @@
 		.phone {
 			color: #b1b2b3;
 			span {
-				color:#ab0b0e;
+				color: #ab0b0e;
 			}
 		}
 		&.has-inner {
 			position: relative;
-			&:after {
-				content: '';
-				top:100%;
+			&::after {
+				content: "";
+				top: 100%;
 				height: 10px;
-				left:0;
+				left: 0;
 				right: 0;
 				position: absolute;
 			}
-			&:hover,&:focus {
+			&:hover,
+			&:focus {
 				ul {
 					display: block;
 				}
 			}
 			ul {
 				position: absolute;
-				left:0;
+				left: 0;
 				top: 100%;
-				padding: 15px 20px 15px;
-				margin:0;
+				padding: 15px 20px;
+				margin: 0;
 				list-style-type: none;
 				background: #fff;
-				
 				min-width: 150px;
 				display: none;
 				li.active {
@@ -105,7 +130,8 @@
 					font-weight: 400;
 					font-size: 12px;
 					font-family: Arial;
-					&:hover,&:focus {
+					&:hover,
+					&:focus {
 						color: #ab0b0e;
 					}
 				}
@@ -115,16 +141,17 @@
 	.logo {
 		width: 140px;
 		height: 65px;
-		background: url(../img/logo.svg) #a2a3a2 center 10px no-repeat;
+		background: url("../img/logo.svg") #a2a3a2 center 10px no-repeat;
 		background-size: 120px;
 	}
 	.navbar-nav {
-		float:none;
+		float: none;
 		display: flex;
 		width: 100%;
 		justify-content: space-between;
 		align-items: center;
-		&:after,&:before {
+		&::after,
+		&::before {
 			content: none;
 		}
 	}
@@ -133,10 +160,60 @@
 		border-radius: 0;
 		border: none;
 		margin-bottom: 0;
-		box-shadow: 0 3px 7px rgba(0,0,0,.6);
+		box-shadow: 0 3px 7px rgba(0, 0, 0, .6);
 	}
 	.navbar-collapse {
 		padding-left: 0;
 		padding-right: 0;
 	}
+	&__content {
+		position: absolute;
+		width: 100%;
+		padding: 10px;
+		background: #fff;
+		z-index: 1000;
+		transform-origin: top;
+		transform: rotateX(86.6deg);
+	}
+	&__logo {
+		& a {
+			display: inline-block;
+			float: left;
+			width: 200px;
+		}
+		& img {
+			width: 100%;
+		}
+	}
+	&__tagline {
+		display: inline-block;
+		float: left;
+		font-size: 14px;
+		margin: 30px 0 0 15px;
+		max-width: 200px;
+		color: #7b7b7d;
+		font-family: "GothamProLight";
+	}
+	&__phone {
+		margin-top: 30px;
+		& i {
+			display: inline-block;
+			font-size: 20px;
+			color: #cc0605;
+		}
+		& a {
+			color: #cc0605;
+			font-size: 24px;
+			font-family: "Reforma";
+			font-weight: 600;
+			position: relative;
+			line-height: 100%;
+			display: inline-block;
+			text-decoration: none;
+		}
+	}
+	&__order-btn {
+		margin-right: 10px;
+	}
 }
+

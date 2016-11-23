@@ -1,12 +1,6 @@
 var config = {
 	"rules": {
-		"at-rule-empty-line-before": [ "always", {
-		      except: [
-		        "all-nested",
-		        "blockless-group"
-		      ],
-		      ignore: ["after-comment"],
-		    } ], //Пустая строка перед @правилом, кроме вложенных блоков
+		"at-rule-empty-line-before": "never", //Запрет пустой строки перед @правилом, кроме вложенных блоков
 		"at-rule-name-case": "lower", //Только строчные символы для @правил
 		"at-rule-name-space-after": "always", //Пробел после @правила
 		"at-rule-semicolon-newline-after": "always", //Обязательна новая строка после ;

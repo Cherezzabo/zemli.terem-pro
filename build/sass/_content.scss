@@ -1,12 +1,17 @@
 //content
 $assetPath : "../img";
 
-* { 
+* {
 	outline: none !important;
 }
 
 .row-eq-height {
 	display: flex;
+}
+
+.no-gutters {
+	padding: 0 !important;
+	margin: 0 !important;
 }
 
 .btn {
@@ -17,7 +22,7 @@ $assetPath : "../img";
 		&.choice {
 			font-size: 30px;
 			font-weight: 600;
-			font-family: 'Reforma';
+			font-family: "Reforma";
 			padding: 20px 30px;
 			text-transform: uppercase;
 		}
@@ -25,7 +30,7 @@ $assetPath : "../img";
 	&-default {
 		font-size: 18px;
 		font-weight: 600;
-		font-family: 'Reforma';
+		font-family: "Reforma";
 		text-transform: uppercase;
 		border-radius: 0;
 		background: #d9534f;
@@ -44,20 +49,18 @@ $assetPath : "../img";
 	.red {
 		color: #d31319;
 	}
-
 	.text-right {
 		margin-top: 45px;
 	}
 	.contact-title {
 		margin: 40px 0 30px;
 		font-size: 48px;
-		font-family: 'Reforma';
+		font-family: "Reforma";
 		font-weight: 600;
-		
 	}
 	.title-contanct-2 {
 		font-size: 60px;
-		font-family: Reforma,Arial,sans-serif;
+		font-family: "Reforma", Arial, sans-serif;
 		font-weight: 400;
 		margin: 0;
 	}
@@ -65,14 +68,15 @@ $assetPath : "../img";
 		font-size: 18px;
 		font-family: Arial;
 	}
-	.title-contanct-2 a, .title-contanct-3 a {
+	.title-contanct-2 a,
+	.title-contanct-3 a {
 		display: block;
 		color: #d31319;
 		text-decoration: none;
 		min-width: 286px;
 	}
 	h2 {
-		font-family: 'Reforma';
+		font-family: "Reforma";
 		font-weight: 600;
 		font-size: 30px;
 		margin: 30px 0 20px;
@@ -80,94 +84,44 @@ $assetPath : "../img";
 	p {
 		font-size: 17px;
 	}
-
 	.row:last-of-type {
 		margin-bottom: 50px;
 	}
 }
-
-.content {
-	padding: 60px 0;
-	&.section-1 {
-		height: 100%;
-		min-height: 100%;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		padding:0;
-		.navi {
-			margin-top: -1px;
-		}
-		.slider-navigation {
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			margin-top: -88px;
-			position: relative;
-			z-index: 10;
-		}
-		.main-dots {
-			display: flex;
-			padding-right: 15px;
-			.owl-dot.active {
-				background-color: red;
-			}
-			.owl-dot {
-				width: 10px;
-				height: 10px;
-				background-color: #fff;
-				border-radius: 100%;
-				cursor: pointer;
-				margin: 0 5px;
-			}
-		}
-		.main-navigation {
-			display: flex;
-			.owl-prev {
-				text-indent: -9999px;
-				width: 17px;
-				height: 17px;
-				background: url(../img/slider_prev.png) #333 center center no-repeat;
-				cursor: pointer;
-				
-				margin: 0 1px;
-			}
-			.owl-next {
-				text-indent: -9999px;
-				width: 17px;
-				height: 17px;
-				background: url(../img/slider_next.png) #333 center center no-repeat;
-				cursor: pointer;
-				
-				margin: 0 1px;
-			}
-		}
+.dropdown {
+	perspective: 1000px;
+	& .dropdown-menu {
+		transform-origin: top;
 	}
 }
-.slider {
+.content {
+	padding: 0;
+}
+/* Старый слайдер */
+/* .slider {
 	&__main {
 		color: #fff;
 		min-height: 100%;
 		height: 100%;
-		&>div:nth-child(1) {
+		& > div:nth-child(1) {
 			min-height: 700px;
 			height: 100%;
-			&>div {
+			& > div {
 				min-height: 100%;
 				height: 100%;
-				&>div {
+				& > div {
 					min-height: 100%;
 					height: 100%;
-					&>div {
+					& > div {
 						min-height: 100%;
 						height: 100%;
-						&>div {
+						& > div {
 							min-height: 100%;
 							height: 100%;
-							&>div {
+							& > div {
 								min-height: 100%;
 								height: 100%;
-								&>div {
+								& > div {
 									height: 100%;
 									display: flex;
 									flex-direction: column;
@@ -183,15 +137,15 @@ $assetPath : "../img";
 		&__item {
 			&.bg {
 				&_1 {
-					background: url(../img/slider/slider-bg-1.jpg) center center no-repeat;
+					background: url("../img/slider/slider-bg-1.jpg") center center no-repeat;
 					background-size: cover;
 				}
 				&_2 {
-					background: url(../img/slider/slider-bg-2.jpg) center center no-repeat;
+					background: url("../img/slider/slider-bg-2.jpg") center center no-repeat;
 					background-size: cover;
 				}
 				&_3 {
-					background: url(../img/slider/slider-bg-3.jpg) center center no-repeat;
+					background: url("../img/slider/slider-bg-3.jpg") center center no-repeat;
 					background-size: cover;
 				}
 			}
@@ -199,7 +153,7 @@ $assetPath : "../img";
 				display: flex;
 				width: 100%;
 				align-items: flex-end;
-				&>div:nth-child(1) {
+				& > div:nth-child(1) {
 					width: 100%;
 				}
 				img {
@@ -209,48 +163,53 @@ $assetPath : "../img";
 				.btn-success {
 					font-size: 19px;
 					font-weight: 600;
-					font-family: 'Reforma';
+					font-family: "Reforma";
 					padding: 8px 50px;
-					box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
+					box-shadow: 0 0 10px 0 rgba(0,0,0,0.7);
 				}
 			}
 			&__content {
 				height: 100%;
 				h1 {
 					font-weight: 600;
-					font-family: 'Reforma';
+					font-family: "Reforma";
 					font-size: 65px;
 					margin-bottom: 60px;
-					text-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+					text-shadow: 0 0 10px rgba(0, 0, 0, .7);
 				}
 				h3 {
 					font-size: 35px;
 					font-weight: 600;
-					font-family: 'Reforma';
-					text-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+					font-family: "Reforma";
+					text-shadow: 0 0 10px rgba(0, 0, 0, .7);
 				}
 			}
 			&__footer {
 				.btn-success {
 					font-size: 19px;
 					font-weight: 600;
-					font-family: 'Reforma';
+					font-family: "Reforma";
 					padding: 8px 50px;
-					box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.7);
+					box-shadow: 0 0 10px 0 rgba(0, 0, 0, .7);
 				}
 			}
 		}
 	}
-}
+} */
 .breadcrumbs__section {
+	padding: 20px 0;
+	background: #ededf2;
 	margin-bottom: 20px;
+	& .row {
+		margin: 0;
+	}
 	img {
 		border-radius: 5px;
 		width: 318px;
 	}
-	&>div {
-		// display: flex;
-		&>div {
+	& > div {
+		/* display: flex; */
+		& > div {
 			&:nth-child(2) {
 				margin-left: 30px;
 				display: flex;
@@ -262,46 +221,53 @@ $assetPath : "../img";
 	.breadcrumbs {
 		ul {
 			display: flex;
-			margin:0;
+			margin: 0;
 			padding: 0;
 			list-style-type: none;
 			font-size: 16px;
 			a {
 				color: #333;
 				text-decoration: none;
-				&:hover,&:focus {
-					text-decoration: underline;
+				&:hover,
+				&:focus {
+					text-decoration: none;
 				}
 			}
 			li {
 				&:last-child {
 					pointer-events: none;
-					&:after {
+					&::after {
 						content: none;
 					}
 					a {
-						text-decoration: underline;
-						&:hover,&:focus {
-							text-decoration: none;
-						}
+						text-decoration: none;
+					}
+					a:hover,
+					a:focus {
+						text-decoration: none;
 					}
 				}
-				&:after {
-					content: '►';
-					margin: 0 10px;
-					font-size: 9px;
-				}
+			}
+			& li + li::before {
+			    content: '';
+			    font-size: 18px;
+			    width: 25px;
+			    height: 9px;
+			    background: url("../img/arrow.png") no-repeat center;
+			    display: inline-block;
+			    margin: 0 10px 0 10px;
 			}
 		}
 	}
 	p {
 		margin-bottom: -3px;
 	}
-	p>a {
+	p > a {
 		font-size: 17px;
-		color:#006ab1;
+		color: #006ab1;
 		text-decoration: underline;
-		&:hover,&:focus {
+		&:hover,
+		&:focus {
 			text-decoration: none;
 		}
 	}
@@ -317,7 +283,7 @@ $assetPath : "../img";
 		}
 		&__content {
 			margin-left: -30px;
-			&>div {
+			& > div {
 				&:nth-child(2) {
 					min-height: 110px;
 				}
@@ -327,7 +293,7 @@ $assetPath : "../img";
 				font-size: 25px;
 				font-weight: 600;
 				color: #a3372b;
-				font-family: 'Reforma';
+				font-family: "Reforma";
 				margin-top: 0;
 			}
 			p {
@@ -337,19 +303,19 @@ $assetPath : "../img";
 			.attantion {
 				display: flex;
 				margin: 0 -5px;
-				text-align:center;
+				text-align: center;
 				width: 100%;
 				p {
 					font-size: 14px;
-					margin:0;
+					margin: 0;
 					font-weight: bold;
 				}
-				&>div {
+				& > div {
 					min-height: 70px;
 					display: flex;
 					margin: 0 5px;
 					width: 100%;
-					background:#d8d8d8;
+					background: #d8d8d8;
 					align-items: center;
 					justify-content: center;
 				}
@@ -366,27 +332,32 @@ $assetPath : "../img";
 	margin-top: -185px;
 }
 
-.map .scale:hover, .map .scale:focus {
-    position: relative;
-    z-index: 1;
-    background: black;
+.map .scale:hover,
+.map .scale:focus {
+	position: relative;
+	z-index: 1;
+	background: black;
 }
 
 .map .scale {
-    -webkit-transition: .3s ease all;
-    transition: .3s ease all;
-    will-change: transform;
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    cursor: pointer;
+	transition: .3s ease all;
+	will-change: transform;
+	transform-origin: center;
+	cursor: pointer;
 }
 
-.map .scale:hover path, .map .scale:hover polygon, .map .scale:hover rect, .map .scale:focus path, .map .scale:focus polygon, .map .scale:focus rect, {
-    fill: #b62c2f;
+.map .scale:hover path,
+.map .scale:hover polygon,
+.map .scale:hover rect,
+.map .scale:focus path,
+.map .scale:focus polygon,
+.map .scale:focus rect {
+	fill: #b62c2f;
 }
 
-.map .scale:hover text, .map .scale:focus text {
-    fill: #fff;
+.map .scale:hover text,
+.map .scale:focus text {
+	fill: #fff;
 }
 
 .gallary__item {
@@ -398,8 +369,8 @@ $assetPath : "../img";
 		text-transform: uppercase;
 		font-size: 25px;
 		font-weight: 600;
-		font-family: 'Reforma';
-		margin-bottom:30px;
+		font-family: "Reforma";
+		margin-bottom: 30px;
 		color: #a3372b;
 	}
 }
@@ -420,7 +391,7 @@ $assetPath : "../img";
 		min-height: 110px;
 		display: flex;
 		background: #d8d8d8;
-		text-align:center;
+		text-align: center;
 		padding: 10px;
 		justify-content: center;
 		align-items: center;
@@ -461,7 +432,7 @@ $assetPath : "../img";
 	.btn-danger {
 		color: #fff;
 		font-size: 24px;
-		font-family: Reforma,Arial,sans-serif;
+		font-family: "Reforma", Arial, sans-serif;
 		font-weight: 600;
 		padding-bottom: 3px;
 		width: 100%;
@@ -473,9 +444,8 @@ $assetPath : "../img";
 		margin-bottom: 0;
 	}
 	.close {
-		-webkit-user-select: none;
 		font-size: 35px;
-		font-family: Roboto;
+		font-family: "Roboto";
 		font-weight: 100;
 		position: absolute;
 		top: 4px;
@@ -487,7 +457,7 @@ $assetPath : "../img";
 	}
 	h4 {
 		font-size: 32px;
-		font-family: Reforma,Arial,sans-serif;
+		font-family: "Reforma", Arial, sans-serif;
 		font-weight: 600;
 		color: #000;
 		text-transform: uppercase;
@@ -499,74 +469,101 @@ $assetPath : "../img";
 /* Участки */
 /* Фильтр */
 .filter-form {
-	margin-bottom: 20px;
+	position: relative;
+    z-index: 1;
+	margin-bottom: 40px;
 	display: flex;
 	flex-flow: row;
 	justify-content: flex-start;
 	background: #ddd;
+	font-family: "GothamProRegular", sans-serif;
 }
 .dropdown,
 .filter-button {
-	display: inline-block;
+	display: block;
 }
-.filter-button {
-	position: absolute;
-	right: 5px;
-	height: 100%;
-	& .submit-button {
-		height: 50px;
-		width: auto;
-		padding: 0 20px;
-		background: #34A63E;
-		color: #fff;
-		box-sizing: content-box;
-		border: 0;
-		font-size: 1em;
-		font-weight: 600;
-	}
-}
-.dropdown-menu {
-	top: 90%;
-	margin-top: 1em;
-	.arrow-top {
-	      position: absolute;
-	      width: 0;
-	      height: 0;
-	      top: -10px;
-	      left: 10px;
-	      border-style: solid;
-	      border-width: 0 10px 10px 10px;
-	      border-color: transparent transparent #ccc transparent;
-	    }
-	    .arrow-top:after {
-	         content: '';
-	         position: absolute;
-	         width: 0;
-	         height: 0;
-	         left: -9px;
-	         top: 1px;
-	         border-style: solid;
-	         border-width: 0 9px 9px;
-	         border-color: transparent transparent #fff;
-	   }
-}
-.dropdown-price {
+.dropdown:nth-last-of-type(2) {
 	flex: 1;
+	margin-right: -5px;
 	& .btn-filter {
 		width: 100%;
 		border: 0;
 		text-align: left;
 	}
 }
+.filter-button {
+	& .refresh-button,
+	& .submit-button {
+		position: relative;
+		height: 50px;
+		width: auto;
+		min-width: 100px;
+		color: #fff;
+		box-sizing: content-box;
+		border: 0;
+		font-size: 1em; 
+		font-weight: 600;
+	}
+	& .refresh-button {
+		background: #999;
+		transform: translateX(5px);
+	}
+	& .submit-button {
+		background: #34a63e;
+		transform: translateX(1px);
+	}
+	& .refresh-button,
+	& .submit-button {
+		&:hover {
+			filter: contrast(1.2);
+		}
+	}
+}
+.dropdown-menu {
+	top: 90%;
+	margin-top: 1em;
+	.arrow-top {
+		position: absolute;
+		width: 0;
+		height: 0;
+		top: -10px;
+		left: 10px;
+		border-style: solid;
+		border-width: 0 10px 10px;
+		border-color: transparent transparent #ccc;
+	}
+	.arrow-top::after {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		left: -9px;
+		top: 1px;
+		border-style: solid;
+		border-width: 0 9px 9px;
+		border-color: transparent transparent #fff;
+	}
+}
 .range-box {
 	padding: 20px;
 	width: auto;
-	& input {
-		width: 100px;
+	& input[type="number"] {
+		width: auto;
+		min-width: 100px;
 		padding-left: 5px;
 		&:first-of-type {
 			margin-bottom: 5px;
 		}
+	}
+	& input[type="radio"] {
+		display: inline-block;
+		position: relative;
+		top: 2px;
+		margin-right: 5px;
+	}
+	& label {
+		display: inline-block;
+		margin-right: 10px;
 	}
 	& .rub-icon {
 		position: relative;
@@ -587,7 +584,8 @@ $assetPath : "../img";
 }
 .btn-filter {
 	width: auto;
-	border-right: 1px solid #fff;
+	height: 100%;
+	border-right: 1px solid #eee;
 	border-radius: 0;
 	background: none;
 	color: #121212;
@@ -595,7 +593,6 @@ $assetPath : "../img";
 	font-size: 1em;
 	font-weight: 600;
 	line-height: normal;
-	height: 50px;
 	white-space: nowrap;
 	transition: background-color .15s;
 	&:hover {
@@ -613,7 +610,12 @@ $assetPath : "../img";
 	background-size: cover;
 }
 
-/* Списки v0.2 */
+/* Списки v0.3 */
+.list-section {
+	padding: 0;
+}
+
+/* Списки v0.2
 .list-section {
 	display: flex;
 	flex-flow: row wrap;
@@ -691,7 +693,7 @@ $assetPath : "../img";
 			}
 			& span:last-of-type {
 				font-size: 12px;
-				line-height: 0.6;
+				line-height: .6;
 			}
 			& i.glyphicon-earphone {
 				background: #34a63e;
@@ -700,7 +702,7 @@ $assetPath : "../img";
 				padding: 5px;
 				font-size: 20px;
 				border-radius: 4px;
-				transform: scale3d(-1,1,1);
+				transform: scale3d(-1, 1, 1);
 			}
 			&_grey-bg {
 				background: #eee;
@@ -721,7 +723,7 @@ $assetPath : "../img";
 		}
 		& .col-right {
 			text-align: right;
-			font-family: 'Roboto', sans-serif;
+			font-family: "Roboto", sans-serif;
 			font-weight: bold;
 			& ul {
 				position: relative;
@@ -732,10 +734,9 @@ $assetPath : "../img";
 			}
 		}
 	}
-}
+} */
 
-
-/* Списки v0.1*/
+/* Списки v0.1 */
 /* .list-item {
 	margin-bottom: 20px;
 	border: 1px solid #ddd;
@@ -799,3 +800,354 @@ $assetPath : "../img";
 		}
 	}
 } */
+
+/* Новая главная */
+/* Баннер с фильтром */
+.main-banner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 500px;
+	background: url("../img/slider/slider-bg-1.jpg") no-repeat;
+	background-size: cover;
+	margin-bottom: 40px;
+	&__title {
+		margin: 0 auto;
+		margin-bottom: 50px;
+		& h1 {
+			margin: 0 auto;
+			font-size: 60px;
+			font-family: "Reforma";
+			font-weight: 600;
+			text-align: center;
+		}
+	}
+	&__filter {
+		& .filter-form {
+			background: #fff;
+			margin-bottom: 50px;
+		}
+	}
+	&__price-list {
+		margin: 0 auto;
+	}
+}
+/* Блок спецпредложений */
+.section-title {
+	font-size: 30px;
+	color: #262628;
+	font-family: "Reforma";
+	font-weight: 600;
+	margin: 0;
+	margin-bottom: 40px;
+	text-transform: uppercase;
+	display: inline-block;
+	float: left;
+	line-height: 24px;
+}
+.main-promo {
+	width: 100%;
+	height: auto;
+	min-height: 500px;
+	margin-bottom: 40px;
+	&__info-slider,
+	&__info-aside {
+		padding: 30px;
+	}
+	&__info-slider {
+		height: 500px;
+	}
+	&__info-aside {
+		height: 245px;
+		&:first-of-type {
+			margin-bottom: 10px;
+		}
+		&:last-of-type {
+			margin-top: 10px;
+		}
+	}
+}
+.promo-slider-nav {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	z-index: 999;
+	& .owl-prev,
+	& .owl-next {
+		display: inline-block;
+		width: 3em;
+		height: 3em;
+		background: #fff;
+		margin-left: 5px;
+		background-size: cover;
+		&:hover {
+			cursor: pointer;
+			filter: brightness(.9);
+		}
+		&::after {
+			content: "";
+			display: block;
+			width: 70%;
+			height: 70%;
+			margin-top: 6px;
+			margin-left: 5px;
+			filter: contrast(3%);
+		}
+	}
+	& .owl-prev::after {
+		background: url("../img/prev.svg") no-repeat;
+	}
+	& .owl-next::after {
+		background: url("../img/next.svg") no-repeat;
+		margin-left: 8px;
+	}
+}
+.promo-slider {
+	padding-right: 10px;
+	position: relative;
+}
+.slider-item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 500px;
+	padding: 30px;
+	&__title,
+	&__pros,
+	&__more-link {
+		width: auto;
+		margin-bottom: 30px !important;
+	}
+	&__title {
+		width: 80%;
+	}
+	&__pros {
+		list-style: none;
+		& li {
+			display: inline-block;
+			margin-right: 1em;
+			background: rgba(255, 255, 255, .8);
+			padding: 10px;
+		}
+	}
+	& .pros-icon {
+		display: block;
+		& img {
+			width: auto !important;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
+.item-bg-1,
+.item-bg-2 {
+	background-size: cover !important;
+}
+.item-bg-1 {
+	background: url("http://www.archaos.ru/gradostroitelstvo/images/Velich/Velich-1.jpg");
+}
+.item-bg-2 {
+	background: url("http://iro-rt.ru/wp-content/uploads/2012/10/73.jpg");
+}
+.slider-item__bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+.slider-item__title {
+	font-family: "Reforma";
+	font-size: 35px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 0;
+}
+.text-white {
+	color: #fff;
+}
+.text-shadow-black {
+	text-shadow: 0 0 10px #000;
+}
+.text-shadow-white {
+	text-shadow: 0 0 10px #fff;
+}
+.info-aside {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-size: cover !important;
+	&--bg-1 {
+		background: url("http://www.cottage.ru/upload/_MG_6770.jpg");
+	}
+	&--bg-2 {
+		background: url("http://budshop.com.ua/uploads/pictures/articles/2008/05/node-1378-kz.jpg");
+	}
+	&__title {
+		text-align: left;
+		font-size: 24px;
+		font-family: "Reforma";
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	&__info {
+		list-style: none;
+		padding: 0;
+	}
+	&__link {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/* Блок Свежие объявления */
+.new-offer {
+	height: 550px;
+	margin-bottom: 30px;
+}
+.btns-group {
+	margin-bottom: 13px;
+	&--no-gutter {
+		margin: 0;
+		& .offer-area-slider-nav {
+			top: -72px;
+		}
+	}
+}
+.content-slider {
+	&__item {
+		@extend .list-section__item;
+		justify-content: flex-start;
+	}
+	&__cards {
+		position: absolute;
+		display: flex;
+	}
+}
+.item-slider {
+	position: relative;
+	max-height: 510px;
+	width: 277px;
+	border-radius: 0;
+	border: 0;
+	padding: 0;
+	background: #fff;
+	margin-right: 10px;
+	.row--add-gutter {
+		margin-bottom: 20px;
+	}
+	& .row {
+		margin: 0;
+	}
+	& img {
+		height: 200px;
+		width: 100%;
+	}
+	&__label {
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		font-family: "Reforma";
+		font-weight: 600;
+		font-size: 18px;
+		text-transform: uppercase;
+		background: rgba(255, 255, 255, 1);
+		color: #000;
+		padding: 7px 10px;
+	}
+	&__desc {
+		padding: 20px;
+		height: auto;
+		min-height: 270px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-content: space-between;
+		& h3 {
+			margin: 0;
+			font-family: "Reforma";
+			font-weight: 600;
+			font-size: 24px;
+			text-transform: uppercase;
+		}
+		&--left-col {
+			color: #808080;
+		}
+		&--right-col {
+			text-align: right;
+		}
+		.row--bottom {
+			position: relative;
+			bottom: 0;
+		}
+		& p {
+			font-family: "GothamProRegular";
+			margin: 0;
+			padding: 0;
+		}
+		.row__btns-group {
+			width: 100%;
+		}
+	}
+	& [class*=col-] {
+		padding: 0;
+	}
+	&__price {
+		font-size: 16px;
+		color: #000;
+		& span {
+			font-size: 32px;
+			font-weight: 600;
+			font-family: "Reforma";
+		}
+	}
+}
+.owl-carousel {
+	position: absolute !important;
+}
+.offer-area-slider-nav,
+.offer-lot-slider-nav {
+	@extend .promo-slider-nav;
+	top: 10px;
+	right: 6px;
+}
+/* Карты */
+.map-section {
+	margin-bottom: 40px;
+}
+
+/* Страница Участки */
+.list-section {
+	position: relative;
+	z-index: 0;
+}
+.area-cards {
+	margin-bottom: 40px;
+	&__wrapper {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+	&__show-more {
+		& .btn--uppercase {
+			text-transform: uppercase;
+			font-family: Reforma;
+    		font-weight: 600;
+    		font-size: 18px;
+		}
+	}
+}
+.item-area {
+	@extend .item-slider;
+	margin-bottom: 10px;
+	&:nth-of-type(4n) {
+		margin-right: 0;
+	}
+}

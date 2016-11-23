@@ -1,0 +1,76 @@
+//filterArea.onInput();
+		//let filterDistance = new Filter('dropdownDistance', 'distance', 'км', 'Удаленность от МКАД');
+		//filterDistance.onInput();
+		//let filterPrice = new Filter('dropdownPrice', 'price', 'р.', 'Цена');
+		//filterPrice.onInput();
+
+
+		// Filter price block
+		// var rangePrice = {
+		// 	textFrom: 'от',
+		// 	textTo: 'до',
+		// 	text: ''
+		// }
+
+		// $('.range-box > input').on('input', function(e) {
+		// 	var target = e.target || window.target;
+		// 	var val = $(target).val();
+		// 	var filterBtn = $(this).parent().parent().prev();
+		// 	var valTarget = parseInt($(target).val());
+
+
+		// 	if($(target).attr('id') == 'price-from') {
+		// 		rangePrice.textFrom = combTextInput('price-from',valTarget);
+		// 	} else {
+		// 		rangePrice.textTo = combTextInput('price-up-to',valTarget);
+		// 	}
+			
+		// 	var textInputPrice = '';
+
+		// 	if(rangePrice.textFrom != 'от') {
+		// 		textInputPrice += rangePrice.textFrom + ' р. ';
+		// 	}
+		// 	if(rangePrice.textTo != 'до') {
+		// 		textInputPrice += rangePrice.textTo + ' р.';
+		// 	}
+		// 	if(!isNaN(rangePrice.from) && rangePrice.from) {
+		// 			rangePrice.textAll += ' ' + rangePrice.textTo + ' ' + rangePrice.from;
+		// 	}
+
+		// 	filterBtn.html(textInputPrice);
+			
+		// 	if(!filterBtn.html()) {
+		// 		filterBtn.html('Цена <span class="my-caret"></span>');
+		// 	}			
+		
+		// })
+
+
+		// function combTextInput(idx,vals,obj){
+		// 	var result = '';
+		// 	if(idx == 'price-up-to'){
+		// 		var Text = 'до';
+		// 	}
+		// 	if(idx == 'price-from'){
+		// 		var Text = 'от';
+		// 	}
+			
+		// 	if(!isNaN(vals) && vals){
+		// 			result = Text;
+		// 			result += ' ' + vals;
+		// 	}else{
+		// 			result = Text;
+		// 	}
+		// 	return result;
+		// }
+
+		// // Filter range input
+		// $("#range_01").ionRangeSlider({
+		//     type: "double",
+		//     grid: false,
+		//     min: 0,
+		//     max: 100,
+		//     from: 200,
+		//     to: 80,
+		//     prefix: "сотки "
+		// });

@@ -12,6 +12,7 @@ var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	concat = require('gulp-concat'),
 	imagemin = require('gulp-imagemin'),
+	include = require("gulp-include"),
 	pngquant = require('imagemin-pngquant'),
 	babel = require('gulp-babel'),
 	watch = require('gulp-watch'),
@@ -36,7 +37,8 @@ gulp.task('scss-lint', function() {
 	return gulp.src(['build/sass/**/*.scss',
       // Ignore linting vendor assets
       // Useful if you have bower components
-      '!bulid/sass/vendor/**/*.scss'])
+      '!build/sass/vendor/**/*.scss',
+      '!build/sass/bootstrap/**/*.scss'])
 	.pipe(postcss(processors, {syntax: syntax_scss}));
 });
 
@@ -61,7 +63,7 @@ gulp.task('sass', function() {
 gulp.task('styles', function() {
 	return gulp.src('build/less/style.less')
 	.pipe(less())
-	.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+	.pipe(autoprefixer(['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']))
 	.pipe(rename({
 		suffix: '.min'
 	}))
@@ -106,13 +108,16 @@ gulp.task('html', function () {
 
 //js
 gulp.task('scripts', function() {
-	return gulp.src('build/js/my/*.js')
+	return gulp.src('build/js/my/**/*.js')
+	.pipe(include({
+		 extensions: "js"
+	}))
+	.on('error', console.log)
 	.pipe(babel({
 		presets: ['es2015']
 	}))
 	.pipe(jshint())
 	.pipe(jshint.reporter('default'))
-	.pipe(concat('app.js'))
 	.pipe(gulp.dest('assets/js'))
 	.pipe(rename({suffix: '.min'}))
 	.pipe(uglify())

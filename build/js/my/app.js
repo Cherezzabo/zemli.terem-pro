@@ -1,23 +1,38 @@
+//=include ./filter.js
+ 
+(function(){
+	//=include ./slider.js 
+	//SLIDERS INIT
+	//Promo
+	let filter = new Filter('.main-banner__filter');
+	filter.render();
+	filter.onSelectChoose();
+
+	let SliderPromo = new Slider('promo-slider', 'promo-slider-nav');
+	SliderPromo.activeStateSlider();
+	//Area
+	let SliderArea = new Slider('offer-area-slider','offer-area-slider-nav','offer-area', 4);
+	SliderArea.activeStateSlider();
+	SliderArea.activeToggler();
+	SliderArea.initToggler('offer-area-button');
+	//Lot
+	let SliderLot = new Slider('offer-lot-slider','offer-lot-slider-nav','offer-lot', 4);
+	SliderLot.initToggler('offer-lot-button');
+})();
 
 $(document).ready(function() {
-	
+	//Выпадающий баннер шапки
+	var foldingHeader = $('.header__content');
+
+	foldingHeader.addClass('opened');
+	$(window).on('scroll', function() {
+		foldingHeader.hide();
+	});
+
 	$(".fancybox").fancybox();
+
 	var App = function (){
 		$('[data-phone="true"]').mask("+7 (999) 999-99-99");
-		$('[data-item="slider"]').owlCarousel({
-			loop: true,
-			margin: 0,
-			nav: true,
-			dots: true,
-			items: 1,
-			navContainer: '.main-navigation',
-			dotsContainer: '.main-dots',
-			autoplayHoverPause: true,
-			autoplay: false,
-			navSpeed: 500,
-			dotsSpeed: 500,
-			dots: true,
-		});
 		
 		var stackModal = 0;
 
@@ -167,86 +182,96 @@ $(document).ready(function() {
 		};
 		Form.initialize();
 
-
+		// Filter animation
+		$('button[data-toggle="dropdown"]').on('click', function(e) {
+			$(this).next().addClass('opened');
+		})
 
 		// Filter search
-		$('.dropdown-menu > li').on('click', function(e) {
-			var target = e.target || window.target;
-			var val = $(target).html();
-			var filterBtn = $(this).parent().prev();
-			filterBtn.html(val).prev().val(val);
-		})
+		// $('.dropdown-menu > li').on('click', function(e) {
+		// 	var target = e.target || window.target;
+		// 	var val = $(target).html();
+		// 	var filterBtn = $(this).parent().prev();
+		// 	filterBtn.html(val).prev().val(val);
+		// });
+
+
+		//filterArea.onInput();
+		//let filterDistance = new Filter('dropdownDistance', 'distance', 'км', 'Удаленность от МКАД');
+		//filterDistance.onInput();
+		//let filterPrice = new Filter('dropdownPrice', 'price', 'р.', 'Цена');
+		//filterPrice.onInput();
+
 
 		// Filter price block
-		var fromPrice = {
-			textTo: 'от',
-			textFrom: 'до',
-			text: ''
-		}
+		// var rangePrice = {
+		// 	textFrom: 'от',
+		// 	textTo: 'до',
+		// 	text: ''
+		// }
 
-		$('.range-box > input').on('input', function(e) {
-			var target = e.target || window.target;
-			var val = $(target).val();
-			var filterBtn = $(this).parent().parent().prev();
-			var valTarget = parseInt($(target).val());
+		// $('.range-box > input').on('input', function(e) {
+		// 	var target = e.target || window.target;
+		// 	var val = $(target).val();
+		// 	var filterBtn = $(this).parent().parent().prev();
+		// 	var valTarget = parseInt($(target).val());
 
 
-			if($(target).attr('id') == 'price-from') {
-				fromPrice.textTo = combTextInput('price-from',valTarget);
-			} else {
-				fromPrice.textFrom = combTextInput('price-up-to',valTarget);
-			}
+		// 	if($(target).attr('id') == 'price-from') {
+		// 		rangePrice.textFrom = combTextInput('price-from',valTarget);
+		// 	} else {
+		// 		rangePrice.textTo = combTextInput('price-up-to',valTarget);
+		// 	}
 			
-			var textInputPrice = '';
+		// 	var textInputPrice = '';
 
-			if(fromPrice.textTo != 'от') {
-				textInputPrice += fromPrice.textTo + ' р. ';
-			}
-			if(fromPrice.textFrom != 'до') {
-				textInputPrice += fromPrice.textFrom + ' р.';
-			}
-			if(!isNaN(fromPrice.from) && fromPrice.from) {
-					fromPrice.textAll += ' ' + fromPrice.textFrom + ' ' + fromPrice.from;
-			}
+		// 	if(rangePrice.textFrom != 'от') {
+		// 		textInputPrice += rangePrice.textFrom + ' р. ';
+		// 	}
+		// 	if(rangePrice.textTo != 'до') {
+		// 		textInputPrice += rangePrice.textTo + ' р.';
+		// 	}
+		// 	if(!isNaN(rangePrice.from) && rangePrice.from) {
+		// 			rangePrice.textAll += ' ' + rangePrice.textTo + ' ' + rangePrice.from;
+		// 	}
 
-			filterBtn.html(textInputPrice);
+		// 	filterBtn.html(textInputPrice);
 			
-			if(!filterBtn.html()) {
-				filterBtn.html('Цена <span class="my-caret"></span>');
-			}			
+		// 	if(!filterBtn.html()) {
+		// 		filterBtn.html('Цена <span class="my-caret"></span>');
+		// 	}			
 		
-		})
+		// })
 
 
-		function combTextInput(idx,vals,obj){
-			var result = '';
-			if(idx == 'price-up-to'){
-				var Text = 'до';
-			}
-			if(idx == 'price-from'){
-				var Text = 'от';
-			}
+		// function combTextInput(idx,vals,obj){
+		// 	var result = '';
+		// 	if(idx == 'price-up-to'){
+		// 		var Text = 'до';
+		// 	}
+		// 	if(idx == 'price-from'){
+		// 		var Text = 'от';
+		// 	}
 			
-			if(!isNaN(vals) && vals){
-					result = Text;
-					result += ' ' + vals;
-			}else{
-					result = Text;
-			}
-			return result;
-		}
+		// 	if(!isNaN(vals) && vals){
+		// 			result = Text;
+		// 			result += ' ' + vals;
+		// 	}else{
+		// 			result = Text;
+		// 	}
+		// 	return result;
+		// }
 
-		// Filter range input
-		$("#range_01").ionRangeSlider({
-		    type: "double",
-		    grid: false,
-		    min: 0,
-		    max: 100,
-		    from: 200,
-		    to: 80,
-		    prefix: "сотки "
-		});
+		// // Filter range input
+		// $("#range_01").ionRangeSlider({
+		//     type: "double",
+		//     grid: false,
+		//     min: 0,
+		//     max: 100,
+		//     from: 200,
+		//     to: 80,
+		//     prefix: "сотки "
+		// });
 	}
 	App();
 });
-

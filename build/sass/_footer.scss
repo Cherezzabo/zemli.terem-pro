@@ -1,5 +1,87 @@
-//header
+/* footer */
 .footer {
-	
+	& .row {
+		margin: 0;
+	}
+	&-wrapper {
+		margin-bottom: 40px;
+	}
+	&__info {
+		background: #fff;
+		padding: 40px;
+		& h2 {
+			font-family: "GothamProBold", sans-serif;
+			font-size: 24px;
+			font-weight: 600;
+			margin-top: 0;
+			margin-bottom: 35px;
+		}
+	}
+	.text-in-columns {
+		font-family: "GothamProRegular", sans-serif;
+		columns: 300px auto;
+	}
+	.row-nav {
+		display: flex;
+		padding: 0;
+		color: #999;
+		height: 60px;
+		border-top: 1px solid #999;
+	}
+	&__left-col {
+		height: 100%;
+		padding-left: 30px;
+		& ul {
+			height: 100%;
+			padding: 0;
+			margin: 0;
+			margin-left: -5px;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			align-items: center;
+			list-style: none;
+			& li {
+				margin: 2px 10px;
+				& a {
+					color: #999;
+				}
+			}
+		}
+	}
+	&__right-col {
+		height: 100%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-end;
+		align-items: center;
+		padding-right: 30px;
+	}
+	&__phone {
+		@extend .header__phone;
+		margin: 0;
+		& i,
+		& a {
+			color: #999;
+		}
+		&:hover {
+			& i,
+			& a {
+				color: #cc0605;
+			}
+		}
+	}
+	.row-copyright {
+		background: #333;
+		height: 40px;
+	}
+	.copy-wrapper {
+		padding-left: 30px;
+		padding-top: 10px;
+	}
+	.copy {
+		color: #fff;
+		margin: 0;
+		font-family: "GothamProRegular", sans-serif;
+	}
 }
-
