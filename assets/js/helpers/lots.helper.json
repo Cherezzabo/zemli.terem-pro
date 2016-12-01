@@ -1,0 +1,66 @@
+{
+   "url": {
+      "default": "/lots/"
+   },
+   "selects": {
+      "select0": [{
+         "name": "type",
+         "name_text": "Лоты",
+         "values":{
+            "lots":"Лоты",
+            "area":"Участки"
+         }
+      }],
+      "select1": [{
+         "name": "material",
+         "name_text": "Материал дома",
+         "values": {
+            "v1":"Каркасный",
+            "v2":"Клееный брус"
+         }
+      }],
+      "select2": [{
+         "name": "house-type",
+         "name_text": "Тип дома",
+         "values": {
+            "v1":"Сезонный",
+            "v2":"Жилой"
+         }
+      }]
+   },
+   "ranges": {
+      "range1": [{
+         "name": "land-area",
+         "name_text": "Площадь участка",
+         "type": "сот.",
+         "min_text": "от",
+         "max_text": "до",
+         "values": {
+            "min": 6,
+            "max": 15
+         }
+      }],
+      "range3": [{
+         "name": "house-area",
+         "name_text": "Площадь дома",
+         "type": "кв.м",
+         "min_text": "от",
+         "max_text": "до",
+         "values": {
+            "min": 30,
+            "max": 150
+         }
+      }],
+      "range4": [{
+         "name": "lot-price",
+         "name_text": "Стоимость лота",
+         "type": "р.",
+         "min_text": "от",
+         "max_text": "до",
+         "values": {
+            "min": 2000000,
+            "max": 5000000
+         }
+      }]
+   }
+}

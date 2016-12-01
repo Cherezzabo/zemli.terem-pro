@@ -17,6 +17,9 @@
 	.header__phone {
 		text-align: center;
 	}
+	.header .navbar-default .navbar-nav > li:nth-child(-n+6)::before {
+		right: -14px;
+	}
 
 	//ПОСЕЛКИ
 	.green-block-bigbanner {
@@ -80,6 +83,18 @@
 	.header__phone {
 		text-align: center;
 	}
+	.header .navbar-default .navbar-nav > li:nth-child(-n+6)::before {
+		content: none;
+	}
+	.header .navbar-default .navbar-nav>li>a {
+	    text-align: center;
+	}
+	.header-content-wrapper {
+		display: none;
+	}
+
+	/* Главная */
+	
 
 	//ПОСЕЛКИ
 	.wrapper-bigbanner {
@@ -167,7 +182,7 @@
 @media (min-width: 480px) and (max-width: 767px) {
 	//ШАПКА
 	.header-content-wrapper {
-		top: 51px;
+		display: none;
 	}
 	.header__logo a,
 	.header__tagline {
@@ -188,15 +203,8 @@
 	}
 
 	// ГЛАВНАЯ
-	.slider__main__item__header {
-		display: block;
-		& div:last-child {
-			margin-top: 10px;
-		}
-	}
-	.main {
-		top: -14px;
-		position: relative;
+	.main-banner__title {
+		margin-bottom: 20px;
 	}
 
 	//ПОСЕЛКИ
@@ -365,8 +373,11 @@
 }
 @media (max-width: 479px) {
 	//ШАПКА
+	.sticky-page {
+		padding-top: 50px;
+	}
 	.header-content-wrapper {
-		top: 51px;
+		display: none;
 	}
 	.header__logo a,
 	.header__tagline {
@@ -513,7 +524,6 @@
 		margin: 5px 0;
 	}
 }
-
 @media (max-width: 412px) {
 	.header__order-btn,
 	.header__price-list {

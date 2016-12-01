@@ -139,3 +139,28 @@ a.button-toggler {
 		filter: saturate(1.2);
 	}
 }
+
+.btn {
+	&-default {
+		background: #7d7d7d;
+		border-color: #7d7d7d;
+		&:focus {
+			background: #999;
+			border-color: #7d7d7d;
+		}
+		&:hover {
+			background-color: #c9302c;
+			border-color: #ac2925;
+			transition: all .3s;
+		}
+	}
+	&--full-width {
+		width: 100%;
+		color: #fff !important;
+	}
+}
+
+.modal-open {
+	overflow: initial;
+	padding-right: 0 !important;
+}

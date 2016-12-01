@@ -1,35 +1,15 @@
 /* footer */
 .footer {
-	& .row {
-		margin: 0;
-	}
-	&-wrapper {
-		margin-bottom: 40px;
-	}
-	&__info {
-		background: #fff;
-		padding: 40px;
-		& h2 {
-			font-family: "GothamProBold", sans-serif;
-			font-size: 24px;
-			font-weight: 600;
-			margin-top: 0;
-			margin-bottom: 35px;
-		}
-	}
-	.text-in-columns {
-		font-family: "GothamProRegular", sans-serif;
-		columns: 300px auto;
-	}
-	.row-nav {
+	& .row-nav {
 		display: flex;
 		padding: 0;
+		margin: 0;
 		color: #999;
 		height: 60px;
 		border-top: 1px solid #999;
 	}
 	&__left-col {
-		height: 100%;
+		height: 60px;
 		padding-left: 30px;
 		& ul {
 			height: 100%;
@@ -50,7 +30,7 @@
 		}
 	}
 	&__right-col {
-		height: 100%;
+		height: 60px;
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: flex-end;
@@ -73,6 +53,7 @@
 	}
 	.row-copyright {
 		background: #333;
+		margin: 0;
 		height: 40px;
 	}
 	.copy-wrapper {

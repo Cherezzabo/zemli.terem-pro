@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru_RU"> 
 <head>
@@ -40,7 +39,7 @@
                       <nav id="nav">
                         <ul class="nav navbar-nav">
                           <li><a href="http://www.terem-pro.ru/" class="logo"></a></li>
-                          <li class=""><a href="/">Главная</a></li>
+                          <li><a href="/">Главная</a></li>
                           <li><a href="poselok.html">Поселки</a></li> 
                           <li class="has-inner">
                             <a href="#">О проекте «Терем 1»</a>
@@ -53,7 +52,7 @@
                           </li>
                           <li class="active"><a href="uchastok.html">Участки</a></li> 
                           <li><a href="lot.html">Лоты</a></li> 
-                          <li><a href="contacts.html">контакты</a></li> 
+                          <li><a href="contacts.html">Контакты</a></li> 
                           <li>
                             <a href="" class="btn green-button add-ad">+ Добавить объявление</a>
                           </li>
@@ -88,871 +87,438 @@
                     <div class="row">
                       <div class="col-xs-12">
                         <!-- Filter -->
-                        <form action="" method="" id="filter" class="filter-form">
-                          <div class="dropdown">
-                            <input type="text" name="road" value="" class="hidden">
-                            <button class="btn btn-filter btn-lg dropdown-toggle" type="button" id="roadDropdown" data-placeholder="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Шоссе
-                              <span class="my-caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownRoad">
-                              <span class="arrow-top"></span>
-                              <li><a href="#">Можайское шоссе</a></li><li><a href="#">Киевское шоссе</a></li><li><a href="#">Разянское шоссе</a></li>
-                            </ul>
-                          </div><div class="dropdown">
-                          <input type="text" name="distance" value="" class="hidden">
-                          <button class="btn btn-filter btn-lg dropdown-toggle" type="button" id="distanceDropdown" data-placeholder="Удаленность от МКАД" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Удаленность от МКАД
-                            <span class="my-caret"></span>
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="distanceDropdown">
-                            <span class="arrow-top"></span>
-                            <div class="range-box">
-                              <input type="number" name="distanceFrom" id="distance-from" placeholder="от 10 км">
-                              <input type="number" name="distanceUpto" id="distance-up-to" placeholder="до 100 км">
-                            </div>
-                          </div>
-                        </div><div class="dropdown">
-                        <input type="text" name="area" value="" class="hidden">
-                        <button class="btn btn-filter btn-lg dropdown-toggle" type="button" id="areaDropdown" data-placeholder="Удаленность от МКАД" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Размер
-                          <span class="my-caret"></span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="areaDropdown">
-                          <span class="arrow-top"></span>
-                          <div class="range-box">
-                            <input type="number" name="areaFrom" id="area-from" placeholder="от 6 м">
-                            <input type="number" name="areaUpto" id="area-up-to" placeholder="до 10 м">
-                          </div>
+                        <div class="areas__filter"></div>
+                      </div>
+                    </div><!-- End filter -->
+              <!-- List section -->
+              <section class="list-header">
+                  <div class="offers-amount">
+                    <span id="offers-number">86165</span> предложений    
+                  </div>
+                  <div class="subscribe">
+                    <a href="#" data-target="#call3" data-toggle="modal">Подписаться</a>
+                  </div>
+
+              </section>
+              <section class="list-section">
+                <div class="list-item">
+                  <div class="row row-eq-height">
+                    <div class="col-md-3 col-xs-12 list-item__photo">
+                      <img src="http://www.yourmortgage.co.uk/wp-content/uploads/sites/4/oldimg/2261802-countryside-300x300.jpg" alt="">
+                    </div>
+                    <div class="col-md-9 col-xs-12 list-item__content">
+                      <div class="col-md-12 list-item__content_data">
+                        <div class="col-md-3 list-item__address">
+                          <p>Новорязанское шоссе,<br> 98 км от МКАД</p>
                         </div>
-                      </div><div class="dropdown">
-                      <input type="text" name="price" value="" class="hidden">
-                      <button class="btn btn-filter btn-lg dropdown-toggle" type="button" id="priceDropdown" data-placeholder="Удаленность от МКАД" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Цена
-                        <span class="my-caret"></span>
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="priceDropdown">
-                        <span class="arrow-top"></span>
-                        <div class="range-box">
-                          <input type="number" name="priceFrom" id="price-from" placeholder="от 100000 р.">
-                          <input type="number" name="priceUpto" id="price-up-to" placeholder="до 3000000 р.">
+                        <div class="col-md-3 list-item__price"><span>310 000 р.</span></div>
+                        <div class="col-md-3 list-item__type">
+                          <div class="col-xs-6 list-item__type_name">Участок</div>
+                          <div class="col-xs-6 list-item__type_area">12 сот.</div>
                         </div>
                       </div>
-                    </div>
-                    <div class="filter-button">
-                      <button class="refresh-button">Сбросить</button>
-                      <button class="submit-button">Найти</button>
-                    </div>
-                  </form>  
-                </div>
-              </div><!-- End filter -->
-              <!-- List section -->
-              <section class="list-section">
-                <section class="offer-cards-section">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <h3 class="section-title">
-                        Участки в поселках
-                      </h3>
-                    </div>
-                    <div class="col-xs-12">
-                      <div class="area-cards">
-                        <div class="area-cards__wrapper">
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
+                      <div class="col-md-12 list-item__content_desc">
+                        <div class="col-md-9 col-xs-12 list-item__content_desc_text">
+                          <p>
+                            Приезжайте, и Вам не захочется уезжать из этой красоты!!!
+                            Уникальнейший, шикарный участок площадью 24 сотки, ровный. Участок расположен в клубном поселке на 7 домов на берегу Рузского водохранилища в 150 метрах от берега. Участок огорожен, электричество до 25 кВт, своя подстанция. Вокруг участка лес и березовая роща.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-12 col-xs-12 list-item__btns">
+                        <div class="col-xs-6 col-md-12 col-sm-6 list-item__btns__phone">
+                          <div class="list-item__button">
+                            <div class="list-item__phone-number list-item__phone-number--trial">
+                                +7 903 273-32...
                               </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
+                            <div class="list-item__phone-label" data-phone-link="phone-1">
+                                Показать телефон
                             </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="area-cards__item item-area">
-                            <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                            <div class="row item-slider__desc">
-                              <h3 class="row--add-gutter">
-                                Участок № 4344 7,82 соток
-                              </h3>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12">
-                                  <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                </div>
-                              </div>
-                              <div class="row row--add-gutter">
-                                <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                  <span>2 300 000 р.</span>
-                                </div>
-                              </div>
-                              <div class="row row__btns-group">
-                                <div class="col-xs-6 item-slider__desc--left-col">
-                                  <a href="#" class="btn btn-default">
-                                    Консультация
-                                  </a>
-                                </div>
-                                <div class="col-xs-6 item-slider__desc--right-col">
-                                  <a href="#" class="btn btn-default pull-right">
-                                    Подробнее
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
+                            <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                            </div>   
                           </div>
                         </div>
-                        <div class="area-cards__show-more">
-                          <button class="btn green-button btn--uppercase">Показать еще</button>
+                        <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                          <a
+                          data-target="#call2" data-toggle="modal" href="#" class="btn btn-default">Записаться на осмотр</a>
                         </div>
                       </div>
                     </div>
                   </div>
-                </section>
-                <section class="new-offer-section">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <h3 class="section-title">
-                        Горячие предложения
-                      </h3>
+                </div>
+                <div class="list-item">
+                  <div class="row row-eq-height">
+                    <div class="col-md-3 col-xs-12 list-item__photo">
+                      <img src="http://www.yourmortgage.co.uk/wp-content/uploads/sites/4/oldimg/2261802-countryside-300x300.jpg" alt="">
                     </div>
-                    <div class="col-xs-12">
-                      <div class="new-offer">
-                        <div class="new-offer__btns-group btns-group btns-group--no-gutter">
-                          <div class="btns-group__btn-radio">
-                            <div class="offer-area-slider-nav"></div>
-                            <div class="offer-lot-slider-nav"></div>
+                    <div class="col-md-9 col-xs-12 list-item__content">
+                      <div class="col-md-12 list-item__content_data">
+                        <div class="col-md-3 list-item__address">
+                          <p>Новорязанское шоссе,<br> 98 км от МКАД</p>
+                        </div>
+                        <div class="col-md-3 list-item__price"><span>310 000 р.</span></div>
+                        <div class="col-md-3 list-item__type">
+                          <div class="col-xs-6 list-item__type_name">Участок</div>
+                          <div class="col-xs-6 list-item__type_area">12 сот.</div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 list-item__content_desc">
+                        <div class="col-md-9 col-xs-12 list-item__content_desc_text">
+                          <p>
+                            Приезжайте, и Вам не захочется уезжать из этой красоты!!!
+                            Уникальнейший, шикарный участок площадью 24 сотки, ровный. Участок расположен в клубном поселке на 7 домов на берегу Рузского водохранилища в 150 метрах от берега. Участок огорожен, электричество до 25 кВт, своя подстанция. Вокруг участка лес и березовая роща.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-12 col-xs-12 list-item__btns">
+                        <div class="col-xs-6 col-md-12 col-sm-6 list-item__btns__phone">
+                          <div class="list-item__button">
+                            <div class="list-item__phone-number list-item__phone-number--trial">
+                                +7 903 273-32...
+                              </div>
+                            <div class="list-item__phone-label" data-phone-link="phone-1">
+                                Показать телефон
+                            </div>
+                            <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                            </div>   
                           </div>
                         </div>
-                        <div class="new-offer__content-slider content-slider">
-                          <div class="content-slider__cards" id="offer-area-slider" data-object="slider" data-item="offer-area-slider">
-                            <div class="content-slider__item item-slider">
-                              <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                              <div class="row item-slider__desc">
-                                <h3 class="row--add-gutter">
-                                  Участок № 4344 7,82 соток
-                                </h3>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12">
-                                    <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                  </div>
-                                </div>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                    <span>2 300 000 р.</span>
-                                  </div>
-                                </div>
-                                <div class="row row__btns-group">
-                                  <div class="col-xs-6 item-slider__desc--left-col">
-                                    <a href="#" class="btn btn-default">
-                                      Консультация
-                                    </a>
-                                  </div>
-                                  <div class="col-xs-6 item-slider__desc--right-col">
-                                    <a href="#" class="btn btn-default pull-right">
-                                      Подробнее
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="content-slider__item item-slider">
-                              <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                              <div class="row item-slider__desc">
-                                <h3 class="row--add-gutter">
-                                  Участок № 4344 7,82 соток
-                                </h3>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12">
-                                    <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                  </div>
-                                </div>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                    <span>2 300 000 р.</span>
-                                  </div>
-                                </div>
-                                <div class="row row__btns-group">
-                                  <div class="col-xs-6 item-slider__desc--left-col">
-                                    <a href="#" class="btn btn-default">
-                                      Консультация
-                                    </a>
-                                  </div>
-                                  <div class="col-xs-6 item-slider__desc--right-col">
-                                    <a href="#" class="btn btn-default pull-right">
-                                      Подробнее
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="content-slider__item item-slider">
-                              <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                              <div class="row item-slider__desc">
-                                <h3 class="row--add-gutter">
-                                  Участок № 4344 7,82 соток
-                                </h3>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12">
-                                    <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                  </div>
-                                </div>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                    <span>2 300 000 р.</span>
-                                  </div>
-                                </div>
-                                <div class="row row__btns-group">
-                                  <div class="col-xs-6 item-slider__desc--left-col">
-                                    <a href="#" class="btn btn-default">
-                                      Консультация
-                                    </a>
-                                  </div>
-                                  <div class="col-xs-6 item-slider__desc--right-col">
-                                    <a href="#" class="btn btn-default pull-right">
-                                      Подробнее
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="content-slider__item item-slider">
-                              <img src="https://cdn.cian.site/9/301/171/uchastok-arhangelskoe-171103982-2.jpg" alt="">
-                              <div class="row item-slider__desc">
-                                <h3 class="row--add-gutter">
-                                  Участок № 4344 7,82 соток
-                                </h3>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12">
-                                    <p>поселок Аристово 71 км от МКАД, Киевское шоссе</p>
-                                  </div>
-                                </div>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                    <span>2 300 000 р.</span>
-                                  </div>
-                                </div>
-                                <div class="row row__btns-group">
-                                  <div class="col-xs-6 item-slider__desc--left-col">
-                                    <a href="#" class="btn btn-default">
-                                      Консультация
-                                    </a>
-                                  </div>
-                                  <div class="col-xs-6 item-slider__desc--right-col">
-                                    <a href="#" class="btn btn-default pull-right">
-                                      Подробнее
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div><!-- END area slider -->
-                          <div class="content-slider__cards" id="offer-lot-slider" data-object="slider" data-item="offer-lot-slider">
-                            <div class="content-slider__item item-slider">
-                              <img src="http://www.terem-pro.ru/bitrix/templates/.default/assets/img/catalog-list/item-9.jpg" alt="">
-                              <span class="item-slider__label">Лот № 12</span>
-                              <div class="row item-slider__desc">
-                                <h3 class="row--add-gutter">
-                                  Участок и дом Лидер-8
-                                </h3>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12">
-                                    <p>Участок 8 соток, дом Лидер-8, брус 150&nbsp;мм, площадь дома 73,08&nbsp;м<sup>2</sup></p>
-                                  </div>
-                                </div>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                    <span>2 083 103 р.</span>
-                                  </div>
-                                </div>
-                                <div class="row row__btns-group">
-                                  <div class="col-xs-6 item-slider__desc--left-col">
-                                    <a href="#" class="btn btn-default">
-                                      Консультация
-                                    </a>
-                                  </div>
-                                  <div class="col-xs-6 item-slider__desc--right-col">
-                                    <a href="#" class="btn btn-default pull-right">
-                                      Подробнее
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="content-slider__item item-slider">
-                              <img src="http://www.terem-pro.ru/bitrix/templates/.default/assets/img/catalog-list/item-9.jpg" alt="">
-                              <span class="item-slider__label">Лот № 10</span>
-                              <div class="row item-slider__desc">
-                                <h3 class="row--add-gutter">
-                                  Участок и дом Богатырь-1
-                                </h3>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12">
-                                    <p>Участок 8 соток, дом Богатырь-1, каркас 150&nbsp;мм, площадь дома 84,54&nbsp;м<sup>2</sup></p>
-                                  </div>
-                                </div>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                    <span>2 138 450 р.</span>
-                                  </div>
-                                </div>
-                                <div class="row row__btns-group">
-                                  <div class="col-xs-6 item-slider__desc--left-col">
-                                    <a href="#" class="btn btn-default">
-                                      Консультация
-                                    </a>
-                                  </div>
-                                  <div class="col-xs-6 item-slider__desc--right-col">
-                                    <a href="#" class="btn btn-default pull-right">
-                                      Подробнее
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="content-slider__item item-slider">
-                              <img src="http://www.terem-pro.ru/bitrix/templates/.default/assets/img/catalog-list/item-9.jpg" alt="">
-                              <span class="item-slider__label">Лот № 35</span>
-                              <div class="row item-slider__desc">
-                                <h3 class="row--add-gutter">
-                                  Участок и дом Варяг-2
-                                </h3>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12">
-                                    <p>Участок 10,49 соток, дом Варяг-2, каркас 200&nbsp;мм, площадь дома 140,86&nbsp;м<sup>2</sup></p>
-                                  </div>
-                                </div>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                    <span>3 575 417 р.</span>
-                                  </div>
-                                </div>
-                                <div class="row row__btns-group">
-                                  <div class="col-xs-6 item-slider__desc--left-col">
-                                    <a href="#" class="btn btn-default">
-                                      Консультация
-                                    </a>
-                                  </div>
-                                  <div class="col-xs-6 item-slider__desc--right-col">
-                                    <a href="#" class="btn btn-default pull-right">
-                                      Подробнее
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="content-slider__item item-slider">
-                              <img src="http://www.terem-pro.ru/bitrix/templates/.default/assets/img/catalog-list/item-9.jpg" alt="">
-                              <span class="item-slider__label">Лот № 135</span>
-                              <div class="row item-slider__desc">
-                                <h3 class="row--add-gutter">
-                                  Участок и дом Терем-1
-                                </h3>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12">
-                                    <p>Участок 10 соток, дом Терем-1, брус 150&nbsp;мм, площадь дома 75&nbsp;м<sup>2</sup></p>
-                                  </div>
-                                </div>
-                                <div class="row row--add-gutter">
-                                  <div class="col-xs-12 item-slider__desc--left-col item-slider__price">
-                                    <span>2 999 999р.</span>
-                                  </div>
-                                </div>
-                                <div class="row row__btns-group">
-                                  <div class="col-xs-6 item-slider__desc--left-col">
-                                    <a href="#" class="btn btn-default">
-                                      Консультация
-                                    </a>
-                                  </div>
-                                  <div class="col-xs-6 item-slider__desc--right-col">
-                                    <a href="#" class="btn btn-default pull-right">
-                                      Подробнее
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div><!-- END lots slider -->
-                        </div><!-- END New offer slider -->
-                      </div><!-- END New offer block -->
+                        <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                          <a
+                          data-target="#call2" data-toggle="modal" href="#" class="btn btn-default">Записаться на осмотр</a>
+                        </div>
+                      </div>
                     </div>
-                  </div><!-- END New offer row -->
-                </section><!-- END New offer section -->
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div class="row row-eq-height">
+                    <div class="col-md-3 col-xs-12 list-item__photo">
+                      <img src="http://www.yourmortgage.co.uk/wp-content/uploads/sites/4/oldimg/2261802-countryside-300x300.jpg" alt="">
+                    </div>
+                    <div class="col-md-9 col-xs-12 list-item__content">
+                      <div class="col-md-12 list-item__content_data">
+                        <div class="col-md-3 list-item__address">
+                          <p>Новорязанское шоссе,<br> 98 км от МКАД</p>
+                        </div>
+                        <div class="col-md-3 list-item__price"><span>310 000 р.</span></div>
+                        <div class="col-md-3 list-item__type">
+                          <div class="col-xs-6 list-item__type_name">Участок</div>
+                          <div class="col-xs-6 list-item__type_area">12 сот.</div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 list-item__content_desc">
+                        <div class="col-md-9 col-xs-12 list-item__content_desc_text">
+                          <p>
+                            Приезжайте, и Вам не захочется уезжать из этой красоты!!!
+                            Уникальнейший, шикарный участок площадью 24 сотки, ровный. Участок расположен в клубном поселке на 7 домов на берегу Рузского водохранилища в 150 метрах от берега. Участок огорожен, электричество до 25 кВт, своя подстанция. Вокруг участка лес и березовая роща.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-12 col-xs-12 list-item__btns">
+                        <div class="col-xs-6 col-md-12 col-sm-6 list-item__btns__phone">
+                          <div class="list-item__button">
+                            <div class="list-item__phone-number list-item__phone-number--trial">
+                                +7 903 273-32...
+                              </div>
+                            <div class="list-item__phone-label" data-phone-link="phone-1">
+                                Показать телефон
+                            </div>
+                            <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                            </div>   
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                          <a
+                          data-target="#call2" data-toggle="modal" href="#" class="btn btn-default">Записаться на осмотр</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div class="row row-eq-height">
+                    <div class="col-md-3 col-xs-12 list-item__photo">
+                      <img src="http://www.yourmortgage.co.uk/wp-content/uploads/sites/4/oldimg/2261802-countryside-300x300.jpg" alt="">
+                    </div>
+                    <div class="col-md-9 col-xs-12 list-item__content">
+                      <div class="col-md-12 list-item__content_data">
+                        <div class="col-md-3 list-item__address">
+                          <p>Новорязанское шоссе,<br> 98 км от МКАД</p>
+                        </div>
+                        <div class="col-md-3 list-item__price"><span>310 000 р.</span></div>
+                        <div class="col-md-3 list-item__type">
+                          <div class="col-xs-6 list-item__type_name">Участок</div>
+                          <div class="col-xs-6 list-item__type_area">12 сот.</div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 list-item__content_desc">
+                        <div class="col-md-9 col-xs-12 list-item__content_desc_text">
+                          <p>
+                            Приезжайте, и Вам не захочется уезжать из этой красоты!!!
+                            Уникальнейший, шикарный участок площадью 24 сотки, ровный. Участок расположен в клубном поселке на 7 домов на берегу Рузского водохранилища в 150 метрах от берега. Участок огорожен, электричество до 25 кВт, своя подстанция. Вокруг участка лес и березовая роща.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-12 col-xs-12 list-item__btns">
+                        <div class="col-xs-6 col-md-12 col-sm-6 list-item__btns__phone">
+                          <div class="list-item__button">
+                            <div class="list-item__phone-number list-item__phone-number--trial">
+                                +7 903 273-32...
+                              </div>
+                            <div class="list-item__phone-label" data-phone-link="phone-1">
+                                Показать телефон
+                            </div>
+                            <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                            </div>   
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                          <a
+                          data-target="#call2" data-toggle="modal" href="#" class="btn btn-default">Записаться на осмотр</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div class="row row-eq-height">
+                    <div class="col-md-3 col-xs-12 list-item__photo">
+                      <img src="http://www.yourmortgage.co.uk/wp-content/uploads/sites/4/oldimg/2261802-countryside-300x300.jpg" alt="">
+                    </div>
+                    <div class="col-md-9 col-xs-12 list-item__content">
+                      <div class="col-md-12 list-item__content_data">
+                        <div class="col-md-3 list-item__address">
+                          <p>Новорязанское шоссе,<br> 98 км от МКАД</p>
+                        </div>
+                        <div class="col-md-3 list-item__price"><span>310 000 р.</span></div>
+                        <div class="col-md-3 list-item__type">
+                          <div class="col-xs-6 list-item__type_name">Участок</div>
+                          <div class="col-xs-6 list-item__type_area">12 сот.</div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 list-item__content_desc">
+                        <div class="col-md-9 col-xs-12 list-item__content_desc_text">
+                          <p>
+                            Приезжайте, и Вам не захочется уезжать из этой красоты!!!
+                            Уникальнейший, шикарный участок площадью 24 сотки, ровный. Участок расположен в клубном поселке на 7 домов на берегу Рузского водохранилища в 150 метрах от берега. Участок огорожен, электричество до 25 кВт, своя подстанция. Вокруг участка лес и березовая роща.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-12 col-xs-12 list-item__btns">
+                        <div class="col-xs-6 col-md-12 col-sm-6 list-item__btns__phone">
+                          <div class="list-item__button">
+                            <div class="list-item__phone-number list-item__phone-number--trial">
+                                +7 903 273-32...
+                              </div>
+                            <div class="list-item__phone-label" data-phone-link="phone-1">
+                                Показать телефон
+                            </div>
+                            <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                            </div>   
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                          <a
+                          data-target="#call2" data-toggle="modal" href="#" class="btn btn-default">Записаться на осмотр</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div class="row row-eq-height">
+                    <div class="col-md-3 col-xs-12 list-item__photo">
+                      <img src="http://www.yourmortgage.co.uk/wp-content/uploads/sites/4/oldimg/2261802-countryside-300x300.jpg" alt="">
+                    </div>
+                    <div class="col-md-9 col-xs-12 list-item__content">
+                      <div class="col-md-12 list-item__content_data">
+                        <div class="col-md-3 list-item__address">
+                          <p>Новорязанское шоссе,<br> 98 км от МКАД</p>
+                        </div>
+                        <div class="col-md-3 list-item__price"><span>310 000 р.</span></div>
+                        <div class="col-md-3 list-item__type">
+                          <div class="col-xs-6 list-item__type_name">Участок</div>
+                          <div class="col-xs-6 list-item__type_area">12 сот.</div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 list-item__content_desc">
+                        <div class="col-md-9 col-xs-12 list-item__content_desc_text">
+                          <p>
+                            Приезжайте, и Вам не захочется уезжать из этой красоты!!!
+                            Уникальнейший, шикарный участок площадью 24 сотки, ровный. Участок расположен в клубном поселке на 7 домов на берегу Рузского водохранилища в 150 метрах от берега. Участок огорожен, электричество до 25 кВт, своя подстанция. Вокруг участка лес и березовая роща.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-12 col-xs-12 list-item__btns">
+                        <div class="col-xs-6 col-md-12 col-sm-6 list-item__btns__phone">
+                          <div class="list-item__button">
+                            <div class="list-item__phone-number list-item__phone-number--trial">
+                                +7 903 273-32...
+                              </div>
+                            <div class="list-item__phone-label" data-phone-link="phone-1">
+                                Показать телефон
+                            </div>
+                            <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                            </div>   
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                          <a
+                          data-target="#call2" data-toggle="modal" href="#" class="btn btn-default">Записаться на осмотр</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-item">
+                  <div class="row row-eq-height">
+                    <div class="col-md-3 col-xs-12 list-item__photo">
+                      <img src="http://www.yourmortgage.co.uk/wp-content/uploads/sites/4/oldimg/2261802-countryside-300x300.jpg" alt="">
+                    </div>
+                    <div class="col-md-9 col-xs-12 list-item__content">
+                      <div class="col-md-12 list-item__content_data">
+                        <div class="col-md-3 list-item__address">
+                          <p>Новорязанское шоссе,<br> 98 км от МКАД</p>
+                        </div>
+                        <div class="col-md-3 list-item__price"><span>310 000 р.</span></div>
+                        <div class="col-md-3 list-item__type">
+                          <div class="col-xs-6 list-item__type_name">Участок</div>
+                          <div class="col-xs-6 list-item__type_area">12 сот.</div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 list-item__content_desc">
+                        <div class="col-md-9 col-xs-12 list-item__content_desc_text">
+                          <p>
+                            Приезжайте, и Вам не захочется уезжать из этой красоты!!!
+                            Уникальнейший, шикарный участок площадью 24 сотки, ровный. Участок расположен в клубном поселке на 7 домов на берегу Рузского водохранилища в 150 метрах от берега. Участок огорожен, электричество до 25 кВт, своя подстанция. Вокруг участка лес и березовая роща.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-12 col-xs-12 list-item__btns">
+                        <div class="col-xs-6 col-md-12 col-sm-6 list-item__btns__phone">
+                          <div class="list-item__button">
+                            <div class="list-item__phone-number list-item__phone-number--trial">
+                                +7 903 273-32...
+                              </div>
+                            <div class="list-item__phone-label" data-phone-link="phone-1">
+                                Показать телефон
+                            </div>
+                            <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                            </div>   
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                          <a
+                          data-target="#call2" data-toggle="modal" href="#" class="btn btn-default">Записаться на осмотр</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="pagination-section">
+                <nav aria-label="cards-pages">
+                  <ul class="my-pagination">
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                      <a href="#" aria-label="Next" class="my-pagination__dots">
+                        <span aria-hidden="true">...</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
               </section>
             </div> <!-- End container block -->
+          <section class="info-block-section">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 info-block">
+                    <div class="info-block__text">
+                      <h2>
+                        Поиск участков на zemli.terem-pro.ru
+                      </h2>
+                      <div class="text-in-columns">
+                        <p>
+                          Купить или снять недвижимость — задача несложная, если знать, где искать и с чего начать поиски. Чтобы арендовать или купить недвижимость, не нужно ехать в агентство. Достаточно отыскать чистую профессиональную базу объявлений о продаже или аренде недвижимости в Москве.
+                        </p>
+                        <p>
+                          Если вы решили продать или купить квартиру, снять или сдать жилую недвижимость или находитесь в поисках загородной или коммерческой недвижимости, то ЦИАН поможет вам! ЦИАН.ру — это самый удобный сайт для поиска недвижимости по точному адресу или по карте, с учётом всех интересующих вас параметров. На CIAN.RU — тысячи актуальных объявлений о продаже или аренде объектов недвижимости в Москве и по всей России, ежедневно на сайте появляются новые объявления. Объявления содержат описания объектов, информацию об инфраструктуре, фотографии, стоимость, контакты владельца.
+                        </p>
+                        <p>
+                          Мы создали мобильное приложение для поиска недвижимости в вашем городе, чтобы у вас был мгновенный доступ к просмотру объявлений по всем типам недвижимости (новостройки, «вторичка») в любом регионе России. Мобильное приложение ЦИАН предлагает интерактивный поиск объектов недвижимости на карте и рядом с вашим местоположением. Искать жилье или другие объекты недвижимости на ЦИАН.ру очень просто! Подробный и удобный фильтр поиска позволяет сразу же задать нужные параметры, вы быстро подберете нужный объект из предложенных вариантов.
+                        </p>
+                        <p>
+                          Не забудьте оформить подписку на новые объявления по результатам поиска, чтобы оперативно получать все самые свежие и актуальные предложения о продаже или аренде недвижимости в Москве.
+                        </p>
+                        <p>
+                          Проверенное жильё находится на CIAN.RU!
+                        </p>
+                      </div>
+                    </div>
+                </div>
+              </div><!-- END info-block -->
+            </div>
+          </section><!-- END info-block section -->
           </section> <!-- End content section -->
-              </main>
+          </main>
 
 
 
-      </div>
+      <footer class="footer">
+        <div class="row row-nav">
+          <div class="container">
+            <div class="col-xs-8 footer__left-col">
+              <ul>
+                <li><a href="">
+                  Главная
+                </a></li>
+                <li><a href="">
+                  Поселки
+                </a></li>
+                <li><a href="">
+                  О проекте «Терем 1»
+                </a></li>
+                <li><a href="">
+                  Участки
+                </a></li>
+                <li><a href="">
+                  Лоты
+                </a></li>
+                <li><a href="">
+                  Контакты
+                </a></li>
+              </ul>
+            </div>
+            <div class="col-xs-4 footer__right-col">
+              <div class="footer__phone">
+                <i class="glyphicon glyphicon-earphone"></i>
+                <a href="tel:+7 (495) 789-82-70">+7 (495) 789-82-70</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-copyright">
+          <div class="container">
+            <div class="col-xs-12 copy-wrapper">
+              <span class="copy small">
+                © 2016 "Теремъ" все права защищены
+              </span>
+            </div>
+          </div>  
+        </div>
+      </footer>
       <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
       <script src="assets/js/jquery.maskedinput.js" type="text/javascript"></script>
 
@@ -961,6 +527,14 @@
       <script src="assets/js/language/ru_RU.js" type="text/javascript"></script>
 
       <script src="assets/js/app.min.js" type="text/javascript"></script>
+
+      <script>
+      $(document).ready(function() {
+        var filter = new Filter('.areas__filter','area','none');
+        filter.render();
+      })
+    </script>
+
       <!-- Yandex.Metrika counter --> 
       <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter39873590 = new Ya.Metrika({ id:39873590, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ut:"noindex" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/39873590?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 
@@ -1113,6 +687,40 @@
                       <p class="m-top"><strong>Внимание!</strong></p>
                       <p>Все поля обязательны для заполнения.</p>
                     </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                      <button type="submit" name="ipadress" value="" class="btn btn-danger disabled" style="pointer-events: all; cursor: pointer;">ОТПРАВИТЬ</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>        
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade my-modal-call" id="call3" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title padding-bottom">Подписка на обновления</h4>
+            <p>Мы будем отправлять все подходящие новые объявления вам на электронную почту.</p>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-12">
+                <form action="hendler.php" method="POST" autocomplete="off" data-form="send" data-thx="one">
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-12 col-sm-12">
+                        <div class="custom-control">
+                          <input type="email" name="userEmail" id="userPhone" class="form-control" placeholder="Введите ваш e-mail">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                       <button type="submit" name="ipadress" value="" class="btn btn-danger disabled" style="pointer-events: all; cursor: pointer;">ОТПРАВИТЬ</button>
                     </div>

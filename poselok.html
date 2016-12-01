@@ -1,680 +1,662 @@
-
 <!DOCTYPE html>
 <html lang="ru_RU"> 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <title>Поселки</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-        <link href='assets/css/app.min.css' rel='stylesheet' type='text/css'>
-        <script type="text/javascript" src="assets/js/owl.carousel.js"></script>
-        <script src="assets/js/form.js" type="text/javascript"></script>
-        <link href='assets/css/owl.carousel.css' rel='stylesheet' type='text/css'>
-        <link href='assets/source/jquery.fancybox.css' rel='stylesheet' type='text/css'>
-        <script src="assets/source/jquery.fancybox.js" type="text/javascript"></script>
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-                <![endif]-->
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    </head>
-    <body>
-        <div class="sticky-page">
-            <!-- Header section -->
-            <section class="header">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Поселки</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <link href='assets/css/app.min.css' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="assets/js/owl.carousel.js"></script>
+  <script src="assets/js/form.js" type="text/javascript"></script>
+  <link href='assets/css/owl.carousel.css' rel='stylesheet' type='text/css'>
+  <link href='assets/source/jquery.fancybox.css' rel='stylesheet' type='text/css'>
+  <script src="assets/source/jquery.fancybox.js" type="text/javascript"></script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+          </head>
+          <body>
+            <div class="sticky-page">
+              <!-- Header section -->
+              <section class="header">
                 <nav class="navbar navbar-default">
-                    <div class="container">
+                  <div class="container">
 
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span> 
-                            </button>
-                        </div>
-
-                        <div class="collapse navbar-collapse" id="myNavbar">
-                            <nav id="nav">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="index.html">Главная</a></li>
-                                    <!-- <li><a href="#">новости</a></li> -->
-                                    <li><a href="poselok.html">Поселки</a></li> 
-                                    <li class="has-inner active">
-                                        <a href="#">О проекте «Терем 1»</a>
-                                        <ul>
-                                            <li><a href="about.html">Описание</a></li>
-                                            <li><a href="about-2.html">Окружение</a></li>
-                                            <li><a href="gallary.html">Галерея</a></li>
-                                            <li class="active"><a href="map.html">План поселка</a></li>
-                                        </ul>
-                                    </li>                                    
-                                    <li><a href="uchastok.html">Участки</a></li> 
-                                    <li><a href="lot.html">Лоты</a></li> 
-                                    <li><a href="contacts.html">Контакты</a></li> 
-                                    <li><a class="call" href="#" data-target="#call" data-toggle="modal"><span><i class="glyphicon glyphicon-earphone"></i></span><span>Заказать звонок</span></a></li> 
-                                    <li><a class="phone" href="tel:+7 (495) 419-14-44">+7 (495) <span>419-14-44</span></a></li> 
-                                    <li><a href="http://www.terem-pro.ru/" class="logo"></a></li> 
-                                </ul>
-                            </nav>
-                        </div>
-
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                      </button>
                     </div>
+
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                      <nav id="nav">
+                        <ul class="nav navbar-nav">
+                          <li><a href="http://www.terem-pro.ru/" class="logo"></a></li>
+                          <li><a href="/">Главная</a></li>
+                          <li class="active"><a href="poselok.html">Поселки</a></li> 
+                          <li class="has-inner">
+                            <a href="#">О проекте «Терем 1»</a>
+                            <ul>
+                              <li><a href="about.html">Описание</a></li>
+                              <li><a href="about-2.html">Окружение</a></li>
+                              <li><a href="gallary.html">Галерея</a></li>
+                              <li><a href="map.html">План поселка</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="uchastok.html">Участки</a></li> 
+                          <li><a href="lot.html">Лоты</a></li> 
+                          <li><a href="contacts.html">Контакты</a></li> 
+                          <li>
+                            <a href="" class="btn green-button add-ad">+ Добавить объявление</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
                 </nav>
-            </section> <!-- End header section -->
-
-            <!-- Content section -->
-            <section class="content">
-                <div class="container">
-                    <!-- Breadcrumbs section -->
+              </section> <!-- End header section -->
+              <main class="main">
+                <!-- Breadcrumbs section -->
+                <section class="breadcrumbs__section">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div>
+                        <div class="container">
+                          <div class="breadcrumbs">
+                            <ul>
+                              <li><a href="index.html">Главная</a></li>
+                              <li><a href="#">Поселки</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section> <!-- End breadcrumb section -->
+                <!-- Content section -->
+                <section class="township-section">
+                  <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-md-12 col-sm-12">
-                            <div class="breadcrumbs__section">
-                                <div class="row row-eq-height">
-                                    <div class="col-xs-12 col-md-8 col-sm-8">
-                                        <div class="breadcrumbs">
-                                            <ul>
-                                                <li><a href="index.html">Главная</a></li>
-                                                <li><a href="#">Поселки</a></li>
-                                            </ul>
-                                        </div>
-                                        <br/>
-                                        <div class="btns">
-                                          <div class="row">
-                                            <div class="col-xs-12 col-md-6 col-sm-8">
-                                                <a href="#" class="btn btn-block btn-default" data-target="#call" data-toggle="modal">оставить заявку на консультацию</a>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <br/>
-                                       <p><a href="#" data-target="#call2" data-toggle="modal">Хотите землю без подряда? Оставьте заявку на подбор земельного участка!</a></p>
-                                    </div>
-                                </div>
-                            </div>
+                      <div class="col-xs-12">
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <h3 class="section-title section-title--top-gutter">
+                              Каталог поселков
+                            </h3>
+                          </div>
                         </div>
-                    </div>
-                   
-                    <!-- Big banner -->
-
-                    <div class="row wrapper-bigbanner">  
-                      <div class="col-xs-12 col-md-8 col-sm-12 banner-img">
-                          <img src="assets/img/banner.jpg" alt="">
+                        <div class="row">
+                          <div class="col-xs-6">
+                            <div class="slider-item item-bg-1">
+                              <h2 class="slider-item__title text-shadow-white">
+                                Поселок «Мирный» 120 км от Москвы
+                              </h2>
+                              <div class="slider-item__more-link">
+                                <a href="#" class="btn btn-default">
+                                  Узнать подробнее
+                                </a>
+                              </div>
+                            </div><!-- END 1st promo-slider item -->
+                          </div>
+                          <div class="col-xs-6">
+                            <div class="slider-item item-bg-2">
+                              <h2 class="slider-item__title text-white text-shadow-black">
+                                Земельные участки в поселке «Терем 1» от&nbsp;2&nbsp;300&nbsp;000&nbsp;р.
+                              </h2>
+                              <div class="slider-item__more-link">
+                                <a href="#" class="btn btn-default">
+                                  Узнать подробнее
+                                </a>
+                              </div>
+                            </div><!-- END 2nd promo-slider item -->
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="col-xs-12 col-md-4 col-sm-12 green-block-bigbanner">
-                          <h3 class="text-center">38 участков от 6 соток</h3>
-                          <p>Полноценные проекты «под ключ» от известного застройщика, компании «Теремъ»</p>
-                          <a href="/price.pdf" target="_blank" class="btn btn-block btn-default">посмотреть прайс-лист</a>
+                    </div>
+                  </div>
+                </section>
+                <section class="info-block-section">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xs-12 info-block">
+                        <div class="info-block__text">
+                          <h2>
+                            Поиск участков на zemli.terem-pro.ru
+                          </h2>
+                          <div class="text-in-columns">
+                            <p>
+                              Купить или снять недвижимость — задача несложная, если знать, где искать и с чего начать поиски. Чтобы арендовать или купить недвижимость, не нужно ехать в агентство. Достаточно отыскать чистую профессиональную базу объявлений о продаже или аренде недвижимости в Москве.
+                            </p>
+                            <p>
+                              Если вы решили продать или купить квартиру, снять или сдать жилую недвижимость или находитесь в поисках загородной или коммерческой недвижимости, то ЦИАН поможет вам! ЦИАН.ру — это самый удобный сайт для поиска недвижимости по точному адресу или по карте, с учётом всех интересующих вас параметров. На CIAN.RU — тысячи актуальных объявлений о продаже или аренде объектов недвижимости в Москве и по всей России, ежедневно на сайте появляются новые объявления. Объявления содержат описания объектов, информацию об инфраструктуре, фотографии, стоимость, контакты владельца.
+                            </p>
+                            <p>
+                              Мы создали мобильное приложение для поиска недвижимости в вашем городе, чтобы у вас был мгновенный доступ к просмотру объявлений по всем типам недвижимости (новостройки, «вторичка») в любом регионе России. Мобильное приложение ЦИАН предлагает интерактивный поиск объектов недвижимости на карте и рядом с вашим местоположением. Искать жилье или другие объекты недвижимости на ЦИАН.ру очень просто! Подробный и удобный фильтр поиска позволяет сразу же задать нужные параметры, вы быстро подберете нужный объект из предложенных вариантов.
+                            </p>
+                            <p>
+                              Не забудьте оформить подписку на новые объявления по результатам поиска, чтобы оперативно получать все самые свежие и актуальные предложения о продаже или аренде недвижимости в Москве.
+                            </p>
+                            <p>
+                              Проверенное жильё находится на CIAN.RU!
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                    </div> <!-- End Big banner -->
-                    
-                    
-                    <!-- Banner list -->
-                    <div class="row"> 
-                        <div class="col-xs-12 col-md-6 col-sm-12"> <!-- Left column -->
-                              <!-- 1st description block -->
-                              <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-right-2 desc-item-inner"> 
-                                <h2><a href="#">Дачный посёлок Борисовское</a></h2>
-                                <p>Новорязанское шоссе, 98 км</p>
-                                <a href="#" class="banner-wrapper">
-                                  <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                    <p>40 Га
-                                    <p>275 участков
-                                    <p>от 6 соток
-                                  </div>
-                                  <div style="background: url(assets/img/bg2_2.jpg)  center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                    <p><span><strong>25 000</strong> руб.</span>за сотку</p>
-                                    <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                                  </div>
-                                </a>
-                                <div class="col-xs-12 col-md-12 col-sm-12 pros-wrapper"> <!-- Pros block -->
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon2_23.jpg" alt="">
-                                    Охрана 24ч
-                                  </div>
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon3_1.jpg" alt="">
-                                    Лесные массивы
-                                  </div>
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon3_2.jpg" alt="">
-                                    Доступность
-                                  </div>
-                                </div> <!-- End of Pros block -->
-                              </div> <!-- End of 1st description block -->
-                              <!-- 2nd description block -->
-                              <!-- <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-right-2 desc-item-inner"> 
-                                <h2><a href="#">Дачный поселок Речной</a></h2>
-                                <p>Минское шоссе, 88 км</p>
-                                <a href="#" class="banner-wrapper">
-                                  <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                    <p>37 Га
-                                    <p>300 участков
-                                    <p>от 8 до 12 соток
-                                  </div>
-                                  <div style="background: url(assets/img/bg2_24.jpg) center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                    <p><span><strong>65 000</strong> руб.</span>за сотку</p>
-                                  </div>
-                                </a>
-                                <div class="col-xs-12 col-md-12 col-sm-12 pros-wrapper"> --> <!-- Pros block -->
-                                 <!--  <div class="pros-column">
-                                    <img src="assets/img/icon1_18.jpg" alt="">
-                                    Пляж
-                                  </div>
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon1_13.jpg" alt="">
-                                    Рыбалка
-                                  </div>
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon3_1.jpg" alt="">
-                                    Лесные массивы
-                                  </div> -->
-                                <!-- </div> --> <!-- End of Pros block -->
-                              <!-- </div> --> <!-- End of 2nd description block -->
-                              <!-- 3d description block -->
-                              <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-right-2 desc-item-inner"> 
-                                <h2><a href="#">Дачный посёлок Бережки-2</a></h2>
-                                <p>Минское шоссе, 118 км</p>
-                                <a href="#" class="banner-wrapper">
-                                  <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                    <p>20 Га
-                                    <p>195 участков
-                                    <p>от 6 до 12 соток
-                                  </div>
-                                  <div style="background: url(assets/img/bg2_18.jpg) center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                    <p><span><strong>25 000</strong> руб.</span>за сотку</p>
-                                    <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                                  </div>
-                                </a>
-                                <div class="col-xs-12 col-md-12 col-sm-12 pros-wrapper"> <!-- Pros block -->
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon1_18.jpg" alt="">
-                                    Пляж
-                                  </div>
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon2_18.jpg" alt="">
-                                    Экология
-                                  </div>
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon3_2.jpg" alt="">
-                                    Доступность
-                                  </div>
-                                </div> <!-- End of Pros block -->
-                              </div> <!-- End of 3d description block -->
-                              <!-- 4th description block -->
-                              <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-right-2 desc-item-inner"> 
-                                <h2><a href="#">Дачный поселок Воробьи</a></h2>
-                                <p>Киевское шоссе, 115 км</p>
-                                <a href="#" class="banner-wrapper">
-                                  <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                    <p>30 Га
-                                    <p>250 участков
-                                    <p>от 6 до 12 соток
-                                  </div>
-                                  <div style="background: url(assets/img/bg2_23.jpg) center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                    <p><span><strong>25 000</strong> руб.</span>за сотку</p>
-                                    <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                                  </div>
-                                </a>
-                                <div class="col-xs-12 col-md-12 col-sm-12 pros-wrapper"> <!-- Pros block -->
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon1_23.jpg" alt="">
-                                    Электричество
-                                  </div>
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon2_23.jpg" alt="">
-                                    Охрана 24 ч
-                                  </div>
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon3_23.jpg" alt="">
-                                    Рядом Ж/Д
-                                  </div>
-                                </div> <!-- End of Pros block -->
-                              </div> <!-- End of 4th description block -->
-                              <!-- 5th description block -->
-                              <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-right-2 desc-item-inner"> 
-                                <h2><a href="#">Посёлок Можайские Сады</a></h2>
-                                <p>Минское / Можайское шоссе, 77 км</p>
-                                <a href="#" class="banner-wrapper">
-                                  <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                    <p>20 Га
-                                    <p>150 участков
-                                    <p>от 8 соток
-                                  </div>
-                                  <div style="background: url(assets/img/bg2_12.jpg) center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                    <p><span><strong>40 000</strong> руб.</span>за сотку</p>
-                                    <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                                  </div>
-                                </a>
-                                <!-- Pros block -->
-                                <div class="col-xs-12 col-md-12 col-sm-12 pros-wrapper">
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon3_23.jpg" alt="">
-                                    Рядом Ж/Д
-                                  </div>
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon2_12.jpg" alt="">
-                                    ГАЗ
-                                  </div>
-                                  <div class="pros-column">
-                                    <img src="assets/img/icon2_4.jpg" alt="">
-                                    Водопровод
-                                  </div>
-                                </div> <!-- End of Pros block -->
-                              </div> <!-- End of 5th description block -->
-                              <!-- 6th description block -->
-                              <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-right-2 desc-item-inner"> 
-                                <h2><a href="#">Дачный поселок Парфенки</a></h2>
-                                <p>Минское шоссе, 98км</p>
-                                <a href="#" class="banner-wrapper">
-                                  <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                    <p>5,4 Га
-                                    <p>56 участков
-                                    <p>от 8 до 20 соток
-                                  </div>
-                                  <div style="background: url(assets/img/bg2_24.jpg) center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                    <p><span><strong>25 000</strong> руб.</span>за сотку</p>
-                                    <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                                  </div>
-                                </a>
-                              </div> <!-- End of 6th description block -->
-                              <!-- 7th description block -->
-                              <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-right-2 desc-item-inner"> 
-                                <h2><a href="#">Дачный поселок Аристово</a></h2>
-                                <p>Киевское шоссе, 71 км</p>
-                                <a href="#" class="banner-wrapper">
-                                  <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                    <p>15 Га
-                                    <p>120 участков
-                                    <p>от 6 до 12 соток
-                                  </div>
-                                  <div style="background: url(assets/img/bg2_6.jpg)  center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                    <p><span><strong>60 000</strong> руб.</span>за сотку</p>
-                                    <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                                  </div>
-                                </a>
-                              </div> <!-- End of 7th description block -->
-                        </div>
-                        <div class="col-xs-12 col-md-6 col-sm-12"> <!-- Right column -->
-                          <!-- 1st description block -->
-                          <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-2 desc-item-inner">
-                            <h2><a href="#">Посёлок Новорижские Сады</a></h2>
-                            <p>Новорижское шоссе, 124 км</p>
-                            <a href="#" class="banner-wrapper">
-                              <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                <p>26 Га
-                                <p>210 участков
-                                <p>от 8 до 12 соток
-                              </div>
-                              <div  style="background: url(assets/img/bg2_15.jpg)  center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                <p><span><strong>25 000</strong> руб.</span>за сотку</p>
-                                <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                              </div>
-                            </a>
-                            <!-- Pros block -->
-                            <div class="col-xs-12 col-md-12 col-sm-12 pros-wrapper">
-                              <div class="pros-column">
-                                <img src="assets/img/icon1_15.jpg" alt="">
-                                Доступные цены
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon2_23.jpg" alt="">
-                                Охрана 24ч
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon1_23.jpg" alt="">
-                                Электричество
-                              </div>
-                            </div> <!-- End of Pros block -->
-                          </div><!-- End of 1st description block -->
-                          <!-- 2nd description block -->
-                          <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-2 desc-item-inner">
-                            <h2><a href="#">Дачный посёлок Вороново</a></h2>
-                            <p>Минское шоссе, 115 км</p>
-                            <a href="#" class="banner-wrapper">
-                              <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                <p>33 Га
-                                <p>259 участков
-                                <p>от 10 соток
-                              </div>
-                              <div  style="background: url(assets/img/bg2_4.jpg)  center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                <p><span><strong>35 000</strong> руб.</span>за сотку</p>
-                                <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                              </div>
-                            </a>
-                            <!-- Pros block -->
-                            <div class="col-xs-12 col-md-12 col-sm-12 pros-wrapper">
-                              <div class="pros-column">
-                                <img src="assets/img/icon1_13.jpg" alt="">
-                                Озеро
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon2_4.jpg" alt="">
-                                Водопровод
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon3_4.jpg" alt="">
-                                Детская площадка
-                              </div>
-                            </div> <!-- End of Pros block -->
-                          </div><!-- End of 2nd description block -->
-                          <!-- 3d description block -->
-                          <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-2 desc-item-inner">
-                            <h2><a href="#">Посёлок на Оке</a></h2>
-                            <p>Каширское шоссе, 105 км</p>
-                            <a href="#" class="banner-wrapper">
-                              <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                <p>35 Га
-                                <p>300 участков
-                                <p>от 6 до 15 соток
-                              </div>
-                              <div  style="background: url(assets/img/bg2_13.jpg)  center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                <p><span><strong>25 000</strong> руб.</span>за сотку</p>
-                                <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                              </div>
-                            </a>
-                            <!-- Pros block -->
-                            <div class="col-xs-12 col-md-12 col-sm-12 pros-wrapper">
-                              <div class="pros-column">
-                                <img src="assets/img/icon1_13.jpg" alt="">
-                                Рыбалка
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon3_23.jpg" alt="">
-                                Рядом Ж/Д
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon3_1.jpg" alt="">
-                                Лесные массивы
-                              </div>
-                            </div> <!-- End of Pros block -->
-                          </div><!-- End of 3d description block -->
-                          <!-- 4th description block -->
-                          <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-2 desc-item-inner">
-                            <h2><a href="#">Дачный посёлок Бережки</a></h2>
-                            <p>Минское шоссе, 118 км</p>
-                            <a href="#" class="banner-wrapper">
-                              <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                <p>18 Га
-                                <p>160 участков
-                                <p>от 8 до 15 соток
-                              </div>
-                              <div  style="background: url(assets/img/bg2_1.jpg)  center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                <p><span><strong>40 000</strong> руб.</span>за сотку</p>
-                                <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                              </div>
-                            </a>
-                            <!-- Pros block -->
-                            <div class="col-xs-12 col-md-12 col-sm-12 pros-wrapper">
-                              <div class="pros-column">
-                                <img src="assets/img/icon1_1.jpg" alt="">
-                                ВДХР
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon2_12.jpg" alt="">
-                                ГАЗ
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon3_1.jpg" alt="">
-                                Лесные массивы
-                              </div>
-                            </div> <!-- End of Pros block -->
-                          </div><!-- End of 4th description block -->
-                          <!-- 5th description block -->
-                          <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-2 desc-item-inner">
-                            <h2><a href="#">Дачный посёлок Захарьино-3</a></h2>
-                            <p>Минское шоссе, 75 км</p>
-                            <a href="#" class="banner-wrapper">
-                              <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                <p>21 Га
-                                <p>180 участков
-                                <p>от 6 соток
-                              </div>
-                              <div  style="background: url(assets/img/bg2_19.jpg)  center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                <p><span><strong>40 000</strong> руб.</span>за сотку</p>
-                                <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                              </div>
-                            </a>
-                            <!-- Pros block -->
-                            <div class="col-xs-12 col-md-12 col-sm-12 pros-wrapper">
-                              <div class="pros-column">
-                                <img src="assets/img/icon1_15.jpg" alt="">
-                                Доступная цена
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon3_23.jpg" alt="">
-                                Рядом Ж/Д
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon3_1.jpg" alt="">
-                                Лесные массивы
-                              </div>
-                            </div> <!-- End of Pros block -->
-                          </div><!-- End of 5th description block -->
-                          <!-- 6th description block -->
-                          <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-2 desc-item-inner">
-                            <h2><a href="#">Дачный поселок Кукарино</a></h2>
-                            <p>Минское / Можайское шоссе, 77 км</p>
-                            <a href="#" class="banner-wrapper">
-                              <div class="bl1 col-xs-4 col-sm-4 col-md-4">
-                                <p>7 Га
-                                <p>72 участков
-                                <p>от 6 до 10 соток
-                              </div>
-                              <div  style="background: url(assets/img/bg2_27.jpg)  center no-repeat; background-size: cover;" class="bl2 col-xs-8 col-sm-8 col-md-8">
-                                <p><span><strong>20 000</strong> руб.</span>за сотку</p>
-                                <p style="font-size: 9px; top: 60px;">*Стоимость сотки указана за землю</p>
-                              </div>
-                            </a>
-                            <!-- Pros block -->
-                            <div class="col-xs-12 col-md-12 col-sm-12 pros-wrapper">
-                              <div class="pros-column">
-                                <img src="assets/img/icon1_27.jpg" alt="">
-                                Дороги
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon1_23.jpg" alt="">
-                                Электричество
-                              </div>
-                              <div class="pros-column">
-                                <img src="assets/img/icon3_23.jpg" alt="">
-                                Рядом Ж/Д
-                              </div>
-                            </div> <!-- End of Pros block -->
-                          </div><!-- End of 6th description block -->
-                        </div>
-                    </div> <!-- Banner list -->
-                </div> <!-- End container block -->
-            </section> <!-- End content section -->
-
-
-
-        </div>
-        <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="assets/js/jquery.maskedinput.js" type="text/javascript"></script>
-
-        <script src="assets/js/formValidation.min.js" type="text/javascript"></script>
-        <script src="assets/js/framework/bootstrap.min.js" type="text/javascript"></script>
-        <script src="assets/js/language/ru_RU.js" type="text/javascript"></script>
-
-        <script src="assets/js/app.min.js" type="text/javascript"></script>
-        <!-- Yandex.Metrika counter --> 
-        <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter39873590 = new Ya.Metrika({ id:39873590, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ut:"noindex" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/39873590?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
-
-    </body>
-</html>
-
-<div class="modal fade my-modal-call" id="call" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title padding-bottom">Заказать звонок</h4>
-                <p>Мы можем позвонить вам абсолютно бесплатно! Укажите свое имя, номер телефона и предпочтительное время звонка. Наши специалисты ответят на любые возникшие вопросы!</p>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <form action="hendler.php" method="POST" autocomplete="off" data-form="send" data-thx="one">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-12 col-sm-12">
-                                        <div class="custom-control">
-
-                                            <input type="text" name="userName" id="userName" class="form-control" placeholder="Введите ваше имя">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-12 col-sm-12">
-                                        <div class="custom-control">
-
-                                            <input type="text" name="userPhoneNumber" data-phone="true" id="userPhone" class="form-control" placeholder="Введите ваш телефон">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-12 col-sm-12">
-                                        <div class="custom-control">
-
-                                            <input type="text" name="userAddress" id="userCity" class="form-control" placeholder="Введите ваш город">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-12 col-sm-12">
-                                        <div class="custom-control">
-                                            <select class="form-control" name="time">
-                                                <option disabled selected title="Удобное время звонка">Удобное время звонка</option>
-                                                <option value="10-00">10-00</option>
-                                                <option value="11-00">11-00</option>
-                                                <option value="12-00">12-00</option>
-                                                <option value="13-00">13-00</option>
-                                                <option value="14-00">14-00</option>
-                                                <option value="15-00">15-00</option>
-                                                <option value="16-00">16-00</option>
-                                                <option value="17-00">17-00</option>
-                                                <option value="18-00">18-00</option>
-                                                <option value="19-00">19-00</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-12 col-sm-12">
-                                        <div class="messages"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                                    <p class="m-top"><strong>Внимание!</strong></p>
-                                    <p>Все поля обязательны для заполнения.</p>
-                                </div>
-                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                    <button type="submit" name="ipadress" value="" class="btn btn-danger disabled" style="pointer-events: all; cursor: pointer;">ОТПРАВИТЬ</button>
-                                </div>
-                            </div>
-                        </form>
+                    </div><!-- END info-block -->
+                  </div>
+                </section><!-- END info-block section -->
+              </main>
+              <footer class="footer">
+                <div class="row row-nav">
+                  <div class="container">
+                    <div class="col-xs-8 footer__left-col">
+                      <ul>
+                        <li><a href="">
+                          Главная
+                        </a></li>
+                        <li><a href="">
+                          Поселки
+                        </a></li>
+                        <li><a href="">
+                          О проекте «Терем 1»
+                        </a></li>
+                        <li><a href="">
+                          Участки
+                        </a></li>
+                        <li><a href="">
+                          Лоты
+                        </a></li>
+                        <li><a href="">
+                          Контакты
+                        </a></li>
+                      </ul>
                     </div>
-                </div>
-            </div>        
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div class="modal fade my-modal-call" id="call2" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title padding-bottom">ЗАЯВКА НА УЧАСТОК</h4>
-                <p>Мы можем подобрать вам земельный участок без подряда под ваши характеристики! Укажите ваши данные и параметры участка. Наши специалисты свяжутся с вами!</p>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <form action="hendler.php" method="POST" autocomplete="off" data-form="send" data-thx="one">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-12 col-sm-12">
-                                        <div class="custom-control">
-
-                                            <input type="text" name="userName" id="userName" class="form-control" placeholder="Введите ваше имя">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-12 col-sm-12">
-                                        <div class="custom-control">
-
-                                            <input type="text" name="userPhoneNumber" data-phone="true" id="userPhone" class="form-control" placeholder="Введите ваш телефон">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-12 col-sm-12">
-                                        <div class="custom-control">
-                                            <input type="email" name="userEmail" id="userPhone" class="form-control" placeholder="Введите ваш e-mail  ">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-12 col-sm-12">
-                                        <div class="custom-control">
-                                            <input type="text" name="userDirection" class="form-control" placeholder="Введите интересующее вас направление">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                                    <p class="m-top"><strong>Внимание!</strong></p>
-                                    <p>Все поля обязательны для заполнения.</p>
-                                </div>
-                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                                    <button type="submit" name="ipadress" value="" class="btn btn-danger disabled" style="pointer-events: all; cursor: pointer;">ОТПРАВИТЬ</button>
-                                </div>
-                            </div>
-                        </form>
+                    <div class="col-xs-4 footer__right-col">
+                      <div class="footer__phone">
+                        <i class="glyphicon glyphicon-earphone"></i>
+                        <a href="tel:+7 (495) 789-82-70">+7 (495) 789-82-70</a>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>        
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+                <div class="row row-copyright">
+                  <div class="container">
+                    <div class="col-xs-12 copy-wrapper">
+                      <span class="copy small">
+                        © 2016 "Теремъ" все права защищены
+                      </span>
+                    </div>
+                  </div>  
+                </div>
+              </footer>
 
-<div class="modal fade my-modal-call" id="thx" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-                <h4 class="modal-title padding-bottom text-center">Заявка отправлена</h4>
-                <p class="text-center">Спасибо за вашу заявку. Наши менеджеры свяжутся с вами в ближайшее время</p>
-                <br>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+
+
+
+
+
+
+              <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+              <script src="assets/js/jquery.maskedinput.js" type="text/javascript"></script>
+
+              <script src="assets/js/formValidation.min.js" type="text/javascript"></script>
+              <script src="assets/js/framework/bootstrap.min.js" type="text/javascript"></script>
+              <script src="assets/js/language/ru_RU.js" type="text/javascript"></script>
+
+              <script src="assets/js/app.min.js" type="text/javascript"></script>
+              <!-- Yandex.Metrika counter --> 
+              <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter39873590 = new Ya.Metrika({ id:39873590, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ut:"noindex" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/39873590?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+            </body>
+            </html>
+
+            <div class="modal fade my-modal-call" id="call" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title padding-bottom">Заказать звонок</h4>
+                    <p>Мы можем позвонить вам абсолютно бесплатно! Укажите свое имя, номер телефона и предпочтительное время звонка. Наши специалисты ответят на любые возникшие вопросы!</p>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <form action="hendler.php" method="POST" autocomplete="off" data-form="send" data-thx="one">
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+
+                                  <input type="text" name="userName" id="userName" class="form-control" placeholder="Введите ваше имя">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+
+                                  <input type="text" name="userPhoneNumber" data-phone="true" id="userPhone" class="form-control" placeholder="Введите ваш телефон">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+
+                                  <input type="text" name="userAddress" id="userCity" class="form-control" placeholder="Введите ваш город">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+                                  <select class="form-control" name="time">
+                                    <option disabled selected title="Удобное время звонка">Удобное время звонка</option>
+                                    <option value="10-00">10-00</option>
+                                    <option value="11-00">11-00</option>
+                                    <option value="12-00">12-00</option>
+                                    <option value="13-00">13-00</option>
+                                    <option value="14-00">14-00</option>
+                                    <option value="15-00">15-00</option>
+                                    <option value="16-00">16-00</option>
+                                    <option value="17-00">17-00</option>
+                                    <option value="18-00">18-00</option>
+                                    <option value="19-00">19-00</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="messages"></div>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                              <p class="m-top"><strong>Внимание!</strong></p>
+                              <p>Все поля обязательны для заполнения.</p>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                              <button type="submit" name="ipadress" value="" class="btn btn-danger disabled" style="pointer-events: all; cursor: pointer;">ОТПРАВИТЬ</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>        
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <div class="modal fade my-modal-call" id="call2" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title padding-bottom">ЗАЯВКА НА УЧАСТОК</h4>
+                    <p>Мы можем подобрать вам земельный участок без подряда под ваши характеристики! Укажите ваши данные и параметры участка. Наши специалисты свяжутся с вами!</p>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <form action="hendler.php" method="POST" autocomplete="off" data-form="send" data-thx="one">
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+
+                                  <input type="text" name="userName" id="userName" class="form-control" placeholder="Введите ваше имя">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+
+                                  <input type="text" name="userPhoneNumber" data-phone="true" id="userPhone" class="form-control" placeholder="Введите ваш телефон">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+                                  <input type="email" name="userEmail" id="userPhone" class="form-control" placeholder="Введите ваш e-mail  ">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+                                  <input type="text" name="userDirection" class="form-control" placeholder="Введите интересующее вас направление">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                              <p class="m-top"><strong>Внимание!</strong></p>
+                              <p>Все поля обязательны для заполнения.</p>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                              <button type="submit" name="ipadress" value="" class="btn btn-danger disabled" style="pointer-events: all; cursor: pointer;">ОТПРАВИТЬ</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>        
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <div class="modal fade my-modal-call" id="call3" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title padding-bottom">Подписка на обновления</h4>
+                    <p>Мы будем отправлять все подходящие новые объявления вам на электронную почту.</p>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <form action="hendler.php" method="POST" autocomplete="off" data-form="send" data-thx="one">
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+                                  <input type="email" name="userEmail" id="userPhone" class="form-control" placeholder="Введите ваш e-mail">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                              <button type="submit" name="ipadress" value="" class="btn btn-danger disabled" style="pointer-events: all; cursor: pointer;">ОТПРАВИТЬ</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>        
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <div class="modal fade my-modal-call" id="thx" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                    <h4 class="modal-title padding-bottom text-center">Заявка отправлена</h4>
+                    <p class="text-center">Спасибо за вашу заявку. Наши менеджеры свяжутся с вами в ближайшее время</p>
+                    <br>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
 
 
 

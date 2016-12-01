@@ -15,7 +15,7 @@ class Slider {
 		});
 		//Initial state - hidden
 		$(this.Slider).hide();
-		$(this.SliderNav).hide(); 
+		$(this.SliderNav).hide();
 	}
 
 	initToggler(elemBtn) {

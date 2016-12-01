@@ -1,197 +1,370 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var searchAreasHelpers = {
-	"url": {
-		"default": "/area/"
-	},
-	"selects": {
-		"select1": [{
-			"name": "road",
-			"name_text": "Шоссе",
-			"values": {
-				"v1": "Можайское шоссе",
-				"v2": "Киевское шоссе",
-				"v3": "Разянское шоссе"
-			}
-		}]
-	},
-	"ranges": {
-		"range1": [{
-			"name": "distance",
-			"name_text": "Удаленность от МКАД",
-			"type": "км",
-			"min_text": "от",
-			"max_text": "до",
-			"values": {
-				"min": 10,
-				"max": 100
-			}
-		}],
-		"range2": [{
-			"name": "area",
-			"name_text": "Размер",
-			"type": "м",
-			"min_text": "от",
-			"max_text": "до",
-			"values": {
-				"min": 6,
-				"max": 10
-			}
-		}],
-		"range3": [{
-			"name": "price",
-			"name_text": "Цена",
-			"type": "р.",
-			"min_text": "от",
-			"max_text": "до",
-			"values": {
-				"min": 100000,
-				"max": 3000000
-			}
-		}]
-	}
-};
-var searchLotHelpers = {
-	"url": {
-		"default": "/lots/"
-	},
-	"ranges": {
-		"range1": [{
-			"name": "distance",
-			"name_text": "Test",
-			"type": "км",
-			"min_text": "от",
-			"max_text": "до",
-			"values": {
-				"min": 10,
-				"max": 100
-			}
-		}]
-
-	}
-};
-
 var Filter = function () {
 	function Filter(value) {
+		var helper = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'area';
+		var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'area';
+
 		_classCallCheck(this, Filter);
 
-		this.areaObject = searchAreasHelpers;
-		this.lotsObject = searchLotHelpers;
+		this.defaultType = type;
+		this.defaultObject = this.getJsonObject(helper);
 		this.wrapperFilter = value;
-		this.FormHeader = "<form action=\"\" method=\"\" id=\"filter\" class=\"filter-form\">\n   \t\t\t\t\t\t\t<div class=\"dropdown\">\n   \t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"type\" id=\"typeSearch\" value=\"area\" class=\"hidden\">\n   \t\t\t\t\t\t\t\t\t\t\t\t\t\t<button class=\"btn btn-filter btn-lg dropdown-toggle\" type=\"button\" id=\"typeDropdown\" data-placeholder=\"\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\u0423\u0447\u0430\u0441\u0442\u043A\u0438<span class=\"my-caret\"></span>\n   \t\t\t\t\t\t\t\t\t\t\t\t\t\t</button>\n   \t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul class=\"dropdown-menu\" aria-labelledby=\"dropdownRoad\">\n   \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"arrow-top\"></span>\n   \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\" data-type=\"area\">\u0423\u0447\u0430\u0441\u0442\u043A\u0438</a></li>\n   \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"#\" data-type=\"lots\">\u041B\u043E\u0442\u044B</a></li>\n   \t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n   \t\t\t\t\t\t\t\t\t\t\t\t\t</div>";
-		this.FormFooter = "<div class=\"filter-button\">\n\t\t\t\t\t\t\t\t<button class=\"refresh-button\">\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C</button>\n\t\t\t\t\t\t\t\t<button class=\"submit-button\">\u041D\u0430\u0439\u0442\u0438</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</form>";
+		this.FormHeader = '<form action="" method="" id="filter" class="filter-form">';
+		this.FormFooter = '<div class="filter-button">\n\t\t\t\t\t\t\t\t<button class="refresh-button" type="reset">\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C</button>\n\t\t\t\t\t\t\t\t<button class="submit-button" type="submit">\u041D\u0430\u0439\u0442\u0438</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</form>';
 		this.FormText = '';
-		this.Bind = function () {
-			var typeSearch = '';
-			var areas = this.areaObject;
-			var lots = this.lotsObject;
-			var _this = this;
-
-			$(this.wrapperFilter + " > form").bind('click', function (e) {
-				var action = $(e.target).attr('id') ? $(e.target).attr('id') : $(e.target).attr('data-type');
-				if (!!action) {
-					//Обработка типа поиска
-					if (action == 'lots') {
-						typeSearch = lots;
-						_this.render(typeSearch, 1);
-					}
-
-					if (action == 'area') {
-						typeSearch = areas;
-						_this.render(typeSearch, 1);
-					}
-				}
-			});
-		};
-		this.onSelectChoose = function () {
-			$(this.wrapperFilter + " li").on('click', function (e) {
-				var target = e.target || window.target;
-				var val = $(target).html();
-				var filterBtn = $(this).parent().prev();
-				filterBtn.html(val).prev().val(val);
-			});
-		};
-		this.onRangeChoose = function () {
-			// $('.range-box > input').on('input', function(e) {
-			// 	var target = e.target || window.target;
-			// 	var val = $(target).val();
-			// 	var filterBtn = $(this).parent().parent().prev();
-			// 	var valTarget = parseInt($(target).val());
-		};
+		this.bindObjInputs = [];
+		this.PriceObjects = [];
 	}
 
 	_createClass(Filter, [{
-		key: "render",
+		key: 'CreatePriceObject',
+		value: function CreatePriceObject(name) {
+			this.neme = name;
+			this.textFrom = 0;
+			this.textTo = 0;
+			this.text = '';
+		}
+	}, {
+		key: 'render',
 		value: function render() {
-			var typesearch = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.areaObject;
+			var typesearch = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.defaultObject;
 			var reinit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
-
-			if (reinit) {
-				$(this.wrapperFilter).html(' ');
-				this.FormText = '';
-				console.log(1);
-				console.log($(this.wrapperFilter));
+			var objs = [];
+			var inputIDX;
+			var cnt = 0;
+			for (var idx in typesearch) {
+				var givenObj = typesearch[idx];
+				if (!!!givenObj.default) {
+					for (var ids in givenObj) {
+						var innerObj = givenObj[ids];
+						this.PriceObjects[cnt] = {
+							name: innerObj[0].name,
+							textFrom: 0,
+							textTo: 0,
+							text: ''
+						};
+						cnt++;
+					}
+				}
 			}
-
+			if (reinit) {
+				$(this.wrapperFilter).html('');
+				this.FormText = '';
+			}
 			if (!!typesearch.selects) {
+
 				for (var key in typesearch.selects) {
 					var select_obj = typesearch.selects[key][0];
 					this.FormText += this.tmpSelect(select_obj);
 				}
 			}
-
 			if (!!typesearch.ranges) {
 				for (var _key in typesearch.ranges) {
 					var range_obj = typesearch.ranges[_key][0];
+					this.bindObjInputs.push(range_obj);
 					this.FormText += this.tmpRange(range_obj);
 				}
 			}
 
 			$(this.wrapperFilter).html(this.FormHeader + ' ' + this.FormText + '' + this.FormFooter);
-			this.Bind();
+			this.Binds();
+			this.BindListSelect();
+			this.BindRangeInput(this.bindObjInputs);
 		}
 	}, {
-		key: "tmpSelect",
+		key: 'Binds',
+		value: function Binds() {
+			var _this = this;
+			var searchObject = '';
+			$(this.wrapperFilter + ' > form').bind('click', function (e) {
+				var action = $(e.target).attr('id') ? $(e.target).attr('id') : $(e.target).attr('data-type');
+				if (!!action) {
+					if (action == 'lots' || action == 'area') {
+						searchObject = _this.getJsonObject(action);
+						_this.render(searchObject, 1);
+					}
+				}
+			});
+			$(this.wrapperFilter + ' > form').find('.refresh-button').bind('click', function (e) {
+				_this.render(_this.defaultObject, 1);
+			});
+		}
+	}, {
+		key: 'BindListSelect',
+		value: function BindListSelect() {
+			$(this.wrapperFilter + ' li').on('click', function (e) {
+				var target = e.target || window.target;
+				var targetLi = $(target).parent();
+				var val = $(target).html();
+				var filterBtn = $(this).parent().prev();
+				var refreshBtn = $('.refresh-button');
+
+				targetLi.addClass('active');
+				targetLi.siblings().removeClass('active');
+				filterBtn.html(val + '<span class="my-caret"></span>').prev().val(val);
+				if ($(target).attr('data-type') == 'lots' || $(target).attr('data-type') == 'area') {
+					refreshBtn.hide();
+				} else {
+					refreshBtn.show();
+				}
+			});
+		}
+	}, {
+		key: 'BindRangeInput',
+		value: function BindRangeInput() {
+			var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+			var ___this = this;
+			var _obj = obj;
+			var textTo = '';
+			var textFrom = '';
+			var refreshBtn = $('.refresh-button');
+
+			if (!!obj) {
+				$('' + this.wrapperFilter).on('input', 'input', function (e) {
+
+					var target = e.target || window.target;
+					var valTarget = parseInt(Math.abs($(target).val()));
+					var filterBtn = $(this).parent().parent().prev();
+					var inputIDX = '';
+					var inputText = '';
+					var inputUnit = '';
+					var ObjIDX = '';
+
+					for (var idx in _obj) {
+						var givenObj = _obj[idx];
+
+						if ($(target).attr('data-name') == '' + givenObj.name) {
+							inputIDX = '' + givenObj.name;
+							inputUnit = givenObj.type;
+
+							for (var i in ___this.PriceObjects) {
+								if (givenObj.name == ___this.PriceObjects[i].name) {
+									ObjIDX = i;
+								}
+							}
+						}
+
+						if ($(target).attr('id') == givenObj.name + '-from') {
+							___this.PriceObjects[ObjIDX].textFrom = ___this.textCombinate('text-from', valTarget);
+						}
+
+						if ($(target).attr('id') == givenObj.name + '-up-to') {
+							___this.PriceObjects[ObjIDX].textTo = ___this.textCombinate('text-up-to', valTarget);
+						}
+
+						if (ObjIDX) {
+							var textInput = '';
+
+							if (___this.PriceObjects[ObjIDX].textFrom) {
+								textInput += ___this.PriceObjects[ObjIDX].textFrom + ' ' + inputUnit + ' ';
+							}
+
+							if (___this.PriceObjects[ObjIDX].textTo) {
+								textInput += ___this.PriceObjects[ObjIDX].textTo + ' ' + inputUnit;
+							}
+
+							if (!___this.PriceObjects[ObjIDX].textFrom && !___this.PriceObjects[ObjIDX].textTo && $(target).attr('data-name') == '' + givenObj.name || !textInput && $(target).attr('data-name') == '' + givenObj.name) {
+								textInput = givenObj.name_text + ' <span class="my-caret"></span>';
+							}
+
+							if ($(target).attr('data-name') == '' + givenObj.name) {
+								inputIDX = '' + givenObj.name;
+								inputText = givenObj.name_text + ' <span class="my-caret"></span>';
+							}
+						}
+					}
+
+					if (!textInput) {
+						$('#' + inputIDX + 'Dropdown').html(inputText);
+					} else {
+						filterBtn.html(textInput);
+					}
+					refreshBtn.show();
+				});
+			}
+		}
+	}, {
+		key: 'textCombinate',
+		value: function textCombinate(idx, vals) {
+			var result = false;
+
+			if (idx == 'text-from') {
+				var Text = 'от';
+			}
+			if (idx == 'text-up-to') {
+				var Text = 'до';
+			}
+			if (!isNaN(vals) && vals && vals != 0) {
+				result = Text;
+				result += ' ' + vals;
+			} else {
+				result = false;
+			}
+			return result;
+		}
+	}, {
+		key: 'getJsonObject',
+		value: function getJsonObject(type) {
+			var urlJSON = '/assets/js/helpers/' + type + '.helper.json';
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', urlJSON, false);
+			xhr.send();
+			if (xhr.status == 200) {
+				return JSON.parse(xhr.responseText);
+			} else {
+				return false;
+			}
+		}
+	}, {
+		key: 'tmpSelect',
 		value: function tmpSelect() {
 			var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
-
-			var tmp = null;
+			var tmp = '';
 			var listStr = '';
+			//ообрабтываешь гед параметры
+			//при совпадении добавляешь нужнему li класс active (который стилизован в CSS) 
+			var objValue = Object.keys(obj.values);
 
 			if (obj) {
 				if (!!obj.values) {
-					for (var value in obj.values) {
-						var listItem = "<li><a href=\"#\">" + obj.values[value] + "</a></li>";
-						listStr += listItem;
+					if (obj.name == 'type') {
+
+						if (this.defaultType != 'none') {
+							if (objValue[0] == 'area') {
+								var listItem = '<li class="active"><a href="#" data-type="area" data-name="' + obj.values['area'] + '">' + obj.values['area'] + '</a></li>\n\t\t\t\t\t\t\t\t\t\t<li><a href="#" data-type="lots" data-name="' + obj.values['lots'] + '">' + obj.values['lots'] + '</a></li>';
+								listStr = listItem;
+							} else if (objValue[0] == 'lots') {
+								var _listItem = '<li><a href="#" data-type="area" data-name="' + obj.values['area'] + '">' + obj.values['area'] + '</a></li>\n\t\t\t\t\t\t\t\t\t\t\t<li class="active"><a href="#" data-type="lots" data-name="' + obj.values['lots'] + '">' + obj.values['lots'] + '</a></li>';
+								listStr = _listItem;
+							}
+
+							tmp = '<div class="dropdown">\n\t\t\t\t\t\t\t\t<input type="text" name="' + obj.name + '" value="' + obj.name_text + '" class="hidden">\n\t\t\t\t\t\t\t\t<button class="btn btn-filter btn-lg dropdown-toggle" type="button" id="' + obj.name + 'Dropdown" data-placeholder="' + obj.name_text + '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n\t\t\t\t\t\t\t\t\t' + obj.name_text + '\n\t\t\t\t\t\t\t\t\t<span class="my-caret"></span>\n\t\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t\t\t<ul class="dropdown-menu" aria-labelledby="dropdownRoad">\n\t\t\t\t\t\t\t\t\t<span class="arrow-top"></span>\n\t\t\t\t\t\t\t\t\t' + listStr + '\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t</div>';
+						}
+					} else {
+						for (var value in obj.values) {
+							var _listItem2 = '<li><a href="#" data-name="' + obj.values[value] + '">' + obj.values[value] + '</a></li>';
+							listStr += _listItem2;
+						}
+						tmp = '<div class="dropdown">\n\t\t\t\t\t\t\t\t<input type="text" name="' + obj.name + '" value="" class="hidden">\n\t\t\t\t\t\t\t\t<button class="btn btn-filter btn-lg dropdown-toggle" type="button" id="' + obj.name + 'Dropdown" data-placeholder="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n\t\t\t\t\t\t\t\t\t' + obj.name_text + '\n\t\t\t\t\t\t\t\t\t<span class="my-caret"></span>\n\t\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t\t\t<ul class="dropdown-menu" aria-labelledby="dropdownRoad">\n\t\t\t\t\t\t\t\t\t<span class="arrow-top"></span>\n\t\t\t\t\t\t\t\t\t' + listStr + '\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t</div>';
 					}
-					tmp = "<div class=\"dropdown\">\n\t\t\t\t\t\t\t<input type=\"text\" name=\"" + obj.name + "\" value=\"\" class=\"hidden\">\n\t\t\t\t\t\t\t<button class=\"btn btn-filter btn-lg dropdown-toggle\" type=\"button\" id=\"" + obj.name + "Dropdown\" data-placeholder=\"\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n\t\t\t\t\t\t\t\t" + obj.name_text + "\n\t\t\t\t\t\t\t\t<span class=\"my-caret\"></span>\n\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t\t<ul class=\"dropdown-menu\" aria-labelledby=\"dropdownRoad\">\n\t\t\t\t\t\t\t\t<span class=\"arrow-top\"></span>\n\t\t\t\t\t\t\t\t" + listStr + "\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>";
 				}
 			}
-
 			return tmp;
 		}
 	}, {
-		key: "tmpRange",
+		key: 'tmpRange',
 		value: function tmpRange() {
 			var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
-
+			//ообрабтываешь гед параметры
+			//при совпадении заносишь value согласно get параметрам в нужный шаблон
+			//естественно добавить 2й шаблон рендера для отображение выбранного
 			var tmp = null;
 
 			if (!!obj.values) {
-				tmp = "<div class=\"dropdown\">\n\t\t\t\t\t\t<input type=\"text\" name=\"" + obj.name + "\" value=\"\" class=\"hidden\">\n\t\t\t\t\t\t<button class=\"btn btn-filter btn-lg dropdown-toggle\" type=\"button\" id=\"" + obj.name + "Dropdown\" data-placeholder=\"\u0423\u0434\u0430\u043B\u0435\u043D\u043D\u043E\u0441\u0442\u044C \u043E\u0442 \u041C\u041A\u0410\u0414\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n\t\t\t\t\t\t\t" + obj.name_text + "\n\t\t\t\t\t\t\t<span class=\"my-caret\"></span>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t\t<div class=\"dropdown-menu\" aria-labelledby=\"" + obj.name + "Dropdown\">\n\t\t\t\t\t\t\t<span class=\"arrow-top\"></span>\n\t\t\t\t\t\t\t<div class=\"range-box\">\n\t\t\t\t\t\t\t\t<input type=\"number\" name=\"" + obj.name + "From\" id=\"" + obj.name + "-from\" placeholder=\"" + obj.min_text + " " + obj.values.min + " " + obj.type + "\">\n\t\t\t\t\t\t\t\t<input type=\"number\" name=\"" + obj.name + "Upto\" id=\"" + obj.name + "-up-to\" placeholder=\"" + obj.max_text + " " + obj.values.max + " " + obj.type + "\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>";
+				tmp = '<div class="dropdown">\n\t\t\t\t\t\t<input type="text" name="' + obj.name + '" value="" class="hidden">\n\t\t\t\t\t\t<button class="btn btn-filter btn-lg dropdown-toggle" type="button" id="' + obj.name + 'Dropdown" data-placeholder="\u0423\u0434\u0430\u043B\u0435\u043D\u043D\u043E\u0441\u0442\u044C \u043E\u0442 \u041C\u041A\u0410\u0414" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\n\t\t\t\t\t\t\t' + obj.name_text + '\n\t\t\t\t\t\t</button>\n\t\t\t\t\t\t<div class="dropdown-menu" aria-labelledby="' + obj.name + 'Dropdown">\n\t\t\t\t\t\t\t<span class="arrow-top"></span>\n\t\t\t\t\t\t\t<div class="range-box">\n\t\t\t\t\t\t\t\t<input type="number" name="' + obj.name + 'From" data-name="' + obj.name + '" id="' + obj.name + '-from" placeholder="' + obj.min_text + ' ' + obj.values.min + '">\n\t\t\t\t\t\t\t\t<span> - </span>\n\t\t\t\t\t\t\t\t<input type="number" name="' + obj.name + 'Upto" data-name="' + obj.name + '" id="' + obj.name + '-up-to" placeholder="' + obj.max_text + ' ' + obj.values.max + '">\n\t\t\t\t\t\t\t\t<span>' + obj.type + '</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>';
 			}
 			return tmp;
 		}
+
+		// 	resetForm() {
+		// 		let _this = this;
+		// 		$(`${this.wrapperFilter} > form`).bind('click', '.refresh-button', function(e){
+		// 			console.log('here');
+		// 			let target = e.target || window.target;
+		// 			_this.render(this.defaultObject, 1);
+		// 		});
+		// 	}
+
 	}]);
 
 	return Filter;
+}();
+
+var Slider = function () {
+	function Slider(elem, elemNav, elemName, itemsCount) {
+		_classCallCheck(this, Slider);
+
+		this.Toggler = '#' + elemName + '-button';
+		this.SliderNav = '.' + elemName + '-slider-nav';
+		this.Slider = $('[data-item="' + elem + '"]').owlCarousel({
+			loop: true,
+			margin: 1,
+			items: itemsCount || 1,
+			nav: true,
+			navContainer: '.' + elemNav,
+			navText: ['', ''],
+			autoplay: true,
+			autoplayTimeout: 3000,
+			autoplayHoverPause: true
+		});
+		//Initial state - hidden
+		$(this.Slider).hide();
+		$(this.SliderNav).hide();
+	}
+
+	_createClass(Slider, [{
+		key: 'initToggler',
+		value: function initToggler(elemBtn) {
+			$('#' + elemBtn).on('click', function () {
+				var idx = $(this).attr('id');
+				if ('#' + idx == SliderArea.Toggler) {
+					SliderLot.hideSlider();
+					SliderArea.showSlider();
+				} else {
+					SliderLot.showSlider();
+					SliderArea.hideSlider();
+				}
+			});
+		}
+	}, {
+		key: 'onResize',
+		value: function onResize() {
+			$(this.Slider).owlCarousel({
+				onResize: reloadItems
+			});
+			function reloadItems(e) {
+				var items = e.item.count;
+				console.log(items);
+			}
+		}
+	}, {
+		key: 'activeStateSlider',
+		value: function activeStateSlider() {
+			$(this.Slider).show();
+			$(this.SliderNav).show();
+		}
+	}, {
+		key: 'activeToggler',
+		value: function activeToggler() {
+			$(this.Toggler).addClass('success');
+		}
+	}, {
+		key: 'hideSlider',
+		value: function hideSlider() {
+			$(this.Toggler).removeClass('success');
+			$(this.Slider).hide('drop', 'easeInQuad', 200, false);
+			$(this.SliderNav).hide();
+		}
+	}, {
+		key: 'showSlider',
+		value: function showSlider() {
+			this.Slider.trigger('initialize.owl.carousel');
+			$(this.Toggler).addClass('success');
+			$(this.Slider).show('drop', 'easeInQuad', 200, false);
+			$(this.SliderNav).show();
+		}
+	}]);
+
+	return Slider;
 }();
 
 (function () {
@@ -206,7 +379,7 @@ var Filter = function () {
 				margin: 1,
 				items: itemsCount || 1,
 				nav: true,
-				navContainer: "." + elemNav,
+				navContainer: '.' + elemNav,
 				navText: ['', ''],
 				autoplay: true,
 				autoplayTimeout: 3000,
@@ -218,7 +391,7 @@ var Filter = function () {
 		}
 
 		_createClass(Slider, [{
-			key: "initToggler",
+			key: 'initToggler',
 			value: function initToggler(elemBtn) {
 				$('#' + elemBtn).on('click', function () {
 					var idx = $(this).attr('id');
@@ -232,7 +405,7 @@ var Filter = function () {
 				});
 			}
 		}, {
-			key: "onResize",
+			key: 'onResize',
 			value: function onResize() {
 				$(this.Slider).owlCarousel({
 					onResize: reloadItems
@@ -243,25 +416,25 @@ var Filter = function () {
 				}
 			}
 		}, {
-			key: "activeStateSlider",
+			key: 'activeStateSlider',
 			value: function activeStateSlider() {
 				$(this.Slider).show();
 				$(this.SliderNav).show();
 			}
 		}, {
-			key: "activeToggler",
+			key: 'activeToggler',
 			value: function activeToggler() {
 				$(this.Toggler).addClass('success');
 			}
 		}, {
-			key: "hideSlider",
+			key: 'hideSlider',
 			value: function hideSlider() {
 				$(this.Toggler).removeClass('success');
 				$(this.Slider).hide('drop', 'easeInQuad', 200, false);
 				$(this.SliderNav).hide();
 			}
 		}, {
-			key: "showSlider",
+			key: 'showSlider',
 			value: function showSlider() {
 				this.Slider.trigger('initialize.owl.carousel');
 				$(this.Toggler).addClass('success');
@@ -276,10 +449,6 @@ var Filter = function () {
 	//Promo
 
 
-	var filter = new Filter('.main-banner__filter');
-	filter.render();
-	filter.onSelectChoose();
-
 	var SliderPromo = new Slider('promo-slider', 'promo-slider-nav');
 	SliderPromo.activeStateSlider();
 	//Area
@@ -290,6 +459,22 @@ var Filter = function () {
 	//Lot
 	var SliderLot = new Slider('offer-lot-slider', 'offer-lot-slider-nav', 'offer-lot', 4);
 	SliderLot.initToggler('offer-lot-button');
+	//Details
+	var SliderDetail = new Slider('details-slider', 'details-slider-nav');
+	SliderDetail.activeStateSlider();
+
+	// // List load more function
+	// $(".area-cards__item, .lots-cards__item").slice(0, 8).show();
+	//   	$("#loadMore").on('click', function (e) {
+	//       e.preventDefault();
+	//       $(".area-cards__item:hidden, .lots-cards__item:hidden").slice(0, 4).slideDown();
+	//       if ($(".area-cards__item:hidden, .lots-cards__item:hidden").length == 0) {
+	//           $("#loadMore").fadeOut('slow');
+	//       }
+	//       $('html,body').animate({
+	//           scrollTop: $(this).offset().top
+	//       }, 1500);
+	//   	});
 })();
 
 $(document).ready(function () {
@@ -302,6 +487,80 @@ $(document).ready(function () {
 	});
 
 	$(".fancybox").fancybox();
+
+	// Filter animation
+	$(document).on('click', '[data-toggle="dropdown"]', function (e) {
+		//Add folding menu animation
+		$(this).next().addClass('opened');
+		//Reset all the carets in filter
+		$(this).parent().siblings('.dropdown').children('button').children('.my-caret').removeClass('animated');
+		//Add caret rotation animation
+		if ($(this).attr('aria-expanded') == 'true') {
+			$(this).children('.my-caret').addClass('animated');
+		} else {
+			$(this).children('.my-caret').removeClass('animated');
+		}
+	});
+
+	//Cards show phone functionality
+	$(document).on('click', '[data-phone-link]', function (e) {
+		$(this).hide(); //Hide pop-up "Show phone number"
+		$(this).prev().hide(); //Hide shorten phone number
+		$(this).next().show(); //Show full phone number
+		$(this).parent().css('border', 0); //Delete borders of rounded parent button
+	});
+
+	// //Slider in Details page
+	// var sync1 = $('[data-item="details-big-picture"]');
+	// var sync2 = $('[data-item="details-thumbnails"]');
+
+	// sync1.owlCarousel({
+	// 	items: 1,
+	// 	slideSpeed: 1000,
+	// 	nav: true,
+	// 	dots:false,
+	// 	onChanged: syncPosition,
+	// 	responsiveRefreshRate: 200,
+	// });
+
+	// sync2.owlCarousel({
+	// 	items: 2,
+	// 	itemsDesktop: [1199,5],
+	// 	itemsDesktopSmall: [979,5],
+	// 	itemsTablet: [768,5],
+	// 	itemsMobile: [479,3],
+	// 	pagination: false,
+	// 	margin: 10,
+	// 	responsiveRefreshRate: 100,
+	// 	onInitialized: function(){
+	// 		$(this)[0]._items[0].addClass('synced');
+	// 	}
+	// });
+
+	// function syncPosition(){
+	// 	var allItems = $(this)[0]._items;
+	// 	var current = 1;
+	// 	for (var i in allItems) {
+	// 		if ($(allItems[i]).hasClass('active')) {
+	// 			current = i;
+	// 		}
+	// 	}
+	// 	$(sync2)
+	// 	.find(".owl-item")
+	// 	.removeClass("synced")
+	// 	.eq(current)
+	// 	.addClass("synced")
+	// 	.trigger('to.owl.carousel', current);
+	// }
+
+	// $(sync2).on("click", ".owl-item", function(e){
+	// 	e.preventDefault();
+	// 	var target = $(e.target).parent();
+	// 	var owlItemList = $(target)[0].parentNode.childNodes;
+	// 	var index = $(owlItemList).index(target);
+	// 	console.log(index);
+	// 	sync1.trigger('to.owl.carousel', index);
+	// });
 
 	var App = function App() {
 		$('[data-phone="true"]').mask("+7 (999) 999-99-99");
@@ -454,97 +713,6 @@ $(document).ready(function () {
 			}
 		};
 		Form.initialize();
-
-		// Filter animation
-		$('button[data-toggle="dropdown"]').on('click', function (e) {
-			$(this).next().addClass('opened');
-		});
-
-		// Filter search
-		// $('.dropdown-menu > li').on('click', function(e) {
-		// 	var target = e.target || window.target;
-		// 	var val = $(target).html();
-		// 	var filterBtn = $(this).parent().prev();
-		// 	filterBtn.html(val).prev().val(val);
-		// });
-
-
-		//filterArea.onInput();
-		//let filterDistance = new Filter('dropdownDistance', 'distance', 'км', 'Удаленность от МКАД');
-		//filterDistance.onInput();
-		//let filterPrice = new Filter('dropdownPrice', 'price', 'р.', 'Цена');
-		//filterPrice.onInput();
-
-
-		// Filter price block
-		// var rangePrice = {
-		// 	textFrom: 'от',
-		// 	textTo: 'до',
-		// 	text: ''
-		// }
-
-		// $('.range-box > input').on('input', function(e) {
-		// 	var target = e.target || window.target;
-		// 	var val = $(target).val();
-		// 	var filterBtn = $(this).parent().parent().prev();
-		// 	var valTarget = parseInt($(target).val());
-
-
-		// 	if($(target).attr('id') == 'price-from') {
-		// 		rangePrice.textFrom = combTextInput('price-from',valTarget);
-		// 	} else {
-		// 		rangePrice.textTo = combTextInput('price-up-to',valTarget);
-		// 	}
-
-		// 	var textInputPrice = '';
-
-		// 	if(rangePrice.textFrom != 'от') {
-		// 		textInputPrice += rangePrice.textFrom + ' р. ';
-		// 	}
-		// 	if(rangePrice.textTo != 'до') {
-		// 		textInputPrice += rangePrice.textTo + ' р.';
-		// 	}
-		// 	if(!isNaN(rangePrice.from) && rangePrice.from) {
-		// 			rangePrice.textAll += ' ' + rangePrice.textTo + ' ' + rangePrice.from;
-		// 	}
-
-		// 	filterBtn.html(textInputPrice);
-
-		// 	if(!filterBtn.html()) {
-		// 		filterBtn.html('Цена <span class="my-caret"></span>');
-		// 	}			
-
-		// })
-
-
-		// function combTextInput(idx,vals,obj){
-		// 	var result = '';
-		// 	if(idx == 'price-up-to'){
-		// 		var Text = 'до';
-		// 	}
-		// 	if(idx == 'price-from'){
-		// 		var Text = 'от';
-		// 	}
-
-		// 	if(!isNaN(vals) && vals){
-		// 			result = Text;
-		// 			result += ' ' + vals;
-		// 	}else{
-		// 			result = Text;
-		// 	}
-		// 	return result;
-		// }
-
-		// // Filter range input
-		// $("#range_01").ionRangeSlider({
-		//     type: "double",
-		//     grid: false,
-		//     min: 0,
-		//     max: 100,
-		//     from: 200,
-		//     to: 80,
-		//     prefix: "сотки "
-		// });
 	};
 	App();
 });

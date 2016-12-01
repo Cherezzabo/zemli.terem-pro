@@ -1,13 +1,9 @@
 //=include ./filter.js
- 
+//=include ./slider.js 
 (function(){
 	//=include ./slider.js 
 	//SLIDERS INIT
 	//Promo
-	let filter = new Filter('.main-banner__filter');
-	filter.render();
-	filter.onSelectChoose();
-
 	let SliderPromo = new Slider('promo-slider', 'promo-slider-nav');
 	SliderPromo.activeStateSlider();
 	//Area
@@ -18,6 +14,22 @@
 	//Lot
 	let SliderLot = new Slider('offer-lot-slider','offer-lot-slider-nav','offer-lot', 4);
 	SliderLot.initToggler('offer-lot-button');
+	//Details
+	let SliderDetail = new Slider('details-slider', 'details-slider-nav');
+	SliderDetail.activeStateSlider();
+
+	// // List load more function
+	// $(".area-cards__item, .lots-cards__item").slice(0, 8).show();
+ //   	$("#loadMore").on('click', function (e) {
+ //       e.preventDefault();
+ //       $(".area-cards__item:hidden, .lots-cards__item:hidden").slice(0, 4).slideDown();
+ //       if ($(".area-cards__item:hidden, .lots-cards__item:hidden").length == 0) {
+ //           $("#loadMore").fadeOut('slow');
+ //       }
+ //       $('html,body').animate({
+ //           scrollTop: $(this).offset().top
+ //       }, 1500);
+ //   	});
 })();
 
 $(document).ready(function() {
@@ -30,6 +42,80 @@ $(document).ready(function() {
 	});
 
 	$(".fancybox").fancybox();
+
+	// Filter animation
+	$(document).on('click', '[data-toggle="dropdown"]', function(e) {
+		//Add folding menu animation
+		$(this).next().addClass('opened');
+		//Reset all the carets in filter
+		$(this).parent().siblings('.dropdown').children('button').children('.my-caret').removeClass('animated');
+		//Add caret rotation animation
+		if($(this).attr('aria-expanded') == 'true') {
+			$(this).children('.my-caret').addClass('animated');
+		} else {
+			$(this).children('.my-caret').removeClass('animated');
+		}
+	})
+
+	//Cards show phone functionality
+	$(document).on('click', '[data-phone-link]', function(e) {
+		$(this).hide(); //Hide pop-up "Show phone number"
+		$(this).prev().hide(); //Hide shorten phone number
+		$(this).next().show(); //Show full phone number
+		$(this).parent().css('border', 0); //Delete borders of rounded parent button
+	})
+
+	// //Slider in Details page
+	// var sync1 = $('[data-item="details-big-picture"]');
+	// var sync2 = $('[data-item="details-thumbnails"]');
+	
+	// sync1.owlCarousel({
+	// 	items: 1,
+	// 	slideSpeed: 1000,
+	// 	nav: true,
+	// 	dots:false,
+	// 	onChanged: syncPosition,
+	// 	responsiveRefreshRate: 200,
+	// });
+	
+	// sync2.owlCarousel({
+	// 	items: 2,
+	// 	itemsDesktop: [1199,5],
+	// 	itemsDesktopSmall: [979,5],
+	// 	itemsTablet: [768,5],
+	// 	itemsMobile: [479,3],
+	// 	pagination: false,
+	// 	margin: 10,
+	// 	responsiveRefreshRate: 100,
+	// 	onInitialized: function(){
+	// 		$(this)[0]._items[0].addClass('synced');
+	// 	}
+	// });
+	
+	// function syncPosition(){
+	// 	var allItems = $(this)[0]._items;
+	// 	var current = 1;
+	// 	for (var i in allItems) {
+	// 		if ($(allItems[i]).hasClass('active')) {
+	// 			current = i;
+	// 		}
+	// 	}
+	// 	$(sync2)
+	// 	.find(".owl-item")
+	// 	.removeClass("synced")
+	// 	.eq(current)
+	// 	.addClass("synced")
+	// 	.trigger('to.owl.carousel', current);
+	// }
+	
+	// $(sync2).on("click", ".owl-item", function(e){
+	// 	e.preventDefault();
+	// 	var target = $(e.target).parent();
+	// 	var owlItemList = $(target)[0].parentNode.childNodes;
+	// 	var index = $(owlItemList).index(target);
+	// 	console.log(index);
+	// 	sync1.trigger('to.owl.carousel', index);
+	// });
 
 	var App = function (){
 		$('[data-phone="true"]').mask("+7 (999) 999-99-99");
@@ -180,98 +266,7 @@ $(document).ready(function() {
 				});
 			}
 		};
-		Form.initialize();
-
-		// Filter animation
-		$('button[data-toggle="dropdown"]').on('click', function(e) {
-			$(this).next().addClass('opened');
-		})
-
-		// Filter search
-		// $('.dropdown-menu > li').on('click', function(e) {
-		// 	var target = e.target || window.target;
-		// 	var val = $(target).html();
-		// 	var filterBtn = $(this).parent().prev();
-		// 	filterBtn.html(val).prev().val(val);
-		// });
-
-
-		//filterArea.onInput();
-		//let filterDistance = new Filter('dropdownDistance', 'distance', 'км', 'Удаленность от МКАД');
-		//filterDistance.onInput();
-		//let filterPrice = new Filter('dropdownPrice', 'price', 'р.', 'Цена');
-		//filterPrice.onInput();
-
-
-		// Filter price block
-		// var rangePrice = {
-		// 	textFrom: 'от',
-		// 	textTo: 'до',
-		// 	text: ''
-		// }
-
-		// $('.range-box > input').on('input', function(e) {
-		// 	var target = e.target || window.target;
-		// 	var val = $(target).val();
-		// 	var filterBtn = $(this).parent().parent().prev();
-		// 	var valTarget = parseInt($(target).val());
-
-
-		// 	if($(target).attr('id') == 'price-from') {
-		// 		rangePrice.textFrom = combTextInput('price-from',valTarget);
-		// 	} else {
-		// 		rangePrice.textTo = combTextInput('price-up-to',valTarget);
-		// 	}
-			
-		// 	var textInputPrice = '';
-
-		// 	if(rangePrice.textFrom != 'от') {
-		// 		textInputPrice += rangePrice.textFrom + ' р. ';
-		// 	}
-		// 	if(rangePrice.textTo != 'до') {
-		// 		textInputPrice += rangePrice.textTo + ' р.';
-		// 	}
-		// 	if(!isNaN(rangePrice.from) && rangePrice.from) {
-		// 			rangePrice.textAll += ' ' + rangePrice.textTo + ' ' + rangePrice.from;
-		// 	}
-
-		// 	filterBtn.html(textInputPrice);
-			
-		// 	if(!filterBtn.html()) {
-		// 		filterBtn.html('Цена <span class="my-caret"></span>');
-		// 	}			
-		
-		// })
-
-
-		// function combTextInput(idx,vals,obj){
-		// 	var result = '';
-		// 	if(idx == 'price-up-to'){
-		// 		var Text = 'до';
-		// 	}
-		// 	if(idx == 'price-from'){
-		// 		var Text = 'от';
-		// 	}
-			
-		// 	if(!isNaN(vals) && vals){
-		// 			result = Text;
-		// 			result += ' ' + vals;
-		// 	}else{
-		// 			result = Text;
-		// 	}
-		// 	return result;
-		// }
-
-		// // Filter range input
-		// $("#range_01").ionRangeSlider({
-		//     type: "double",
-		//     grid: false,
-		//     min: 0,
-		//     max: 100,
-		//     from: 200,
-		//     to: 80,
-		//     prefix: "сотки "
-		// });
+		Form.initialize();		
 	}
 	App();
 });
