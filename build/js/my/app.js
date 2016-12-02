@@ -43,6 +43,21 @@ $(document).ready(function() {
 
 	$(".fancybox").fancybox();
 
+	//Задвигающийся лого шапки
+	var foldingLogo = $('.logo');
+	var foldingBreadcrumbs = $('.breadcrumbs > ul');
+	$(window).on('scroll', function() {
+		console.log("Scrolling");
+		if ($(window).scrollTop() === 0) {
+			foldingLogo.removeClass('folded');
+			foldingBreadcrumbs.removeClass('unfolded');
+		} else {
+			foldingLogo.addClass('folded');
+			foldingBreadcrumbs.addClass('unfolded');
+		}
+
+	});
+
 	// Filter animation
 	$(document).on('click', '[data-toggle="dropdown"]', function(e) {
 		//Add folding menu animation

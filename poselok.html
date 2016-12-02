@@ -38,7 +38,7 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                       <nav id="nav">
                         <ul class="nav navbar-nav">
-                          <li><a href="http://www.terem-pro.ru/" class="logo"></a></li>
+                          <li class="logo-holder"><a href="http://www.terem-pro.ru/" class="logo"></a></li>
                           <li><a href="/">Главная</a></li>
                           <li class="active"><a href="poselok.html">Поселки</a></li> 
                           <li class="has-inner">
@@ -48,13 +48,15 @@
                               <li><a href="about-2.html">Окружение</a></li>
                               <li><a href="gallary.html">Галерея</a></li>
                               <li><a href="map.html">План поселка</a></li>
+                              <li><a href="partners.html">Партнеры</a></li>
                             </ul>
                           </li>
                           <li><a href="uchastok.html">Участки</a></li> 
                           <li><a href="lot.html">Лоты</a></li> 
                           <li><a href="contacts.html">Контакты</a></li> 
                           <li>
-                            <a href="" class="btn green-button add-ad">+ Добавить объявление</a>
+                            <a class="call" href="#" data-target="#call" data-toggle="modal"><span><i class="glyphicon glyphicon-earphone"></i></span><span>заказать звонок</span></a>
+                            <!-- <a href="" class="btn green-button add-ad">+ Добавить объявление</a> -->
                           </li>
                         </ul>
                       </nav>
@@ -70,10 +72,15 @@
                       <div>
                         <div class="container">
                           <div class="breadcrumbs">
-                            <ul>
-                              <li><a href="index.html">Главная</a></li>
-                              <li><a href="#">Поселки</a></li>
-                            </ul>
+                            <div class="row">
+                              <h2 class="section-title section-title--bottom-gutter">Поселки</h2>
+                            </div>
+                            <div class="row">
+                              <ul>
+                                <li><a href="index.html">Главная</a></li>
+                                <li><a href="#">Поселки</a></li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -85,13 +92,6 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-xs-12">
-                        <div class="row">
-                          <div class="col-xs-12">
-                            <h3 class="section-title section-title--top-gutter">
-                              Каталог поселков
-                            </h3>
-                          </div>
-                        </div>
                         <div class="row">
                           <div class="col-xs-6">
                             <div class="slider-item item-bg-1">
@@ -363,7 +363,7 @@
                     <div class="row">
                       <div class="col-xs-12 info-block">
                         <div class="info-block__text">
-                          <h2>
+                          <h2 class="section-title">
                             Поиск участков на zemli.terem-pro.ru
                           </h2>
                           <div class="text-in-columns">

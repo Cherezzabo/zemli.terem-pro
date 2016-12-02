@@ -38,7 +38,7 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                       <nav id="nav">
                         <ul class="nav navbar-nav">
-                          <li><a href="http://www.terem-pro.ru/" class="logo"></a></li>
+                          <li class="logo-holder"><a href="http://www.terem-pro.ru/" class="logo"></a></li>
                           <li class=""><a href="/">Главная</a></li>
                           <li><a href="poselok.html">Поселки</a></li> 
                           <li class="has-inner">
@@ -48,13 +48,15 @@
                               <li><a href="about-2.html">Окружение</a></li>
                               <li><a href="gallary.html">Галерея</a></li>
                               <li><a href="map.html">План поселка</a></li>
+                              <li><a href="partners.html">Партнеры</a></li>
                             </ul>
                           </li>
                           <li><a href="uchastok.html">Участки</a></li> 
                           <li class="active"><a href="lot.html">Лоты</a></li> 
                           <li><a href="contacts.html">Контакты</a></li> 
                           <li>
-                            <a href="" class="btn green-button add-ad">+ Добавить объявление</a>
+                            <a class="call" href="#" data-target="#call" data-toggle="modal"><span><i class="glyphicon glyphicon-earphone"></i></span><span>Обратный звонок</span></a>
+                            <!-- <a href="" class="btn green-button add-ad">+ Добавить объявление</a> -->
                           </li>
                         </ul>
                       </nav>
@@ -71,10 +73,15 @@
                       <div>
                         <div class="container">
                           <div class="breadcrumbs">
-                            <ul>
-                              <li><a href="index.html">Главная</a></li>
-                              <li><a href="#">Лоты</a></li>
-                            </ul>
+                            <div class="row">
+                              <h2 class="section-title section-title--bottom-gutter">Лоты</h2>
+                            </div>
+                            <div class="row">
+                              <ul>
+                                <li><a href="index.html">Главная</a></li>
+                                <li><a href="#">Лоты</a></li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -107,29 +114,12 @@
                           </div>
                           <div class="col-md-9 col-xs-12 list-item__content">
                             <div class="row">
-                              <div class="col-xs-12">
-                                <div class="list-item__btns__phone">
-                                  <div class="list-item__button pull-right">
-                                    <div class="list-item__phone-number list-item__phone-number--trial">
-                                      +7 903 273-32...
-                                    </div>
-                                    <div class="list-item__phone-label" data-phone-link="phone-1">
-                                      Показать телефон
-                                    </div>
-                                    <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
-                                      <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
-                                    </div>   
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-xs-12 item-content">
-                                <div class="row">
+                              <div class="col-xs-9">
+                                <div class="row item-content">
                                   <div class="col-xs-12 item-content__area area-content">
                                     <div class="row">
                                       <div class="col-xs-12 area-content__head">
-                                        <strong>Участок</strong>
+                                        <strong class="area-content__label">Участок</strong>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -156,7 +146,7 @@
                                   <div class="col-xs-12 item-content__house house-content">
                                     <div class="row">
                                       <div class="col-xs-12 house-content__head">
-                                        <strong>Дом</strong>
+                                        <strong class="house-content__label">Дом</strong>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -194,22 +184,31 @@
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-xs-12">
-                                <div class="row row-eq-height">
-                                  <div class="col-xs-6 list-item__price--lot">
-                                    <i>Стоимость лота: <span><strong>2 083 103 р.</strong></span></i>
-                                  </div>
-                                  <div class="col-xs-6">
-                                    <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
-                                      <a data-target="#call2" data-toggle="modal" href="#" class="btn btn-default pull-right">
-                                        Записаться на осмотр
-                                      </a>
+                                  <div class="col-xs-12 item-content__price">
+                                    <div class="col-xs-6 list-item__price--lot">
+                                      <i>Стоимость лота:<span> <strong>2 083 103 р.</strong></span></i>
                                     </div>
                                   </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-3 list-item__btns">
+                                <div class="list-item__btns__phone">
+                                  <div class="list-item__button pull-right">
+                                    <div class="list-item__phone-number list-item__phone-number--trial">
+                                      +7 903 273-32...
+                                    </div>
+                                    <div class="list-item__phone-label" data-phone-link="phone-1">
+                                      Показать телефон
+                                    </div>
+                                    <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                      <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                                    </div>   
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                                  <a data-target="#call2" data-toggle="modal" href="#" class="btn btn-default pull-right">
+                                    Записаться на просмотр
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -224,29 +223,12 @@
                           </div>
                           <div class="col-md-9 col-xs-12 list-item__content">
                             <div class="row">
-                              <div class="col-xs-12">
-                                <div class="list-item__btns__phone">
-                                  <div class="list-item__button pull-right">
-                                    <div class="list-item__phone-number list-item__phone-number--trial">
-                                      +7 903 273-32...
-                                    </div>
-                                    <div class="list-item__phone-label" data-phone-link="phone-1">
-                                      Показать телефон
-                                    </div>
-                                    <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
-                                      <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
-                                    </div>   
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-xs-12 item-content">
-                                <div class="row">
+                              <div class="col-xs-9">
+                                <div class="row item-content">
                                   <div class="col-xs-12 item-content__area area-content">
                                     <div class="row">
                                       <div class="col-xs-12 area-content__head">
-                                        <strong>Участок</strong>
+                                        <strong class="area-content__label">Участок</strong>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -273,7 +255,7 @@
                                   <div class="col-xs-12 item-content__house house-content">
                                     <div class="row">
                                       <div class="col-xs-12 house-content__head">
-                                        <strong>Дом</strong>
+                                        <strong class="house-content__label">Дом</strong>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -311,22 +293,31 @@
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-xs-12">
-                                <div class="row row-eq-height">
-                                  <div class="col-xs-6 list-item__price--lot">
-                                    <i>Стоимость лота: <span><strong>2 083 103 р.</strong></span></i>
-                                  </div>
-                                  <div class="col-xs-6">
-                                    <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
-                                      <a data-target="#call2" data-toggle="modal" href="#" class="btn btn-default pull-right">
-                                        Записаться на осмотр
-                                      </a>
+                                  <div class="col-xs-12 item-content__price">
+                                    <div class="col-xs-6 list-item__price--lot">
+                                      <i>Стоимость лота:<span> <strong>2 083 103 р.</strong></span></i>
                                     </div>
                                   </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-3 list-item__btns">
+                                <div class="list-item__btns__phone">
+                                  <div class="list-item__button pull-right">
+                                    <div class="list-item__phone-number list-item__phone-number--trial">
+                                      +7 903 273-32...
+                                    </div>
+                                    <div class="list-item__phone-label" data-phone-link="phone-1">
+                                      Показать телефон
+                                    </div>
+                                    <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                      <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                                    </div>   
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                                  <a data-target="#call2" data-toggle="modal" href="#" class="btn btn-default pull-right">
+                                    Записаться на просмотр
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -341,29 +332,12 @@
                           </div>
                           <div class="col-md-9 col-xs-12 list-item__content">
                             <div class="row">
-                              <div class="col-xs-12">
-                                <div class="list-item__btns__phone">
-                                  <div class="list-item__button pull-right">
-                                    <div class="list-item__phone-number list-item__phone-number--trial">
-                                      +7 903 273-32...
-                                    </div>
-                                    <div class="list-item__phone-label" data-phone-link="phone-1">
-                                      Показать телефон
-                                    </div>
-                                    <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
-                                      <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
-                                    </div>   
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-xs-12 item-content">
-                                <div class="row">
+                              <div class="col-xs-9">
+                                <div class="row item-content">
                                   <div class="col-xs-12 item-content__area area-content">
                                     <div class="row">
                                       <div class="col-xs-12 area-content__head">
-                                        <strong>Участок</strong>
+                                        <strong class="area-content__label">Участок</strong>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -390,7 +364,7 @@
                                   <div class="col-xs-12 item-content__house house-content">
                                     <div class="row">
                                       <div class="col-xs-12 house-content__head">
-                                        <strong>Дом</strong>
+                                        <strong class="house-content__label">Дом</strong>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -428,22 +402,31 @@
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-xs-12">
-                                <div class="row row-eq-height">
-                                  <div class="col-xs-6 list-item__price--lot">
-                                    <i>Стоимость лота: <span><strong>2 083 103 р.</strong></span></i>
-                                  </div>
-                                  <div class="col-xs-6">
-                                    <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
-                                      <a data-target="#call2" data-toggle="modal" href="#" class="btn btn-default pull-right">
-                                        Записаться на осмотр
-                                      </a>
+                                  <div class="col-xs-12 item-content__price">
+                                    <div class="col-xs-6 list-item__price--lot">
+                                      <i>Стоимость лота:<span> <strong>2 083 103 р.</strong></span></i>
                                     </div>
                                   </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-3 list-item__btns">
+                                <div class="list-item__btns__phone">
+                                  <div class="list-item__button pull-right">
+                                    <div class="list-item__phone-number list-item__phone-number--trial">
+                                      +7 903 273-32...
+                                    </div>
+                                    <div class="list-item__phone-label" data-phone-link="phone-1">
+                                      Показать телефон
+                                    </div>
+                                    <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                      <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                                    </div>   
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                                  <a data-target="#call2" data-toggle="modal" href="#" class="btn btn-default pull-right">
+                                    Записаться на просмотр
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -458,29 +441,12 @@
                           </div>
                           <div class="col-md-9 col-xs-12 list-item__content">
                             <div class="row">
-                              <div class="col-xs-12">
-                                <div class="list-item__btns__phone">
-                                  <div class="list-item__button pull-right">
-                                    <div class="list-item__phone-number list-item__phone-number--trial">
-                                      +7 903 273-32...
-                                    </div>
-                                    <div class="list-item__phone-label" data-phone-link="phone-1">
-                                      Показать телефон
-                                    </div>
-                                    <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
-                                      <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
-                                    </div>   
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-xs-12 item-content">
-                                <div class="row">
+                              <div class="col-xs-9">
+                                <div class="row item-content">
                                   <div class="col-xs-12 item-content__area area-content">
                                     <div class="row">
                                       <div class="col-xs-12 area-content__head">
-                                        <strong>Участок</strong>
+                                        <strong class="area-content__label">Участок</strong>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -507,7 +473,7 @@
                                   <div class="col-xs-12 item-content__house house-content">
                                     <div class="row">
                                       <div class="col-xs-12 house-content__head">
-                                        <strong>Дом</strong>
+                                        <strong class="house-content__label">Дом</strong>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -545,22 +511,31 @@
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-xs-12">
-                                <div class="row row-eq-height">
-                                  <div class="col-xs-6 list-item__price--lot">
-                                    <i>Стоимость лота: <span><strong>2 083 103 р.</strong></span></i>
-                                  </div>
-                                  <div class="col-xs-6">
-                                    <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
-                                      <a data-target="#call2" data-toggle="modal" href="#" class="btn btn-default pull-right">
-                                        Записаться на осмотр
-                                      </a>
+                                  <div class="col-xs-12 item-content__price">
+                                    <div class="col-xs-6 list-item__price--lot">
+                                      <i>Стоимость лота:<span> <strong>2 083 103 р.</strong></span></i>
                                     </div>
                                   </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-3 list-item__btns">
+                                <div class="list-item__btns__phone">
+                                  <div class="list-item__button pull-right">
+                                    <div class="list-item__phone-number list-item__phone-number--trial">
+                                      +7 903 273-32...
+                                    </div>
+                                    <div class="list-item__phone-label" data-phone-link="phone-1">
+                                      Показать телефон
+                                    </div>
+                                    <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                      <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                                    </div>   
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                                  <a data-target="#call2" data-toggle="modal" href="#" class="btn btn-default pull-right">
+                                    Записаться на просмотр
+                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -575,29 +550,12 @@
                           </div>
                           <div class="col-md-9 col-xs-12 list-item__content">
                             <div class="row">
-                              <div class="col-xs-12">
-                                <div class="list-item__btns__phone">
-                                  <div class="list-item__button pull-right">
-                                    <div class="list-item__phone-number list-item__phone-number--trial">
-                                      +7 903 273-32...
-                                    </div>
-                                    <div class="list-item__phone-label" data-phone-link="phone-1">
-                                      Показать телефон
-                                    </div>
-                                    <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
-                                      <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
-                                    </div>   
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-xs-12 item-content">
-                                <div class="row">
+                              <div class="col-xs-9">
+                                <div class="row item-content">
                                   <div class="col-xs-12 item-content__area area-content">
                                     <div class="row">
                                       <div class="col-xs-12 area-content__head">
-                                        <strong>Участок</strong>
+                                        <strong class="area-content__label">Участок</strong>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -624,7 +582,7 @@
                                   <div class="col-xs-12 item-content__house house-content">
                                     <div class="row">
                                       <div class="col-xs-12 house-content__head">
-                                        <strong>Дом</strong>
+                                        <strong class="house-content__label">Дом</strong>
                                       </div>
                                     </div>
                                     <div class="row">
@@ -662,40 +620,169 @@
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-xs-12">
-                                <div class="row row-eq-height">
-                                  <div class="col-xs-6 list-item__price--lot">
-                                    <i>Стоимость лота: <span><strong>2 083 103 р.</strong></span></i>
-                                  </div>
-                                  <div class="col-xs-6">
-                                    <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
-                                      <a data-target="#call2" data-toggle="modal" href="#" class="btn btn-default pull-right">
-                                        Записаться на осмотр
-                                      </a>
+                                  <div class="col-xs-12 item-content__price">
+                                    <div class="col-xs-6 list-item__price--lot">
+                                      <i>Стоимость лота:<span> <strong>2 083 103 р.</strong></span></i>
                                     </div>
                                   </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-3 list-item__btns">
+                                <div class="list-item__btns__phone">
+                                  <div class="list-item__button pull-right">
+                                    <div class="list-item__phone-number list-item__phone-number--trial">
+                                      +7 903 273-32...
+                                    </div>
+                                    <div class="list-item__phone-label" data-phone-link="phone-1">
+                                      Показать телефон
+                                    </div>
+                                    <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                      <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                                    </div>   
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                                  <a data-target="#call2" data-toggle="modal" href="#" class="btn btn-default pull-right">
+                                    Записаться на просмотр
+                                  </a>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
+                      <div class="list-item">
+                        <div class="row row-eq-height">
+                          <span class="list-item__label">Лот № 12</span>
+                          <div class="col-md-3 col-xs-12 list-item__photo">
+                            <img src="http://www.terem-pro.ru/bitrix/templates/.default/assets/img/catalog-list/item-9.jpg" alt="">
+                          </div>
+                          <div class="col-md-9 col-xs-12 list-item__content">
+                            <div class="row">
+                              <div class="col-xs-9">
+                                <div class="row item-content">
+                                  <div class="col-xs-12 item-content__area area-content">
+                                    <div class="row">
+                                      <div class="col-xs-12 area-content__head">
+                                        <strong class="area-content__label">Участок</strong>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-xs-12 area-content__desc">
+                                        <div class="row">
+                                          <div class="col-xs-4">
+                                            <small>Расположение</small>
+                                            <br>
+                                            <span>
+                                              МО, Можайское шоссе
+                                            </span>
+                                          </div>
+                                          <div class="col-xs-3">
+                                            <small>Площадь</small>
+                                            <br>
+                                            <span>
+                                              10,49 сот.
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-xs-12 item-content__house house-content">
+                                    <div class="row">
+                                      <div class="col-xs-12 house-content__head">
+                                        <strong class="house-content__label">Дом</strong>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-xs-12 house-content__desc">
+                                        <div class="row">
+                                          <div class="col-xs-2">
+                                            <small>Модель</small>
+                                            <br>
+                                            <span>
+                                              Варяг-2
+                                            </span>
+                                          </div>
+                                          <div class="col-xs-2">
+                                            <small>Технология</small>
+                                            <br>
+                                            <span>
+                                              Каркасный, 200
+                                            </span>
+                                          </div>
+                                          <div class="col-xs-2">
+                                            <small>Площадь</small>
+                                            <br>
+                                            <span>
+                                              140,86 м<sup>2</sup>
+                                            </span>
+                                          </div>
+                                          <div class="col-xs-2">
+                                            <small>Тип</small>
+                                            <br>
+                                            <span>
+                                              Жилой
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-xs-12 item-content__price">
+                                    <div class="col-xs-6 list-item__price--lot">
+                                      <i>Стоимость лота:<span> <strong>2 083 103 р.</strong></span></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-3 list-item__btns">
+                                <div class="list-item__btns__phone">
+                                  <div class="list-item__button pull-right">
+                                    <div class="list-item__phone-number list-item__phone-number--trial">
+                                      +7 903 273-32...
+                                    </div>
+                                    <div class="list-item__phone-label" data-phone-link="phone-1">
+                                      Показать телефон
+                                    </div>
+                                    <div data-phone-cont="phone-1" class="list-item__phone-number list-item__phone-number--full">
+                                      <a href="tel:+7 903 273-32-99">+7 903 273-32-99</a>
+                                    </div>   
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 col-md-12 col-sm-6  list-item__btns__subscribe">
+                                  <a data-target="#call2" data-toggle="modal" href="#" class="btn btn-default pull-right">
+                                    Записаться на просмотр
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+
+                         
               </section>
               <section class="pagination-section">
-                <nav aria-label="cards-pages">
-                  <ul class="my-pagination">
+                <nav aria-label="cards-pages" class="cards-pages">
+                  <ul class="pagination">
+                    <li>
+                      <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
                     <li class="active"><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
                     <li><a href="#">4</a></li>
                     <li><a href="#">5</a></li>
                     <li>
-                      <a href="#" aria-label="Next" class="my-pagination__dots">
-                        <span aria-hidden="true">...</span>
+                      <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
                       </a>
                     </li>
                   </ul>
@@ -707,7 +794,7 @@
                 <div class="row">
                   <div class="col-xs-12 info-block">
                     <div class="info-block__text">
-                      <h2>
+                      <h2 class="section-title">
                         Поиск участков на zemli.terem-pro.ru
                       </h2>
                       <div class="text-in-columns">

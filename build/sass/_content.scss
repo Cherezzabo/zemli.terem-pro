@@ -6,6 +6,7 @@ $assetPath : "../img";
 }
 
 .main {
+	position: relative;
 	margin-bottom: 40px;
 }
 
@@ -201,9 +202,21 @@ $assetPath : "../img";
 	}
 } */
 .breadcrumbs__section {
-	padding: 20px 0;
+	position: relative;
+	padding: 0;
 	background: #ededf2;
 	margin-bottom: 20px;
+	background: url('../img/breadcrumbs_bg.jpg') no-repeat;
+	background-size: cover;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(24,31,17,0.7);
+	}
 	& .row {
 		margin: 0;
 	}
@@ -223,14 +236,23 @@ $assetPath : "../img";
 		}
 	}
 	.breadcrumbs {
-		ul {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 180px;
+		& h2 {
+			color: #fff;
+		}
+		& ul {
 			display: flex;
+			position: relative;
 			margin: 0;
 			padding: 0;
 			list-style-type: none;
 			font-size: 16px;
 			a {
-				color: #333;
+				color: #fff;
 				text-decoration: none;
 				&:hover,
 				&:focus {
@@ -257,9 +279,10 @@ $assetPath : "../img";
 				font-size: 18px;
 				width: 25px;
 				height: 9px;
-				background: url("../img/arrow.png") no-repeat center;
+				background: url("../img/next.svg") no-repeat center;
 				display: inline-block;
 				margin: 0 10px;
+				filter: invert(1);
 			}
 		}
 	}
@@ -470,9 +493,24 @@ $assetPath : "../img";
 	}
 }
 
-/* Участки */
 /* Фильтр */
+.main-banner__filter {
+	background: #fff;
+	border-radius: 3px;
+	& .btn-filter {
+		border-right: 1px solid #eee;
+	}
+}
+.areas__filter,
+.lots__filter {
+	background: #fff;
+	border-radius: 5px;
+	& .btn-filter {
+		border-right: 1px solid #eee;
+	}
+}
 .filter-form {
+	border: 1px solid #eee;
 	position: relative;
 	height: 50px;
 	z-index: 1;
@@ -480,8 +518,10 @@ $assetPath : "../img";
 	display: flex;
 	flex-flow: row;
 	justify-content: flex-start;
-	background: #fff;
+	background: none;
 	font-family: "GothamProRegular", sans-serif;
+	// box-shadow: 0 0 3px rgba(0,0,0,.2);
+	border-radius: 3px;
 }
 .dropdown,
 .filter-button {
@@ -499,17 +539,17 @@ $assetPath : "../img";
 .filter-button {
 	& .submit-button {
 		position: relative;
-		height: 50px;
+		height: calc(100% + 2px);
 		width: auto;
 		min-width: 100px;
 		color: #fff;
 		border: 0;
+		border-radius: 0 3px 3px 0;
+		box-shadow: 0 0 3px rgba(0,0,0,.2);
 		font-size: 1em;
 		font-weight: 600;
-	}
-	& .submit-button {
 		background: #34a63e;
-		transform: translateX(1px);
+		transform: translate(1px, -1px);
 	}
 	& .submit-button {
 		&:hover {
@@ -640,11 +680,10 @@ $assetPath : "../img";
 .btn-filter {
 	width: auto;
 	height: 50px;
-	border-right: 1px solid #eee;
+	border-right: 1px solid #fff;
 	border-radius: 0;
 	background: none;
 	color: #121212;
-	padding: 14px 15px 17px 14px;
 	font-size: 1em;
 	font-weight: 600;
 	line-height: normal;
@@ -813,11 +852,9 @@ $assetPath : "../img";
 	& .subscribe {
 		& a {
 			border: 1px solid rgba(0, 0, 0, 0.25);
-			border-radius: 14px;
 			font-size: 13px;
 			font-weight: 200;
 			padding: 6px 10px;
-			border-radius: 14px;
 			color: #a2a3a2;
 			text-decoration: none;
 		}
@@ -835,6 +872,19 @@ $assetPath : "../img";
 	height: 250px;
 	margin-bottom: 10px;
 	background: #fff;
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
+	.item-content {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	&:hover {
+		box-shadow: 0 3px 8px 3px rgba(0,0,0,.2);
+		transition: .3s ease;
+		cursor: pointer;
+		background: #eee;
+	}
 	& .row {
 		margin: 0;
 		padding: 0;
@@ -861,7 +911,7 @@ $assetPath : "../img";
 		& img {
 			position: relative;
 			width: 100%;
-			height: auto;
+			height: 250px;
 		}
 	}
 	&__content {
@@ -871,9 +921,26 @@ $assetPath : "../img";
 		padding: 20px;
 		box-sizing: content-box;
 		font-family: "GothamProRegular", sans-serif;
+		& > .row {
+			height: 100%;
+			& > [class*=col-] {
+				height: 100%;
+			}
+		}
+		&_wrapper {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
 		&_data,
 		&_desc {
 			padding: 0;
+		}
+		&_desc {
+			& p {
+				text-align: justify;
+			}
 		}
 		& small {
 			color: #999;
@@ -927,7 +994,6 @@ $assetPath : "../img";
 			}
 			& i {
 				position: relative;
-				bottom: -28px;
 			}
 		}
 	}
@@ -944,11 +1010,11 @@ $assetPath : "../img";
 		padding-right: 20px;
 		padding-bottom: 20px;
 		&__phone {
-			margin-bottom: 10px;
+
 		}
 		&__subscribe {
 			position: relative;
-			right: -10px;
+			padding: 0;
 		}
 	}
 	&__button {
@@ -957,9 +1023,8 @@ $assetPath : "../img";
 		right: -5px;
 		width: 166px;
 		height: 31px;
-		background: #fff;
+		background: none;
 		border: 1px solid rgba(0, 0, 0, 0.25);
-		border-radius: 14px;
 		font-size: 1.2em;
 		font-weight: 200;
 		padding: 3px 10px;
@@ -970,7 +1035,6 @@ $assetPath : "../img";
 		white-space: nowrap;
 		text-decoration: none;
 		color: rgba(0, 0, 0, 0.55);
-		border-radius: 14px;
 		outline: none;
 		& > * {
 			display: inline-block;
@@ -991,9 +1055,8 @@ $assetPath : "../img";
 		right: -1px;
 		width: 166px;
 		height: 31px;
-		background: #fff;
+		background: #eee;
 		border: 1px solid #a2a3a2;
-		border-radius: 14px;
 		font-weight: 200;
 		padding: 3px 10px;
 		font-size: 12px;
@@ -1001,6 +1064,7 @@ $assetPath : "../img";
 		text-transform: uppercase;
 		letter-spacing: -1px;
 		padding-top: 6px;
+		cursor: pointer;
 		& a {
 			text-decoration: none;
 			color: #000;
@@ -1029,7 +1093,11 @@ $assetPath : "../img";
 	}
 	& .area-content,
 	& .house-content {
-		margin-bottom: 10px;
+		// margin-bottom: 10px;
+		&__label {
+			display: block;
+			margin-bottom: 7px;
+		}
 	}
 	& .area-content__desc [class*='col-'],
 	& .house-content__desc [class*='col-'] {
@@ -1077,16 +1145,24 @@ $assetPath : "../img";
 	margin-bottom: 40px;
 	text-transform: uppercase;
 	display: inline-block;
-	float: left;
 	line-height: 24px;
 	&--top-gutter {
 		margin-top: 20px;
 	}
+	&--center {
+		display: block;
+		text-align: center;
+	}
+	&--bottom-gutter {
+		margin: 0;
+		margin-bottom: 10px;
+	}
 }
 .main-promo {
-	width: 100%;
+	width: calc(100% + 20px);
 	height: auto;
-	min-height: 500px;
+	min-height: 510px;
+	margin-left: -10px;
 	margin-bottom: 40px;
 	&__info-slider,
 	&__info-aside {
@@ -1105,10 +1181,19 @@ $assetPath : "../img";
 		}
 	}
 }
+.owl-prev,
+.owl-next {
+	// margin: 10px;
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
+	&:hover {
+		box-shadow: 0 3px 8px 3px rgba(0,0,0,.2);
+		transition: .3s ease;
+	}
+}
 .promo-slider-nav {
 	position: absolute;
 	right: 20px;
-	top: 10px;
+	top: 20px;
 	z-index: 999;
 	& .owl-prev,
 	& .owl-next {
@@ -1141,7 +1226,7 @@ $assetPath : "../img";
 	}
 }
 .promo-slider {
-	padding-right: 10px;
+	// padding-right: 10px;
 	position: relative;
 }
 .slider-item {
@@ -1151,6 +1236,12 @@ $assetPath : "../img";
 	justify-content: center;
 	height: 500px;
 	padding: 30px;
+	margin: 10px;
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
+	&:hover {
+		box-shadow: 0 3px 8px 3px rgba(0,0,0,.2);
+		transition: .3s ease;
+	}
 	&__title,
 	&__pros,
 	&__more-link {
@@ -1216,6 +1307,13 @@ $assetPath : "../img";
 	flex-direction: column;
 	justify-content: space-around;
 	background-size: cover !important;
+	margin: 10px;
+	margin-left: 0;
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
+	&:hover {
+		box-shadow: 0 3px 8px 3px rgba(0,0,0,.2);
+		transition: .3s ease;
+	}
 	&--bg-1 {
 		background: url("http://www.cottage.ru/upload/_MG_6770.jpg");
 	}
@@ -1304,6 +1402,9 @@ $assetPath : "../img";
 	&__cards {
 		position: absolute;
 		display: flex;
+		margin-left: -8px;
+		// width: calc(100% + 8px) !important;
+		// width: 100%;
 	}
 }
 .item-slider {
@@ -1314,7 +1415,12 @@ $assetPath : "../img";
 	border: 0;
 	padding: 0;
 	background: #fff;
-	margin-right: 10px;
+	margin: 10px 8px;
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
+	&:hover {
+		box-shadow: 0 3px 8px 3px rgba(0,0,0,.2);
+		transition: .3s ease;
+	}
 	& a {
 		color: #000;
 		text-decoration: none;
@@ -1400,6 +1506,9 @@ $assetPath : "../img";
 }
 .owl-carousel {
 	position: absolute !important;
+	& .owl-item {
+		// margin-right: 0 !important;
+	}
 }
 .offer-area-slider-nav,
 .offer-lot-slider-nav {
@@ -1416,18 +1525,16 @@ $assetPath : "../img";
 	&__text {
 		background: #fff;
 		padding: 40px;
-		& h2 {
-			font-family: "GothamProBold", sans-serif;
-			font-size: 24px;
-			font-weight: 600;
-			margin-top: 0;
-			margin-bottom: 35px;
+		box-shadow: 0 0 3px rgba(0,0,0,.2);
+		& img {
+			width: 100%;
+			transform: translateY(40%);
 		}
 	}
-	.text-in-columns {
-		font-family: "GothamProRegular", sans-serif;
-		columns: 300px auto;
-	}
+	// .text-in-columns {
+	// 	font-family: "GothamProRegular", sans-serif;
+	// 	columns: 300px auto;
+	// }
 }
 
 /* Карты */
@@ -1475,33 +1582,52 @@ $assetPath : "../img";
 .pagination-section {
 	background: #fff;
 	margin-bottom: 40px;
-	padding: 40px;
-	& .my-pagination {
-		list-style: none;
+	& .cards-pages {
 		display: flex;
-		padding: 0;
+		justify-content: center;
+	}
+	& .pagination {
 		margin: 0;
-		font-size:17px;
-		text-align: center;
+		color: #000;
 		& li {
-			margin-right: 10px;
-			width: 23px;
-			&.active {
-				border-bottom: 3px solid #0071db;
-				& a {
-					font-weight: bold;
+			& a {
+				color: #000;
+				&:hover {
 					color: #000;
 				}
 			}
-			& a {
-				text-decoration: none;
-				color: #3F86DF;
+			&.active > a {
+				background: #eee;
+				border: 1px solid #ddd;
 			}
 		}
-		&__dots {
-			font-weight: bold;
-		}
-	} 
+	}
+	// & .my-pagination {
+	// 	list-style: none;
+	// 	display: flex;
+	// 	padding: 0;
+	// 	margin: 0 auto;
+	// 	font-size:17px;
+	// 	text-align: center;
+	// 	& li {
+	// 		margin-right: 10px;
+	// 		width: 23px;
+	// 		&.active {
+	// 			border-bottom: 3px solid #0071db;
+	// 			& a {
+	// 				font-weight: bold;
+	// 				color: #000;
+	// 			}
+	// 		}
+	// 		& a {
+	// 			text-decoration: none;
+	// 			color: #3F86DF;
+	// 		}
+	// 	}
+	// 	&__dots {
+	// 		font-weight: bold;
+	// 	}
+	// } 
 }
 
 /* Страница Детали */

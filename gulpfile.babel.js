@@ -1,26 +1,30 @@
-var gulp = require('gulp'),
-	less = require('gulp-less'),
-	sass = require('gulp-sass'),
-	sourcemaps = require('gulp-sourcemaps'),
-	autoprefixer = require('gulp-autoprefixer'),
-	minifycss = require('gulp-minify-css'),
-	rename = require('gulp-rename'),
-	notify = require('gulp-notify'),
-	reload = require('gulp-livereload'),
+var	autoprefixer = require('gulp-autoprefixer'),
+	babel = require('gulp-babel'),
+	browserify = require('browserify'),
+	babelify = require('babelify'),
 	connect = require('gulp-connect'),
-	uglify = require('gulp-uglify'),
-	jshint = require('gulp-jshint'),
 	concat = require('gulp-concat'),
+	jshint = require('gulp-jshint'),
 	imagemin = require('gulp-imagemin'),
 	include = require("gulp-include"),
+ 	gulp = require('gulp'),
+ 	gutil = require('gulp-util'),
+	less = require('gulp-less'),
+	minifycss = require('gulp-minify-css'),
+	notify = require('gulp-notify'),
 	pngquant = require('imagemin-pngquant'),
-	babel = require('gulp-babel'),
-	watch = require('gulp-watch'),
 	postcss = require('gulp-postcss'),
+	rename = require('gulp-rename'),
+	reload = require('gulp-livereload'),
 	reporter = require('postcss-reporter'),
+	sass = require('gulp-sass'),
+	source = require('vinyl-source-stream'),
+	sourcemaps = require('gulp-sourcemaps'),
 	syntax_scss = require('postcss-scss'),
 	stylelint = require('stylelint'),
-	stylelintConfig = require('./stylelintConfig.js');
+	stylelintConfig = require('./stylelintConfig.js'),
+	uglify = require('gulp-uglify'),
+	watch = require('gulp-watch');
 
 
 //scss lint
@@ -126,10 +130,36 @@ gulp.task('scripts', function() {
 	.pipe(notify({ message: 'app.js' }));
 });
 
+
+
+// jsx
+gulp.task('jsx', function() {
+	return browserify({
+        entries: './build/js/my/app.jsx',
+        extensions: ['.jsx'],
+        debug: true
+    })
+    .transform('babelify', {
+        presets: ['es2015', 'react'],
+        plugins: ['transform-class-properties']
+    })
+    .bundle()
+    .on('error', function(err){
+        gutil.log(gutil.colors.red.bold('[browserify error]'));
+        gutil.log(err.message);
+        this.emit('end');
+    })
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('./assets/js/'))
+    .pipe(connect.reload())
+	.pipe(notify({ message: 'jsx' }));;
+});
+
 //watcher
 gulp.task('watch', function () {
 	gulp.watch(['*.html'], ['html']);
 	gulp.watch(['build/js/my/*.js'], ['scripts']);
+	gulp.watch(['build/js/my/*.jsx'], ['jsx']);
 	gulp.watch(['build/sass/*.scss'], ['scss-lint', 'sass']);
 	gulp.watch(['build/less/*.less'], ['styles']);
 	gulp.watch(['build/img/*'], ['img']);
