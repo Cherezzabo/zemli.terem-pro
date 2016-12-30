@@ -51,7 +51,7 @@ gulp.task('sass', function() {
 	return gulp.src('build/sass/**/*.scss')  // Берем источник
 		.pipe(sourcemaps.init())
 		.pipe(sass()) // Проебразуем Sass в CSS посредством gulp-sass
-		.pipe(autoprefixer({browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']}))
+		.pipe(autoprefixer(['last 2 version', 'safari 5', 'safari 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(sourcemaps.write())
 		.pipe(minifycss())

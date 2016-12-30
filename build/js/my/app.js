@@ -45,23 +45,21 @@ $(document).ready(function() {
 
 	//Задвигающийся лого шапки
 	var foldingLogo = $('.logo');
-	var foldingBreadcrumbs = $('.breadcrumbs > ul');
+	// var foldingBreadcrumbs = $('.breadcrumbs > ul');
 	$(window).on('scroll', function() {
-		console.log("Scrolling");
 		if ($(window).scrollTop() === 0) {
 			foldingLogo.removeClass('folded');
-			foldingBreadcrumbs.removeClass('unfolded');
+			// foldingBreadcrumbs.removeClass('unfolded');
 		} else {
 			foldingLogo.addClass('folded');
-			foldingBreadcrumbs.addClass('unfolded');
+			// foldingBreadcrumbs.addClass('unfolded');
 		}
-
 	});
 
 	// Filter animation
 	$(document).on('click', '[data-toggle="dropdown"]', function(e) {
-		//Add folding menu animation
-		$(this).next().addClass('opened');
+		// //Add folding menu animation
+		// $(this).next().addClass('opened');
 		//Reset all the carets in filter
 		$(this).parent().siblings('.dropdown').children('button').children('.my-caret').removeClass('animated');
 		//Add caret rotation animation
@@ -78,6 +76,43 @@ $(document).ready(function() {
 		$(this).prev().hide(); //Hide shorten phone number
 		$(this).next().show(); //Show full phone number
 		$(this).parent().css('border', 0); //Delete borders of rounded parent button
+	})
+
+	//Show|Hide map
+	$('#show-map-btn').click(function(e) {
+		e.preventDefault();
+		if ($(this).data('state') == 'closed') {
+			$(this).data('state', 'opened');
+			console.log();
+			$(this).children('.show-map-btn--toggler').html('▼');
+			$(".map-section").show();
+		} else {
+			$(this).data('state', 'closed');
+			$(this).children('.show-map-btn--toggler').html('►');
+			$(".map-section").hide();
+		}
+	})
+
+	//Show filter reset button emultaion
+	$('#filter').on('click', '.dropdown-menu--terem>li', function(e) {
+		e.preventDefault();
+		$('.col--show-map-btn')
+			.removeClass('col--show-map-btn')
+			.css('padding', '0');
+		$('.col--filter-reset').css('visibility', 'visible');
+	})
+
+	//Details info block functionality
+	$('.details__tabs').on('click', '.tab > a', function(e){
+		e.preventDefault();
+		var tmp = $(this)
+			.addClass('link--active')
+			.removeClass('link--gray')
+			.parent('div')
+			.siblings('div')
+			.children()
+			.removeClass('link--active')
+			.addClass('link--gray');
 	})
 
 	// //Slider in Details page
@@ -131,7 +166,6 @@ $(document).ready(function() {
 	// 	console.log(index);
 	// 	sync1.trigger('to.owl.carousel', index);
 	// });
-
 	var App = function (){
 		$('[data-phone="true"]').mask("+7 (999) 999-99-99");
 		

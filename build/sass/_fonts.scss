@@ -1,4 +1,37 @@
 @font-face {
+    font-family: "Myriad Pro";
+    src: url("../fonts/MyriadProRegular.woff") format("woff");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/RobotoRegular.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+/* font-family: 'RobotoLight'; */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/RobotoLight.woff') format('woff');
+    font-style: normal;
+    font-weight: 100;
+}
+/* font-family: 'RobotoMedium'; */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/RobotoMedium.woff') format('woff');
+    font-style: normal;
+    font-weight: 600;
+}
+/* font-family: 'RobotoBold'; */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/RobotoBold.woff') format('woff');
+    font-style: normal;
+    font-weight: 900;
+}
+@font-face {
 	font-family: "Reforma";
 	src: url("../fonts/RFG79.eot");
 	src:

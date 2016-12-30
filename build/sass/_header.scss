@@ -1,6 +1,6 @@
 //header
 .sticky-page {
-	padding-top: 45px;
+	padding-top: 40px;
 }
 .header-content-wrapper {
 	position: relative;
@@ -29,10 +29,6 @@
 		&-nav {
 			height: 45px;
 		}
-	}
-	& .navbar-default {
-		box-shadow: 0 3px 1px 0px rgba(0,0,0,.2);
-		// border-bottom: 1px solid #a2a3a2 !important;
 	}
 	.navbar-default .navbar-nav > li {
 		position: relative;
@@ -185,7 +181,7 @@
 		border-radius: 0;
 		border: none;
 		margin-bottom: 0;
-		box-shadow: 0 3px 7px rgba(0, 0, 0, .6);
+		//box-shadow: 0 3px 7px rgba(0, 0, 0, .6);
 	}
 	.navbar-collapse {
 		padding-left: 0;

@@ -67,295 +67,200 @@
               <main class="main">
                 <!-- Breadcrumbs section -->
                 <section class="breadcrumbs__section">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <div>
-                        <div class="container">
-                          <div class="breadcrumbs">
-                            <div class="row">
-                              <h2 class="section-title section-title--bottom-gutter">Поселки</h2>
-                            </div>
-                            <div class="row">
-                              <ul>
-                                <li><a href="index.html">Главная</a></li>
-                                <li><a href="#">Поселки</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <ul class="breadcrumbs">
+                          <li><a href="/">Главная</a></li>
+                          <li><a href="#">Поселки</a></li>
+                        </ul>
                       </div>
                     </div>
                   </div>
                 </section> <!-- End breadcrumb section -->
-                <!-- Content section -->
-                <section class="township-section">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-xs-12">
-                        <div class="row">
-                          <div class="col-xs-6">
-                            <div class="slider-item item-bg-1">
-                              <h2 class="slider-item__title text-shadow-white">
-                                Поселок «Мирный» 120 км от Москвы
-                              </h2>
-                              <div class="slider-item__more-link">
-                                <a href="#" class="btn btn-default">
-                                  Узнать подробнее
-                                </a>
+                <section class="filter-section">
+                  <div class="row no-gutters">
+                    <div class="col-xs-12 no-gutters">
+                      <div class="main-banner main-banner--no-bg">
+                        <div class="container">
+
+                          <h2 class="filter-block__title filter-block__title--less-gutter">
+                            Выберите параметры поселка
+                          </h2>
+
+                          <div class="filter--general">
+                            <form action="" method="post" id="filter" class="filter-form" novalidate="">
+                              <input type="hidden" name="security" id="valit" value="6d1d308a57969949bd9bf280b06240af">
+
+                              <!-- Шоссе -->
+                              <div class="dropdown dropdown--terem">
+                                <input name="road" id="road" value="" class="hidden" type="text">
+                                <span class="my-cross" id="roadDropdown_cross" data-parent="roadDropdown"></span>
+                                <button class="btn my-btn-filter my-btn-filter--road btn-lg dropdown-toggle" type="button" id="roadDropdown" data-checked="false" data-placeholder="Шоссе" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Шоссе
+                                  <span class="my-caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu--terem road-filter" aria-labelledby="roadDropdown">
+                                  <li data-id="Киевское" data-value="Киевское" data-key="85" class="road-filter-li"><a href="#" data-name="Киевское">Киевское</a></li>
+                                  <li data-id="Можайское" data-value="Можайское" data-key="255326" class="road-filter-li"><a href="#" data-name="Можайское">Можайское</a></li>
+                                  <li data-id="Ярославское" data-value="Ярославское" data-key="108" class="road-filter-li"><a href="#" data-name="Ярославское">Ярославское</a></li>
+                                </ul>
                               </div>
-                            </div><!-- END 1st promo-slider item -->
-                          </div>
-                          <div class="col-xs-6">
-                            <div class="slider-item item-bg-2">
-                              <h2 class="slider-item__title text-white text-shadow-black">
-                                Земельные участки в поселке «Терем 1» от&nbsp;2&nbsp;300&nbsp;000&nbsp;р.
-                              </h2>
-                              <div class="slider-item__more-link">
-                                <a href="#" class="btn btn-default">
-                                  Узнать подробнее
-                                </a>
+
+                              <!-- Удаленность от МКАД -->
+                              <div class="dropdown dropdown--terem">
+                                <button class="btn my-btn-filter my-btn-filter--distance btn-lg dropdown-toggle" type="button" id="distanceDropdown" data-placeholder="Удаленность от МКАД" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Удаленность от МКАД
+                                  <span class="my-caret"></span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu--terem" aria-labelledby="distanceDropdown">
+                                  <div class="range-box">
+                                    <input name="distanceMIN" data-name="distance" id="distanceMIN" placeholder="от 9" data-val="9" value="" step="1" type="number" min="9">
+                                    <span>&nbsp;-&nbsp;</span>
+                                    <input name="distanceMAX" data-name="distance" id="distanceMAX" placeholder="до 411" data-val="411" value="" step="1" type="number" max="411">
+                                    <span>км</span>
+                                  </div>
+                                </div>
                               </div>
-                            </div><!-- END 2nd promo-slider item -->
+
+                              <!-- Цена за сотку -->
+                              <div class="dropdown dropdown--terem">
+                                <button class="btn my-btn-filter my-btn-filter--price btn-lg dropdown-toggle" type="button" id="priceDropdown" data-placeholder="Цена за сотку" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Цена за сотку
+                                  <span class="my-caret"></span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu--terem" aria-labelledby="priceDropdown">
+                                  <div class="range-box">
+                                    <input name="priceMIN" data-name="price" id="priceMIN" data-val="80" value="" placeholder="от 80" type="number">&nbsp;-&nbsp;<input name="priceMAX" data-name="price" id="priceMAX" data-val="5940" value="" placeholder="до 5940" type="number">тыс.&nbsp;р.
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="filter-button">
+                                <button class="submit-button" type="submit">Найти</button>
+                              </div>
+                            </form>
                           </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
+
+
+
+                          <div class="filter-block__extra-info filter-block__extra-info--no-up-gutter">
+                            <p class="filter-block__extra-info--text">
+                              Наши специалисты ответят на Ваши вопросы по телефону
+                              <br>
+                              8 (495) 419-14-44 или <a href="#" class="modal-call" data-target="#call" data-toggle="modal"><span class="filter-block__extra-info--text--blue-link">перезвонят Вам через 30 секунд</span></a>
+                            </p>
+                          </div>
+
+                           <div class="row">
+                           <div class="col-xs-offset-3 col-xs-3 col--show-map-btn">
+                              <a href="#" id="show-map-btn" data-state="closed" class="my-link">Выбрать на карте <span class="show-map-btn--toggler">►</span></a>
+                            </div>
+                            <div class="col-xs-3 col--no-padding col--filter-reset text-right">
+                              <a href="" class="my-link">Сбросить все фильтры <span class="my-cross--link"></span></a>
                             </div>
                           </div>
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
-                            </div>
-                          </div>
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
-                            </div>
-                          </div>
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
-                            </div>
-                          </div>
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
-                            </div>
-                          </div>
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
-                            </div>
-                          </div>
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
-                            </div>
-                          </div>
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
-                            </div>
-                          </div>
-                          <div class="col-xs-4">
-                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
-                              <h2 class="info-aside__title">
-                                Земельный участок в поселке «Зарево»
-                              </h2>
-                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
-                                <li>
-                                  Водопровод
-                                </li>
-                                <li>
-                                  Газ
-                                </li>
-                                <li>
-                                  Охрана
-                                </li>
-                              </ul>
-                              <a href="" class="info-aside__link"></a>
-                            </div>
-                          </div>
+
                         </div>
                       </div>
                     </div>
+                  </div><!-- END Filter row -->
+                </section> <!-- End Filter section -->
+                <!-- Content section -->
+                <section class="map-section">
+                  <div class="container">
+                    <img src="assets/img/map.png" alt="">
+                  </div>
+                </section>
+                <section class="list-section">
+                  <div class="container">
+
+                    <div class="row list-row">
+                        <div class="col-xs-12 col-md-6 list__item">
+                          <div class="col-xs-6 list__item__img">
+                            <img src="assets/img/site-preview.jpg" alt="">
+                          </div>
+                          <div class="col-xs-6 list__item__desc">
+                            <span class="promo-flag">Акция</span>
+                            <h2 class="list__item__desc__title">Поселок «Мирный»</h2>
+                            <p class="list__item__desc__p>
+                              <span data-type="distance">00</span> км
+                              <br>
+                              <span data-type="road">Ярославское шоссе</span>
+                              <br>
+                              участки от <span data-type="area-min">00</span> до <span data-type="area-max">00</span> соток
+                            </p>
+                            <p class="list__item__desc__price">
+                              от <span data-type="price">00 000</span> рублей за сотку
+                            </p>
+                          </div>
+                          <a href="" class="link-hover link-hover--round-corners"></a>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 list__item">
+                          <div class="col-xs-6 list__item__img">
+                            <img src="assets/img/site-preview.jpg" alt="">
+                          </div>
+                          <div class="col-xs-6 list__item__desc">
+                            <h2 class="list__item__desc__title">Поселок «Мирный»</h2>
+                            <p class="list__item__desc__p>
+                              <span data-type="distance">00</span> км
+                              <br>
+                              <span data-type="road">Ярославское шоссе</span>
+                              <br>
+                              участки от <span data-type="area-min">00</span> до <span data-type="area-max">00</span> соток
+                            </p>
+                            <p class="list__item__desc__price">
+                              от <span data-type="price">00 000</span> рублей за сотку
+                            </p>
+                          </div>
+                          <a href="" class="link-hover link-hover--round-corners"></a>
+                        </div>
+                    </div>
+
+                    <div class="row list-row">
+
+                        <div class="col-xs-12 col-md-6 list__item">
+                          <div class="col-xs-6 list__item__img">
+                            <img src="assets/img/site-preview.jpg" alt="">
+                          </div>
+                          <div class="col-xs-6 list__item__desc">
+                            <h2 class="list__item__desc__title">Поселок «Мирный»</h2>
+                            <p class="list__item__desc__p>
+                              <span data-type="distance">00</span> км
+                              <br>
+                              <span data-type="road">Ярославское шоссе</span>
+                              <br>
+                              участки от <span data-type="area-min">00</span> до <span data-type="area-max">00</span> соток
+                            </p>
+                            <p class="list__item__desc__price">
+                              от <span data-type="price">00 000</span> рублей за сотку
+                            </p>
+                          </div>
+                          <a href="" class="link-hover link-hover--round-corners"></a>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 list__item">
+                          <div class="col-xs-6 list__item__img">
+                            <img src="assets/img/site-preview.jpg" alt="">
+                          </div>
+                          <div class="col-xs-6 list__item__desc">
+                            <h2 class="list__item__desc__title">Поселок «Мирный»</h2>
+                            <p class="list__item__desc__p>
+                              <span data-type="distance">00</span> км
+                              <br>
+                              <span data-type="road">Ярославское шоссе</span>
+                              <br>
+                              участки от <span data-type="area-min">00</span> до <span data-type="area-max">00</span> соток
+                            </p>
+                            <p class="list__item__desc__price">
+                              от <span data-type="price">00 000</span> рублей за сотку
+                            </p>
+                          </div>
+                          <a href="" class="link-hover link-hover--round-corners"></a>
+                        </div>
+                    </div>
+
                   </div>
                 </section>
                 <section class="info-block-section">
