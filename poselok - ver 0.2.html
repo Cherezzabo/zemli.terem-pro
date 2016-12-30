@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ru_RU"> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Поселки</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <link href='assets/css/app.min.css' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="assets/js/owl.carousel.js"></script>
+  <script src="assets/js/form.js" type="text/javascript"></script>
+  <link href='assets/css/owl.carousel.css' rel='stylesheet' type='text/css'>
+  <link href='assets/source/jquery.fancybox.css' rel='stylesheet' type='text/css'>
+  <script src="assets/source/jquery.fancybox.js" type="text/javascript"></script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+          </head>
+          <body>
+            <div class="sticky-page">
+              <!-- Header section -->
+              <section class="header">
+                <nav class="navbar navbar-default">
+                  <div class="container">
+
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                      </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                      <nav id="nav">
+                        <ul class="nav navbar-nav">
+                          <li class="logo-holder"><a href="http://www.terem-pro.ru/" class="logo"></a></li>
+                          <li><a href="/">Главная</a></li>
+                          <li class="active"><a href="poselok.html">Поселки</a></li> 
+                          <li class="has-inner">
+                            <a href="#">О проекте «Терем 1»</a>
+                            <ul>
+                              <li><a href="about.html">Описание</a></li>
+                              <li><a href="about-2.html">Окружение</a></li>
+                              <li><a href="gallary.html">Галерея</a></li>
+                              <li><a href="map.html">План поселка</a></li>
+                              <li><a href="partners.html">Партнеры</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="uchastok.html">Участки</a></li> 
+                          <li><a href="lot.html">Лоты</a></li> 
+                          <li><a href="contacts.html">Контакты</a></li> 
+                          <li>
+                            <a class="call" href="#" data-target="#call" data-toggle="modal"><span><i class="glyphicon glyphicon-earphone"></i></span><span>заказать звонок</span></a>
+                            <!-- <a href="" class="btn green-button add-ad">+ Добавить объявление</a> -->
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </nav>
+              </section> <!-- End header section -->
+              <main class="main">
+                <!-- Breadcrumbs section -->
+                <section class="breadcrumbs__section">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div>
+                        <div class="container">
+                          <div class="breadcrumbs">
+                            <div class="row">
+                              <h2 class="section-title section-title--bottom-gutter">Поселки</h2>
+                            </div>
+                            <div class="row">
+                              <ul>
+                                <li><a href="index.html">Главная</a></li>
+                                <li><a href="#">Поселки</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section> <!-- End breadcrumb section -->
+                <!-- Content section -->
+                <section class="township-section">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <div class="row">
+                          <div class="col-xs-6">
+                            <div class="slider-item item-bg-1">
+                              <h2 class="slider-item__title text-shadow-white">
+                                Поселок «Мирный» 120 км от Москвы
+                              </h2>
+                              <div class="slider-item__more-link">
+                                <a href="#" class="btn btn-default">
+                                  Узнать подробнее
+                                </a>
+                              </div>
+                            </div><!-- END 1st promo-slider item -->
+                          </div>
+                          <div class="col-xs-6">
+                            <div class="slider-item item-bg-2">
+                              <h2 class="slider-item__title text-white text-shadow-black">
+                                Земельные участки в поселке «Терем 1» от&nbsp;2&nbsp;300&nbsp;000&nbsp;р.
+                              </h2>
+                              <div class="slider-item__more-link">
+                                <a href="#" class="btn btn-default">
+                                  Узнать подробнее
+                                </a>
+                              </div>
+                            </div><!-- END 2nd promo-slider item -->
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                          <div class="col-xs-4">
+                            <div class="main-promo__info-aside info-aside info-aside--no-gutter info-aside--bg-1 text-white text-shadow-black">
+                              <h2 class="info-aside__title">
+                                Земельный участок в поселке «Зарево»
+                              </h2>
+                              <ul class="info-aside__info info-aside__info--horizontal text-shadow-black">
+                                <li>
+                                  Водопровод
+                                </li>
+                                <li>
+                                  Газ
+                                </li>
+                                <li>
+                                  Охрана
+                                </li>
+                              </ul>
+                              <a href="" class="info-aside__link"></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="info-block-section">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xs-12 info-block">
+                        <div class="info-block__text">
+                          <h2 class="section-title">
+                            Поиск участков на zemli.terem-pro.ru
+                          </h2>
+                          <div class="text-in-columns">
+                            <p>
+                              Купить или снять недвижимость — задача несложная, если знать, где искать и с чего начать поиски. Чтобы арендовать или купить недвижимость, не нужно ехать в агентство. Достаточно отыскать чистую профессиональную базу объявлений о продаже или аренде недвижимости в Москве.
+                            </p>
+                            <p>
+                              Если вы решили продать или купить квартиру, снять или сдать жилую недвижимость или находитесь в поисках загородной или коммерческой недвижимости, то ЦИАН поможет вам! ЦИАН.ру — это самый удобный сайт для поиска недвижимости по точному адресу или по карте, с учётом всех интересующих вас параметров. На CIAN.RU — тысячи актуальных объявлений о продаже или аренде объектов недвижимости в Москве и по всей России, ежедневно на сайте появляются новые объявления. Объявления содержат описания объектов, информацию об инфраструктуре, фотографии, стоимость, контакты владельца.
+                            </p>
+                            <p>
+                              Мы создали мобильное приложение для поиска недвижимости в вашем городе, чтобы у вас был мгновенный доступ к просмотру объявлений по всем типам недвижимости (новостройки, «вторичка») в любом регионе России. Мобильное приложение ЦИАН предлагает интерактивный поиск объектов недвижимости на карте и рядом с вашим местоположением. Искать жилье или другие объекты недвижимости на ЦИАН.ру очень просто! Подробный и удобный фильтр поиска позволяет сразу же задать нужные параметры, вы быстро подберете нужный объект из предложенных вариантов.
+                            </p>
+                            <p>
+                              Не забудьте оформить подписку на новые объявления по результатам поиска, чтобы оперативно получать все самые свежие и актуальные предложения о продаже или аренде недвижимости в Москве.
+                            </p>
+                            <p>
+                              Проверенное жильё находится на CIAN.RU!
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div><!-- END info-block -->
+                  </div>
+                </section><!-- END info-block section -->
+              </main>
+              <footer class="footer">
+                <div class="row row-nav">
+                  <div class="container">
+                    <div class="col-xs-8 footer__left-col">
+                      <ul>
+                        <li><a href="">
+                          Главная
+                        </a></li>
+                        <li><a href="">
+                          Поселки
+                        </a></li>
+                        <li><a href="">
+                          О проекте «Терем 1»
+                        </a></li>
+                        <li><a href="">
+                          Участки
+                        </a></li>
+                        <li><a href="">
+                          Лоты
+                        </a></li>
+                        <li><a href="">
+                          Контакты
+                        </a></li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-4 footer__right-col">
+                      <div class="footer__phone">
+                        <i class="glyphicon glyphicon-earphone"></i>
+                        <a href="tel:+7 (495) 789-82-70">+7 (495) 789-82-70</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row row-copyright">
+                  <div class="container">
+                    <div class="col-xs-12 copy-wrapper">
+                      <span class="copy small">
+                        © 2016 "Теремъ" все права защищены
+                      </span>
+                    </div>
+                  </div>  
+                </div>
+              </footer>
+
+
+
+
+
+
+
+              <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+              <script src="assets/js/jquery.maskedinput.js" type="text/javascript"></script>
+
+              <script src="assets/js/formValidation.min.js" type="text/javascript"></script>
+              <script src="assets/js/framework/bootstrap.min.js" type="text/javascript"></script>
+              <script src="assets/js/language/ru_RU.js" type="text/javascript"></script>
+
+              <script src="assets/js/app.min.js" type="text/javascript"></script>
+              <!-- Yandex.Metrika counter --> 
+              <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter39873590 = new Ya.Metrika({ id:39873590, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ut:"noindex" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/39873590?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+            </body>
+            </html>
+
+            <div class="modal fade my-modal-call" id="call" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title padding-bottom">Заказать звонок</h4>
+                    <p>Мы можем позвонить вам абсолютно бесплатно! Укажите свое имя, номер телефона и предпочтительное время звонка. Наши специалисты ответят на любые возникшие вопросы!</p>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <form action="hendler.php" method="POST" autocomplete="off" data-form="send" data-thx="one">
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+
+                                  <input type="text" name="userName" id="userName" class="form-control" placeholder="Введите ваше имя">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+
+                                  <input type="text" name="userPhoneNumber" data-phone="true" id="userPhone" class="form-control" placeholder="Введите ваш телефон">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+
+                                  <input type="text" name="userAddress" id="userCity" class="form-control" placeholder="Введите ваш город">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+                                  <select class="form-control" name="time">
+                                    <option disabled selected title="Удобное время звонка">Удобное время звонка</option>
+                                    <option value="10-00">10-00</option>
+                                    <option value="11-00">11-00</option>
+                                    <option value="12-00">12-00</option>
+                                    <option value="13-00">13-00</option>
+                                    <option value="14-00">14-00</option>
+                                    <option value="15-00">15-00</option>
+                                    <option value="16-00">16-00</option>
+                                    <option value="17-00">17-00</option>
+                                    <option value="18-00">18-00</option>
+                                    <option value="19-00">19-00</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="messages"></div>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                              <p class="m-top"><strong>Внимание!</strong></p>
+                              <p>Все поля обязательны для заполнения.</p>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                              <button type="submit" name="ipadress" value="" class="btn btn-danger disabled" style="pointer-events: all; cursor: pointer;">ОТПРАВИТЬ</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>        
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <div class="modal fade my-modal-call" id="call2" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title padding-bottom">ЗАЯВКА НА УЧАСТОК</h4>
+                    <p>Мы можем подобрать вам земельный участок без подряда под ваши характеристики! Укажите ваши данные и параметры участка. Наши специалисты свяжутся с вами!</p>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <form action="hendler.php" method="POST" autocomplete="off" data-form="send" data-thx="one">
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+
+                                  <input type="text" name="userName" id="userName" class="form-control" placeholder="Введите ваше имя">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+
+                                  <input type="text" name="userPhoneNumber" data-phone="true" id="userPhone" class="form-control" placeholder="Введите ваш телефон">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+                                  <input type="email" name="userEmail" id="userPhone" class="form-control" placeholder="Введите ваш e-mail  ">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+                                  <input type="text" name="userDirection" class="form-control" placeholder="Введите интересующее вас направление">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                              <p class="m-top"><strong>Внимание!</strong></p>
+                              <p>Все поля обязательны для заполнения.</p>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                              <button type="submit" name="ipadress" value="" class="btn btn-danger disabled" style="pointer-events: all; cursor: pointer;">ОТПРАВИТЬ</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>        
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <div class="modal fade my-modal-call" id="call3" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title padding-bottom">Подписка на обновления</h4>
+                    <p>Мы будем отправлять все подходящие новые объявления вам на электронную почту.</p>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <form action="hendler.php" method="POST" autocomplete="off" data-form="send" data-thx="one">
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="custom-control">
+                                  <input type="email" name="userEmail" id="userPhone" class="form-control" placeholder="Введите ваш e-mail">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                              <button type="submit" name="ipadress" value="" class="btn btn-danger disabled" style="pointer-events: all; cursor: pointer;">ОТПРАВИТЬ</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>        
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <div class="modal fade my-modal-call" id="thx" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                    <h4 class="modal-title padding-bottom text-center">Заявка отправлена</h4>
+                    <p class="text-center">Спасибо за вашу заявку. Наши менеджеры свяжутся с вами в ближайшее время</p>
+                    <br>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+
